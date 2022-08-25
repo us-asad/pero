@@ -1,0 +1,22 @@
+.section__footer-btn {
+  margin: auto;
+  display: flex;
+  font-weight: 400;
+  font-size: 14px;
+  border-radius: 15px;
+  padding: 15px;
+  color: var(--white-color);
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.section__footer-btn-icon {
+  width: 50px;
+}
+
+.section__footer-btn-text {
+  height: 100%;
+  display: inline-block;
+  text-align: start;
+}

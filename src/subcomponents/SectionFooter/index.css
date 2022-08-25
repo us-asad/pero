@@ -1,0 +1,15 @@
+.section__footer {
+  width: 300px;
+  margin: 0 auto;
+  padding: 0 0 50px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.section__footer-text {
+  margin-bottom: 10px;
+}
+
+.section__footer-hr {
+  border-bottom: 3px solid #fff;
+}

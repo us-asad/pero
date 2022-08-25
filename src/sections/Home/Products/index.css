@@ -1,0 +1,25 @@
+.products {
+  background-color: var(--green-normal);
+  color: var(--white-color);
+  padding: 80px;
+}
+
+.products__title {
+  font-weight: 700;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.products__text {
+  font-weight: 400;
+  font-size: 15px;
+  text-align: center;
+}
+
+.products__slider {
+  height: 20px;
+  background-color: var(--green-bold);
+  margin: 100px 0 60px;
+  text-align: center;
+}
