@@ -40,8 +40,6 @@ export default function Main() {
 
   }
 
-  console.log(pages.length - activePageIdx2)
-
   return (
     <div className='main'>
       <div className="container">
@@ -78,6 +76,7 @@ export default function Main() {
                 <Feather 
                   src="/assets/images/feathers/main/4.png"
                   style={{bottom: "30px", right: "140px"}}
+                  animate={pages.length - activePageIdx2 - 1 < i && !disableBtn ? { bottom: "-400px", right: "-500px", transition: "10s" } : pages.length - activePageIdx2 - 1 === i && !disableBtn ? { bottom: "-400px", right: "-500px" } : {}}
                 />
               </div>
             ))}

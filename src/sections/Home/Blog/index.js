@@ -1,10 +1,14 @@
 import React from 'react'
+import { useRef } from 'react';
 import { SectionFooter, WhiteBg } from 'subcomponents';
 import "./index.css";
 
-export default function Blog() {
+export default function Blog({ scrollY }) {
+  const blogRef = useRef();
+  // const data = scrollY === window.pageYOffset + blogRef.current?.getBoundingClientRect().top ? true : ""
+
   return (
-    <section className='blog'>
+    <section ref={blogRef} className='blog'>
       <h3 className='blog__bg-text'>BLOG POSTS</h3>
       <div className="container blog__container">
         <div className="blog__main-img">

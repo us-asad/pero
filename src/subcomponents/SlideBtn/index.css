@@ -1,0 +1,26 @@
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a13838;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: var(--white-color);
+  border: 10px solid rgb(161 56 56 / 76%);
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  transition: 300ms;
+  width: 60px;
+  height: 60px;
+  z-index: 1;
+}
+
+.slide-btn:active {
+  width: 55px;
+  height: 55px;
+}

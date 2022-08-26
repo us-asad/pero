@@ -46,6 +46,30 @@ export const main_section_pages = [
   }
 ].reverse();
 
+export const products = [
+  {
+    title: "Бумажные продукции",
+    image_url: "/assets/images/products/1.png",
+  },
+  {
+    title: "Туалетные бумаги",
+    image_url: "/assets/images/products/2.png",
+  },
+  {
+    title: "Диспенсеры",
+    image_url: "/assets/images/products/3.png",
+  },
+  {
+    title: "Бумажные продукции",
+    image_url: "/assets/images/products/1.png",
+  },
+  {
+    title: "Бумажные продукции last",
+    image_url: "/assets/images/products/1.png",
+  },
+  
+]
+
 export const videos = [
   "/assets/videos/1.avi",
   "/assets/videos/2.avi",

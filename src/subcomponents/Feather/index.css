@@ -1,5 +1,5 @@
 .feather__img {
   position: absolute;
   z-index: 0;
-  /* transition: 20s; */
+  transition: 50s;
 }

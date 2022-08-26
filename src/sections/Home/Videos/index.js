@@ -2,7 +2,13 @@ import { videos } from 'data'
 import React, { useState } from 'react'
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { SectionFooterBtn, WhiteBg } from 'subcomponents';
+import SlideBtn from 'subcomponents/SlideBtn';
 import "./index.css"
+
+const slide_btn_styles = {
+  color: "#a13838",
+  borderColor: "rgb(161 56 56 / 76%)"
+}
 
 export default function Videos() {
   const [activeVideoIdx, setActiveVideoIdx] = useState(1);
@@ -22,12 +28,15 @@ export default function Videos() {
               /> */}
             </li>
           ))}
-          <button onClick={() => setActiveVideoIdx(prev => prev - 1 < 0 ? prev : prev - 1)} className="videos__control-btn videos__prev">
-            <FaChevronLeft />
-          </button>
-          <button onClick={() => setActiveVideoIdx(prev => prev + 1 > videos.length - 1 ? prev : prev + 1)} className="videos__control-btn videos__next">
-            <FaChevronRight />
-          </button>
+          <SlideBtn
+            onClick={() => setActiveVideoIdx(prev => prev - 1 < 0 ? prev : prev - 1)}
+            style={{...slide_btn_styles, left: "-30px"}}
+          />
+          <SlideBtn
+            rightIcon
+            onClick={() => setActiveVideoIdx(prev => prev + 1 > videos.length - 1 ? prev : prev + 1)}
+            style={{...slide_btn_styles, right: "-30px"}}
+          />
         </ul>
         <SectionFooterBtn text="Videolarni yuklab olsh" bgColor="#DC4848" width="" />
       </div>
