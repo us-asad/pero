@@ -1,26 +1,94 @@
 import React from 'react'
+import { useState } from 'react';
+import { useEffect } from 'react';
 import { useRef } from 'react';
-import { SectionFooter, WhiteBg } from 'subcomponents';
+import { Feather, SectionFooter, WhiteBg } from 'subcomponents';
 import "./index.css";
 
 export default function Blog({ scrollY }) {
+  const [arrived, setArrived] = useState(false);
+  const [showPopUp1, setShowPopUp1] = useState(false);
+  const [showPopUp2, setShowPopUp2] = useState(false);
+  const [showPopUp3, setShowPopUp3] = useState(false);
   const blogRef = useRef();
   // const data = scrollY === window.pageYOffset + blogRef.current?.getBoundingClientRect().top ? true : ""
 
+  if (!showPopUp1 && (blogRef.current?.offsetTop - blogRef.current?.scrollTop + blogRef.current?.clientTop) - blogRef.current?.clientHeight / 2 < scrollY) {
+    setShowPopUp1(true);
+    setTimeout(() => {
+      setShowPopUp2(true);
+      setTimeout(() => {
+        setShowPopUp3(true);
+      }, 500);
+    }, 500);
+  }
+
+
+
   return (
     <section ref={blogRef} className='blog'>
-      <h3 className='blog__bg-text'>BLOG POSTS</h3>
-      <div className="container blog__container">
-        <div className="blog__main-img">
-          <img src="/assets/images/blog-img.png" alt="Pero BLOG" />
-          <button className='blog__main-btn'>All Blog Post</button>
+      <div className='container'>
+        <h3 className='blog__bg-text'>BLOG POSTS</h3>
+        <div className="container blog__container">
+          <div className="blog__main-container">
+            <div className={`blog__pop-up-1 blog__pop-up-container ${showPopUp1 ? "active" : ""}`}>
+              <img
+                src="/assets/images/blog-pop-up-img.png"
+                alt="Pero Blog"
+                className='blog__pop-up-img'
+              />
+              <p className='blog__pop-up-text'>
+                Pero nafislik nimadr brbalo text boladi
+                kjhi Pero nafislik nimadr brbalo text boladiPero nafislik
+              </p>
+            </div>
+            <div className={`blog__pop-up-2 blog__pop-up-container ${showPopUp2 ? "active" : ""}`}>
+              <img
+                src="/assets/images/blog-pop-up-img.png"
+                alt="Pero Blog"
+                className='blog__pop-up-img'
+              />
+              <p className='blog__pop-up-text'>
+                Pero nafislik nimadr brbalo text boladi
+                kjhi Pero nafislik nimadr brbalo text boladiPero nafislik
+              </p>
+            </div>
+            <div className={`blog__pop-up-3 blog__pop-up-container ${showPopUp3 ? "active" : ""}`}>
+              <img
+                src="/assets/images/blog-pop-up-img.png"
+                alt="Pero Blog"
+                className='blog__pop-up-img'
+              />
+              <p className='blog__pop-up-text'>
+                Pero nafislik nimadr brbalo text boladi
+                kjhi Pero nafislik nimadr brbalo text boladiPero nafislik
+              </p>
+            </div>
+            <img src="/assets/images/blog-img.png" alt="Pero BLOG" className='blog__main-img' />
+            <button className='blog__main-btn'>All Blog Post</button>
+          </div>
         </div>
+        <SectionFooter text="Barcha blog postlarimiz" color="var(--orange-light)" />
       </div>
-      <SectionFooter text="Barcha blog postlarimiz" color="var(--orange-light)" />
       <WhiteBg light long style={{ bottom: "30px", left: "50%", transform: "translateX(-50%)" }} />
       <WhiteBg long style={{ top: "30px", left: "50%", transform: "translateX(-50%)" }} />
       <WhiteBg style={{ top: "10px", left: "0" }} />
       <WhiteBg style={{ top: "-100px", right: "100px", transform: "rotate(90deg)" }} />
+      <Feather
+        src="/assets/images/feathers/blog/1.png"
+        style={{ bottom: '80px', left: "0" }}
+        animate={{bottom: "-100%", left: "-100%"}}
+      />
+      <Feather
+        src="/assets/images/feathers/blog/2.png"
+        style={{ top: '100px', left: "120px" }}
+        animate={{top: "-100%", left: "-100%"}}
+      />
+      <Feather
+        src="/assets/images/feathers/blog/3.png"
+        style={{ top: '30%', right: "120px" }}
+        animate={{top: "-100%", right: "-100%"}}
+      />
     </section>
   )
 }

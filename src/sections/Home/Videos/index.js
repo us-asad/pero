@@ -1,7 +1,6 @@
 import { videos } from 'data'
 import React, { useState } from 'react'
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { SectionFooterBtn, WhiteBg } from 'subcomponents';
+import { Feather, SectionFooterBtn, WhiteBg } from 'subcomponents';
 import SlideBtn from 'subcomponents/SlideBtn';
 import "./index.css"
 
@@ -46,6 +45,32 @@ export default function Videos() {
       <WhiteBg style={{ bottom: "-100px", right: "180px", transform: "rotate(-90deg)" }} />
       <WhiteBg style={{ top: "-100px", right: "180px", transform: "rotate(90deg)" }} />
       <WhiteBg light style={{ top: "-100px", left: "180px", transform: "rotate(90deg)" }} />
+      <Feather
+        src="/assets/images/feathers/videos/1.png"
+        style={{bottom: "5px", left: "10px"}}
+        animate={{bottom: "-100%", left: "-100%"}}
+      />
+      <Feather
+        src="/assets/images/feathers/videos/2.png"
+        style={{top: "150px", left: "50px"}}
+        animate={{top: "-100%", left: "100%"}}
+      />
+      <Feather
+        src="/assets/images/feathers/videos/3.png"
+        style={{top: "40px", left: "25%"}}
+        animate={{top: "-100%", left: "-100%"}}
+      />
+      <Feather
+        src="/assets/images/feathers/videos/4.png"
+        style={{top: "70px", right: "40px"}}
+        animate={{top: "-100%",right: "-100%"}}
+      />
+      <Feather
+        src="/assets/images/feathers/videos/5.png"
+        style={{bottom: "100px", right: "20%"}}
+        animate={{bottom: "-100%", right: "-100%"}}
+      />
+      
     </section>
   )
 }

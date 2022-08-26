@@ -1,5 +1,5 @@
 .main {
-  background-image: url("../../../../public/assets/images/main-bg.png");
+  background-image: url(/public/assets/images/main-bg.png);
   background-size: cover;
   padding: 60px 0 0;
   position: relative;

@@ -8,12 +8,11 @@ export default function Home() {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScrollY(window.scrollY);
-    });
+    const handleScroll = () => { setScrollY(window.scrollY) }
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll");
+      window.removeEventListener("scroll", handleScroll);
     }
   }, []);
 

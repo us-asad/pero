@@ -2,6 +2,13 @@
   background-color: var(--green-normal);
   color: var(--white-color);
   padding: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.products .container {
+  position: relative;
+  z-index: 1;
 }
 
 .products__title {

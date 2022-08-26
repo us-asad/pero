@@ -2,7 +2,7 @@ import { products } from 'data';
 import React from 'react'
 import { useRef } from 'react';
 import { useState } from 'react';
-import { SectionFooterBtn } from 'subcomponents';
+import { Feather, SectionFooterBtn, WhiteBg } from 'subcomponents';
 import SlideBtn from 'subcomponents/SlideBtn';
 import "./index.css";
 
@@ -16,8 +16,6 @@ const slide_btn_styles = {
 export default function Products() {
   const [activeIdx, setActiveIdx] = useState(1);
   const slideRef = useRef();
-
-  console.log(activeIdx)
 
   return (
     <section className='products font-rubik'>
@@ -63,6 +61,43 @@ export default function Products() {
         </div>
         <SectionFooterBtn text={btnText} bgColor="var(--green-light)" width="0px" />
       </div>
+      <WhiteBg
+          style={{top: ".5%", left: "0"}}
+        />
+        <WhiteBg
+          style={{bottom: ".5%", right: "0", transform: "rotate(180deg)"}}
+        />
+        <WhiteBg
+          style={{top: "-15%", left: "10%", transform: "rotate(90deg)"}}
+        />
+        <WhiteBg
+          style={{top: "-15%", right: "10%", transform: "rotate(90deg)"}}
+        />
+        <Feather
+          src="/assets/images/feathers/products/1.png"
+          style={{left: "1%", bottom: "2%"}}
+          animate={{left: "-100%", bottom: "-100%"}}
+        />
+        <Feather
+          src="/assets/images/feathers/products/2.png"
+          style={{left: "5%", top: "20%"}}
+          animate={{left: "100%", top: "-100%"}}
+        />
+        <Feather
+          src="/assets/images/feathers/products/3.png"
+          style={{left: "33%", top: "10%"}}
+          animate={{left: "-100%", top: "-100%"}}
+        />
+        <Feather
+          src="/assets/images/feathers/products/4.png"
+          style={{right: "1%", top: "10%"}}
+          animate={{right: "-100%", top: "-100%"}}
+        />
+        <Feather
+          src="/assets/images/feathers/products/5.png"
+          style={{right: "15%", bottom: "10%"}}
+          animate={{right: "-100%", bottom: "-100%"}}
+        />
     </section>
   )
 }

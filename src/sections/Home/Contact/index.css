@@ -3,9 +3,11 @@
   text-align: center;
   background-color: var(--green-semibold);
   position: relative;
+  overflow: hidden;
 }
 
 .contact .container {
+  position: relative;
   z-index: 1;
 }
 

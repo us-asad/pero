@@ -15,7 +15,7 @@ export default function Contact() {
           malumoitlarizzi yozb qoldiring va bizani mutahasislarimiz sizga qongiroq qlwadi
         </p>
         <form onSubmit={submit} className='contact__form'>
-        <input
+          <input
             type="text"
             placeholder='Ismingiz'
             name='name'
@@ -43,26 +43,31 @@ export default function Contact() {
         src="/assets/images/feathers/contact/1.png"
         width="280px"
         style={{ bottom: "30px", left: "40px" }}
+        animate={{ bottom: "-100%", left: "-100%" }}
       />
       <Feather
         src="/assets/images/feathers/contact/2.png"
         width="120px"
         style={{ top: "200px", left: "100px" }}
+        animate={{ top: "-100%", left: "100%" }}
       />
       <Feather
         src="/assets/images/feathers/contact/3.png"
         width="120px"
         style={{ top: "50px", left: "450px" }}
+        animate={{ top: "-100%", left: "-100%" }}
       />
       <Feather
         src="/assets/images/feathers/contact/4.png"
         width="180px"
         style={{ top: "80px", right: "30px" }}
+        animate={{ top: "-100%", right: "-100%" }}
       />
       <Feather
         src="/assets/images/feathers/contact/5.png"
         width="80px"
-        style={{ bottm: "80px", right: "240px" }}
+        style={{ bottom: "80px", right: "240px" }}
+        animate={{ bottom: "-100%", right: "-100%" }}
       />
       <WhiteBg style={{ top: "20px", left: "-30px" }} />
       <WhiteBg style={{ bottom: "-100px", left: "80px", transform: "rotate(-90deg)" }} />

@@ -10,6 +10,8 @@
   display: flex;
   justify-content: center;
   padding: 0 50px 100px;
+  position: relative;
+  z-index: 1;
 }
 
 .about__left-title, .about__right-title {

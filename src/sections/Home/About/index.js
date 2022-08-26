@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionFooter, WhiteBg } from 'subcomponents';
+import { Feather, SectionFooter, WhiteBg } from 'subcomponents';
 import "./index.css";
 
 export default function About() {
@@ -23,6 +23,21 @@ export default function About() {
       <SectionFooter text="Biz haqimizda batafsil" color="var(--orange-normal)" />
       <WhiteBg long light style={{bottom: "30px", left: "50%", transform: "translateX(-50%)", opacity: 1}} />
       <WhiteBg long light style={{top: "-100px", left: "30px", transform: "rotate(90deg)"}} />
+      <Feather
+        src="/assets/images/feathers/about/1.png"
+        style={{bottom: "2%", left: "15%"}}
+        animate={{bottom: "120%", left: "100%"}}
+      />
+      <Feather
+        src="/assets/images/feathers/about/2.png"
+        style={{top: "2%", left: "1%"}}
+        animate={{top: "-100%", left: "-100%"}}
+      />
+      <Feather
+        src="/assets/images/feathers/about/1.png"
+        style={{top: "10%", right: "5%"}}
+        animate={{top: "-100%", right: "-100%"}}
+      />
     </section>
   )
 }
