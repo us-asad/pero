@@ -1,0 +1,30 @@
+.aboutmain__numbers {
+  background-color: #379f95;
+  border-radius: 56px;
+  padding: 80px 100px 40px;
+  display: flex;
+  gap: 180px;
+}
+
+.aboutmain__number {
+  width: 33%;
+}
+
+.aboutmain__number-title {
+  width:  max-content;
+  margin: 0 auto 37px;
+  position: relative;
+  font-size: 58px;
+  line-height: 56.4px;
+  font-weight: 700;
+  color: var(--pink-thin);
+  text-align: center;
+}
+
+.aboutmain__number-feather {
+  position: absolute;
+  left: -64px;
+  top: -50px
+}
+
+

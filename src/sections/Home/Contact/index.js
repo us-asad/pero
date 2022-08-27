@@ -10,11 +10,11 @@ export default function Contact() {
   return (
     <section className='contact'>
       <div className="container">
-        <h1 className='contact__title'>Aloqa uchun</h1>
-        <p className='contact__text'>
-          malumoitlarizzi yozb qoldiring va bizani mutahasislarimiz sizga qongiroq qlwadi
-        </p>
         <form onSubmit={submit} className='contact__form'>
+          <h1 className='contact__title'>Aloqa uchun</h1>
+          <p className='contact__text'>
+            malumoitlarizzi yozb qoldiring va bizani mutahasislarimiz sizga qongiroq qlwadi
+          </p>
           <input
             type="text"
             placeholder='Ismingiz'
@@ -38,6 +38,15 @@ export default function Contact() {
             <img className='contact__btn-icon' src="/assets/icons/send.png" alt="Send" />
           </button>
         </form>
+        <div className='contact__main-content'>
+          <img
+            src="/assets/images/contact-img.png"
+            alt="Pero Contact"
+            className='contact__main-img'
+          />
+          <h3 className='contact__main-title'>Pero - poklik siri</h3>
+          <p className='contact__main-text'>OOO Pero holding company 2022</p>
+        </div>
       </div>
       <Feather
         src="/assets/images/feathers/contact/1.png"

@@ -4,15 +4,20 @@ import { BsTwitter } from "react-icons/bs";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { footer_links } from 'data';
 import "./index.css"
+import { useLocation } from 'react-router-dom';
 
 export default function Footer() {
+  const location = useLocation();
+
+  const notHomePage = location?.pathname !== "/";
+
   return (
     <>
-      <footer className='footer'>
+      <footer className='footer' style={notHomePage ? {background: "var(--pink-normal)", color: "#136A61"} : {}}>
         <div className="container footer__items">
           <div className='footer__item'>
-            <img src="/assets/images/logo-white.png" alt="PERO Logo" className='footer__logo' />
-            <p className='footer__text'>
+            <img src={`/assets/images/logo${notHomePage ? "" : "-white"}.png`} alt="PERO Logo" className='footer__logo' />
+            <p className='footer__text' style={notHomePage ? {opacity: 1} : {}}>
               Quo is the most easier way for transaction
               with your friends and family, No matter where are you.
               An exceptional way for make your life one step easier.

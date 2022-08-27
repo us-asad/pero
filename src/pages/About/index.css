@@ -1,0 +1,17 @@
+.about {
+  background-color: var(--green-semibold);
+  padding: 80px;
+}
+
+.about__title {
+  font-size: 42px;
+  line-height: 49.28px;
+  font-weight: 700;
+  color: var(--pink-thin);
+}
+
+.about__text {
+  font-size: 17.86px;
+  line-height: 26.79px;
+  font-weight: 300;
+}

@@ -1,4 +1,3 @@
-import { Footer, Header } from 'components';
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -18,14 +17,12 @@ export default function Home() {
 
   return (
     <>
-      <Header />
       <Main />
       <Products />
       <About />
       <Videos />
       <Blog scrollY={scrollY} />
       <Contact />
-      <Footer />
     </>
   )
 }

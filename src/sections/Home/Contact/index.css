@@ -9,6 +9,7 @@
 .contact .container {
   position: relative;
   z-index: 1;
+  display: flex;
 }
 
 .contact__title {
@@ -24,6 +25,10 @@
   width: 450px;
   margin: auto;
   margin-bottom: 60px;
+}
+
+.contact__main-wrapper {
+  display: flex;
 }
 
 .contact__form {
@@ -68,5 +73,26 @@
 
 .contact__btn-icon {
   width: 23px;
+}
+
+.contact__main-content {
+  text-align: start;
+}
+
+.contact__main-img {
+  margin-bottom: -100px;
+}
+
+.contact__main-title,
+.contact__main-text {
+  margin-left: 200px;
+}
+
+.contact__main-title {
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 60.1px;
+  color: var(--pink-thin);
+  width: 50%;
 }
 

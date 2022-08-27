@@ -1,20 +1,21 @@
 import { langs, nav_items } from 'data';
 import React from 'react'
 import { BiChevronDown } from "react-icons/bi";
+import { Link } from 'react-router-dom';
 import "./index.css";
 
 export default function Header() {
   return (
     <nav className='container nav font-rubik'>
-      <div className='nav__logo'>
+      <Link to="/" className='nav__logo'>
         <img src="/assets/images/logo.png" alt="Logo" />
-      </div>
+      </Link>
       <ul className='nav__items'>
         {nav_items.map((item, i) => (
           <li key={i} className="nav__item">
-            <a href={item.link} className="nav__link">
+            <Link to={item.link} className="nav__link">
               {item.name}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

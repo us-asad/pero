@@ -1,4 +1,4 @@
-.main {
+.homemain {
   background-image: url(/public/assets/images/main-bg.png);
   background-size: cover;
   padding: 60px 0 0;
@@ -6,21 +6,21 @@
   color: var(--black-color);
 }
 
-.main .container {
+.homemain .container {
   position: relative;
 }
 
-.main__image {
+.homemain__image {
   width: 90%;
   position: relative;
   padding-bottom: 50px;
 }
 
-.main__image img {
+.homemain__image img {
   width: 100%;
 }
 
-.main__clicker {
+.homemain__clicker {
   position: absolute;
   left: 0px;
   top: 0%;
@@ -28,7 +28,7 @@
   z-index: 10;
 }
 
-.main__click {
+.homemain__click {
   position: absolute;
   top: 45%;
   left: 84px;
@@ -45,16 +45,16 @@
   color: #000;
 }
 
-.main__click img {
+.homemain__click img {
   width: 60px;
 }
 
-.main__click span {
+.homemain__click span {
   text-align: center;
   opacity: 0.5;
 }
 
-.main__hand {
+.homemain__hand {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -64,11 +64,11 @@
   z-index: 10;
 }
 
-.main__hand img {
+.homemain__hand img {
   width: 100%;
 }
 
-.main__overflow {
+.homemain__overflow {
   position: absolute;
   left: 48px;
   top: 30px;
@@ -77,7 +77,7 @@
   overflow: hidden;
 }
 
-.main__pages {
+.homemain__pages {
   position: absolute;
   right: 254px;
   top: 0;
@@ -85,7 +85,7 @@
   transition: all 1s;
 }
 
-.main__page {
+.homemain__page {
   background-image: url(/public/assets/images/page-bg.png);
   background-size: cover;
   width: 906px;
@@ -97,28 +97,28 @@
   position: relative;
 }
 
-.main__page-container {
+.homemain__page-container {
   width: 55%;
   margin-left: 70px;
 }
 
-.main__page-title {
+.homemain__page-title {
   font-size: 45px;
   font-weight: 800;
   line-height: 54.96px;
   margin-bottom: 30px;
 }
 
-.main__page-text {
+.homemain__page-text {
   font-size: 20px;
   font-weight: 400;
   line-height: 29.46px;
 }
 
-.main .section__footer {
+.homemain .section__footer {
   color: var(--green-normal);
 }
 
-.main .section__footer-hr {
+.homemain .section__footer-hr {
   border-bottom: 3px solid var(--green-normal);
 }

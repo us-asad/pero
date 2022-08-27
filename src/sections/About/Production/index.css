@@ -1,0 +1,29 @@
+.aboutproduction {
+  display: flex;
+  margin: -30px 0 -50px;
+}
+
+.aboutproduction__details {
+  width: 50%;
+}
+
+.aboutproduction__details-title {
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+.aboutproduction__details-btn {
+  margin-top: 40px;
+  padding: 14px 60px;
+  background-color: #2D8D80;
+  font-size: 16.07px;
+  line-height: 17.52px;
+  border-radius: 15px;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.aboutproduction__img {
+  width: 90%;
+}
+

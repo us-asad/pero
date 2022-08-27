@@ -10,7 +10,9 @@
   --blue-bold: #082856;
   --white-color: #fff;
   --white-light: rgba(255, 255, 255, .13);
+  --pink-thin: #FFE5CE;
   --pink-light: #FFE1C7;
+  --pink-normal: #F9E0C8;
   --orange-light: #FFC898;
   --orange-thin: #FFE2CA;
   --red-normal: #931a1a;
@@ -42,6 +44,12 @@ button {
   border: 0;
 }
 
+select {
+  -webkit-appearance: none;
+  border: 0;
+  outline: 0;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -56,6 +64,40 @@ input[type=number] {
 
 .font-rubik {
   font-family: 'Rubik', sans-serif;
+}
+
+.px-normal {
+  padding: 0 150px !important;
+}
+
+.app__title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app__title {
+  font-size: 53px;
+  line-height: 63.84px;
+  color: var(--pink-thin);
+}
+
+.app__span {
+  padding: 5px 24px;
+  background-color: var(--pink-thin);
+  border-radius: 10px;
+  color: var(--green-semibold);
+  display: flex;
+  align-items: center;
+}
+
+.app__routes {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0 80px;
+  border: 0;
+  outline: 0;
+  font-weight: 300;
 }
 
 .container {

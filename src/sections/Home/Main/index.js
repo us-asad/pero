@@ -1,5 +1,5 @@
 import { main_section_pages } from 'data';
-import React, { useMemo } from 'react'
+import React from 'react'
 import { useRef } from 'react';
 import { useState } from 'react'
 import { Feather, SectionFooter } from 'subcomponents'
@@ -41,23 +41,23 @@ export default function Main() {
   }
 
   return (
-    <div className='main'>
+    <div className='homemain'>
       <div className="container">
-        <div className='main__image'>
-          <button disabled={disableBtn} className='main__click' onClick={changeActivePageIdx}>
+        <div className='homemain__image'>
+          <button disabled={disableBtn} className='homemain__click' onClick={changeActivePageIdx}>
             <img src="/assets/icons/click-icon.png" alt="Click Icon" />
             <span>O'zgartirish uchun bosing</span>
           </button>
-          <img src="/assets/images/main-click.png" alt="Click" className='main__clicker' />
+          <img src="/assets/images/main-click.png" alt="Click" className='homemain__clicker' />
           <img src="/assets/images/paper.png" alt="Pero paper" />
         </div>
-        <div className='main__overflow'>
-          <div className='main__pages' style={{ transform: `translateX(${activePageIdx * pageRef.current?.clientWidth}px)` }}>
+        <div className='homemain__overflow'>
+          <div className='homemain__pages' style={{ transform: `translateX(${activePageIdx * pageRef.current?.clientWidth}px)` }}>
             {pages.map((page, i) => (
-              <div ref={pageRef} key={i} className='main__page' style={pages.length - activePageIdx2 <= i ? { transform: "translateX(350px)", transition: addTr ? "1s" : "0", position: pages.length - activePageIdx2 === i ? "static" : "relative" } : {position: pages.length - activePageIdx2 === i ? "static" : "relative"}}>
-                <div className="main__page-container">
-                  <h1 className='main__page-title'>{page.title}</h1>
-                  <p className='main__page-text'>
+              <div ref={pageRef} key={i} className='homemain__page' style={pages.length - activePageIdx2 <= i ? { transform: "translateX(350px)", transition: addTr ? "1s" : "0", position: pages.length - activePageIdx2 === i ? "static" : "relative" } : {position: pages.length - activePageIdx2 === i ? "static" : "relative"}}>
+                <div className="homemain__page-container">
+                  <h1 className='homemain__page-title'>{page.title}</h1>
+                  <p className='homemain__page-text'>
                     {page.text}
                   </p>
                 </div>
@@ -84,7 +84,7 @@ export default function Main() {
         </div>
         <SectionFooter text="Biz haqimizda batafsil" color="var(--green-normal)" />
       </div>
-      <div className='main__hand' style={hand ? { right: "-113px" } : {}}>
+      <div className='homemain__hand' style={hand ? { right: "-113px" } : {}}>
         <img src='/assets/images/hand.png' alt="Pero Hand" />
       </div>
     </div>

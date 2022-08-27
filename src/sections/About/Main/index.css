@@ -1,0 +1,28 @@
+.aboutmain {
+  display: flex;
+  justify-content: space-between;
+}
+
+.aboutmain__content {
+  width: 40%;
+  margin-top: 100px;
+}
+
+.aboutmain__content-title {
+  font-size: 75.23px;
+  line-height: 73.78px;
+  font-weight: 700;
+  color: var(--pink-thin)
+}
+
+.aboutmain__content-text {
+  font-size: 17.86px;
+  line-height: 26.79px;
+  font-weight: 300;
+  color: var(--pink-thin);
+  margin-top: 15px;
+}
+
+.aboutmain__img {
+  width: 50%;
+}

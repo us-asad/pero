@@ -1,0 +1,26 @@
+.abouticons {
+  display: flex;
+  gap: 56px;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.abouticons__icon {
+  text-align: center;
+}
+
+.abouticons__icon-title {
+  margin: 25px 0 30px;
+  font-size: 21px;
+  line-height: 26.79px;
+}
+
+.abouticons__icon-text {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 21.5px;
+}
+
+.abouticons__icon-img.mb-25 {
+  margin-bottom: -25px;
+}

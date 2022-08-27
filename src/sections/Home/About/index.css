@@ -1,4 +1,4 @@
-.about {
+.homeabout {
   background-color: var(--blue-normal);
   color: var(--white-color);
   padding: 100px 0 30px;
@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-.about__container {
+.homeabout__container {
   display: flex;
   justify-content: center;
   padding: 0 50px 100px;
@@ -14,47 +14,47 @@
   z-index: 1;
 }
 
-.about__left-title, .about__right-title {
+.homeabout__left-title, .homeabout__right-title {
   font-weight: 700;
   font-size: 75px;
   color: var(--pink-light);
   line-height: 73.78px;
 }
 
-.about__left-side {
+.homeabout__left-side {
   width: 30%;
   margin-top: 80px;
 }
 
-.about__left-title {
+.homeabout__left-title {
   margin-bottom: 20px;
 }
 
-.about__left-text {
+.homeabout__left-text {
   font-size: 17.86px;
   line-height: 26.79px;
   font-weight: 400;
 }
 
-.about__center {
+.homeabout__center {
   width: 500px;
 }
 
-.about__center img {
+.homeabout__center img {
   width: 100%;
 }
 
-.about__right-side {
+.homeabout__right-side {
   margin-top: 250px;
   width: 20%;
   text-align: end;
 }
 
-.about__right-title {
+.homeabout__right-title {
   margin-bottom: 30px;
 }
 
-.about__right-btn {
+.homeabout__right-btn {
   background-color: var(--orange-light);
   color: var(--blue-normal);
   border-radius: 84px;
@@ -65,11 +65,11 @@
   font-size: 24px;
 }
 
-.about .section__footer {
+.homeabout .section__footer {
   color: var(--orange-light);
 }
 
-.about .section__footer-hr {
+.homeabout .section__footer-hr {
   border-bottom: 3px solid var(--orange-light);
 }
 
