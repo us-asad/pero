@@ -1,6 +1,8 @@
 .about {
   background-color: var(--green-semibold);
   padding: 80px;
+  position: relative;
+  overflow: hidden;
 }
 
 .about__title {

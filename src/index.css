@@ -48,6 +48,8 @@ select {
   -webkit-appearance: none;
   border: 0;
   outline: 0;
+  background-color: transparent;
+  color: inherit;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -104,6 +106,8 @@ input[type=number] {
   width: 1400px;
   margin: auto;
   padding: 0px 20px;
+  position: relative;
+  z-index: 2;
 }
 
 @media (max-width: 1420px) {

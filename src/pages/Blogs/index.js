@@ -1,6 +1,7 @@
+import { DefaultPageDecorations } from 'components';
 import { blogs } from 'data';
 import React, { useEffect, useState } from 'react';
-import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
+import { BiChevronRight } from 'react-icons/bi';
 import { CgArrowRightO, CgCalendarDates } from "react-icons/cg";
 import ReactPaginate from 'react-paginate';
 import "./index.css";
@@ -16,7 +17,6 @@ export default function Blogs() {
   useEffect(() => {
     // Fetch items from another resources.
     const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(blogs.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(blogs.length / itemsPerPage));
   }, [itemOffset, itemsPerPage]);
@@ -24,9 +24,6 @@ export default function Blogs() {
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % blogs.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
     setItemOffset(newOffset);
   };
 
@@ -34,7 +31,7 @@ export default function Blogs() {
     <section className='blogs'>
       <div className="container px-normal font-zonapro">
         <div className='app__title-container'>
-          <h2 className='app__title'>Foydalanish shartlari</h2>
+          <h2 className='app__title'>Bizning Blog</h2>
           <span className='app__span'>последняя обновления : 21.05</span>
         </div>
         <ul className='app__routes'>
@@ -81,6 +78,7 @@ export default function Blogs() {
           activeClassName="active"
         />
       </div>
+      <DefaultPageDecorations />
     </section>
   )
 }

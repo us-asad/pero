@@ -2,11 +2,14 @@
   background-color: var(--green-semibold);
   padding-top: 80px;
   padding-bottom: 100px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .termsofuse__content {
   font-size: 16px;
   font-weight: 300;
   line-height: 26.64px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }

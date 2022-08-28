@@ -82,9 +82,9 @@ export default function Main() {
             ))}
           </div>
         </div>
-        <SectionFooter text="Biz haqimizda batafsil" color="var(--green-normal)" />
       </div>
-      <div className='homemain__hand' style={hand ? { right: "-113px" } : {}}>
+      <SectionFooter className="homemain__footer-btn" text="Biz haqimizda batafsil" color="var(--green-normal)" />
+      <div className={`homemain__hand ${hand ? "active" : ""}`}>
         <img src='/assets/images/hand.png' alt="Pero Hand" />
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Feather, WhiteBg } from 'subcomponents';
+import SendBtn from 'subcomponents/SendBtn';
 import "./index.css";
 
 export default function Contact() {
@@ -33,10 +34,9 @@ export default function Contact() {
             className='contact__feild font-rubik'
             rows={5}
           ></textarea>
-          <button className='contact__btn'>
-            <span className='contact__btn-text'>Yuborish</span>
-            <img className='contact__btn-icon' src="/assets/icons/send.png" alt="Send" />
-          </button>
+          <div className='contact__btn'>
+            <SendBtn />
+          </div>
         </form>
         <div className='contact__main-content'>
           <img

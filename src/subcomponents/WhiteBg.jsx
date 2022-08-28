@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function WhiteBg({ long, light, style }) {
+export default function WhiteBg({ long, greenWhite, light, style }) {
   return (
     <img
-      src={!long ? "/assets/images/white-bg.png" : "/assets/images/long-white-bg.png"}
+      src={greenWhite ? "/assets/images/green-white-bg.jpg" : !long ? "/assets/images/white-bg.png" : "/assets/images/long-white-bg.png"}
       alt="Ellipse"
       style={{
         position: "absolute",

@@ -162,6 +162,65 @@ export const products_page = [
   }
 ]
 
+export const all_products = [
+  {
+    image_url: "/assets/images/product-demo.png",
+    title: "Бумажные cалфетки (Asian Pack Aroma) 310"
+  },
+  {
+    image_url: "/assets/images/product-demo.png",
+    title: "Бумажные cалфетки (Asian Pack Aroma) 310"
+  },
+  {
+    image_url: "/assets/images/product-demo.png",
+    title: "Бумажные cалфетки (Asian Pack Aroma) 310"
+  },
+  {
+    image_url: "/assets/images/product-demo.png",
+    title: "Бумажные cалфетки (Asian Pack Aroma) 310"
+  },
+  {
+    image_url: "/assets/images/product-demo.png",
+    title: "Бумажные cалфетки (Asian Pack Aroma) 310"
+  },
+  {
+    image_url: "/assets/images/product-demo.png",
+    title: "Бумажные cалфетки (Asian Pack Aroma) 310"
+  },
+  {
+    image_url: "/assets/images/product-demo.png",
+    title: "Бумажные cалфетки (Asian Pack Aroma) 310"
+  },
+  {
+    image_url: "/assets/images/product-demo.png",
+    title: "Бумажные cалфетки (Asian Pack Aroma) 310"
+  },
+  {
+    image_url: "/assets/images/product-demo.png",
+    title: "Бумажные cалфетки (Asian Pack Aroma) 310"
+  },
+  {
+    image_url: "/assets/images/product-demo.png",
+    title: "Бумажные cалфетки (Asian Pack Aroma) 310"
+  },
+  {
+    image_url: "/assets/images/product-demo.png",
+    title: "Бумажные cалфетки (Asian Pack Aroma) 310"
+  },
+  {
+    image_url: "/assets/images/product-demo.png",
+    title: "Бумажные cалфетки (Asian Pack Aroma) 310"
+  },
+  {
+    image_url: "/assets/images/product-demo.png",
+    title: "Бумажные cалфетки (Asian Pack Aroma) 310"
+  },
+  {
+    image_url: "/assets/images/product-demo.png",
+    title: "Бумажные cалфетки (Asian Pack Aroma) 310"
+  }
+];
+
 export const videos = [
   "/assets/videos/1.avi",
   "/assets/videos/2.avi",

@@ -35,6 +35,7 @@
 
 .nav__langs {
   position: relative;
+  color: var(--green-semibold)
 }
 
 .nav__langs-container {
@@ -63,4 +64,26 @@
 .nav__contact-text {
   font-size: 9px;
   font-weight: 200;
+}
+
+.nav__toggler {
+  display: none;
+  font-size: 30px;
+  color: var(--green-semibold);
+}
+
+@media (max-width: 1150px) {
+  .nav__contact {
+    display: none;
+  }
+}
+
+@media (max-width: 950px) {
+  .nav__items {
+    display: none;
+  }
+
+  .nav__toggler {
+    display: block;
+  }
 }

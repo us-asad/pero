@@ -1,6 +1,8 @@
 .blogs {
   background-color: var(--green-semibold);
   padding: 80px 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .blogs__wrapper {

@@ -1,12 +1,16 @@
 import { langs, nav_items } from 'data';
 import React from 'react'
 import { BiChevronDown } from "react-icons/bi";
+import { GiHamburgerMenu } from "react-icons/gi"
 import { Link } from 'react-router-dom';
 import "./index.css";
 
 export default function Header() {
   return (
     <nav className='container nav font-rubik'>
+      <button className='nav__toggler'>
+        <GiHamburgerMenu />
+      </button>
       <Link to="/" className='nav__logo'>
         <img src="/assets/images/logo.png" alt="Logo" />
       </Link>

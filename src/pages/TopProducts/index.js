@@ -1,3 +1,4 @@
+import { DefaultPageDecorations } from 'components';
 import { products_page } from 'data';
 import React, { useEffect, useState } from 'react';
 import { AiFillStar } from 'react-icons/ai';
@@ -16,16 +17,12 @@ export default function TopProducts() {
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(products_page.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(products_page.length / itemsPerPage));
   }, [itemOffset, itemsPerPage]);
 
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % products_page.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
     setItemOffset(newOffset);
   };
 
@@ -53,8 +50,8 @@ export default function TopProducts() {
           ))}
         </ul>
         <div className='topproducts__wrapper'>
-          {currentItems?.map(product => (
-            <div className='topproducts__product'>
+          {currentItems?.map((product, i) => (
+            <div key={i} className='topproducts__product'>
               <div className='topproducts__product-details'>
                 <h2 className='topproducts__product-title'>{product.title}</h2>
                 <p className='topproducts__product-text'>{product.text}</p>
@@ -104,6 +101,7 @@ export default function TopProducts() {
           activeClassName="active"
         />
       </div>
+      <DefaultPageDecorations />
     </section>
   )
 }
