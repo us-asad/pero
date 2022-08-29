@@ -27,3 +27,33 @@
   width: 90%;
 }
 
+@media (max-width: 950px) {
+  .aboutproduction {
+    flex-direction: column;
+  }
+
+  .aboutproduction__details {
+    width: 100%;
+  }
+
+  .aboutproduction__details-title {
+    margin-top: 100px;
+    margin-bottom: 20px;
+  }
+
+  .aboutproduction__img {
+    width: 150%;
+    margin-left: -25%;
+    margin-top: -40px;
+  }
+}
+
+@media (max-width: 400px) {
+  .aboutproduction__details-btn {
+    padding: 11px 42px;
+    font-size: 14.07px;
+    line-height: 16.52px;
+    border-radius: 10px;
+  }
+}
+

@@ -15,13 +15,11 @@ export default function Blogs() {
   const itemsPerPage = 6;
 
   useEffect(() => {
-    // Fetch items from another resources.
     const endOffset = itemOffset + itemsPerPage;
     setCurrentItems(blogs.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(blogs.length / itemsPerPage));
   }, [itemOffset, itemsPerPage]);
 
-  // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % blogs.length;
     setItemOffset(newOffset);
@@ -32,7 +30,7 @@ export default function Blogs() {
       <div className="container px-normal font-zonapro">
         <div className='app__title-container'>
           <h2 className='app__title'>Bizning Blog</h2>
-          <span className='app__span'>последняя обновления : 21.05</span>
+          <span className='app__span blogs__span'>последняя обновления : 21.05</span>
         </div>
         <ul className='app__routes'>
           {routes.map((route, i) => (

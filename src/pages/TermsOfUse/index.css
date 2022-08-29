@@ -13,3 +13,31 @@
   line-height: 26.64px;
   margin-bottom: 30px;
 }
+
+.mt-title {
+  margin-top: 40px;
+}
+
+@media (max-width: 950px) {
+  .termsofuse__span {
+    display: none;
+  }
+
+  .termsofuse__content {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .termsofuse__content {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .mt-title {
+    margin-top: 15px;
+  }
+}

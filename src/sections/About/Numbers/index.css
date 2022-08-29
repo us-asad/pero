@@ -24,7 +24,81 @@
 .aboutmain__number-feather {
   position: absolute;
   left: -64px;
-  top: -50px
+  top: -50px;
+  width: 105px;
 }
 
+@media (max-width: 1230px) {
+  .aboutmain__numbers {
+    gap: 62px;
+    padding: 60px 40px 30px;
+    border-radius: 25px;
+  }
+}
+
+@media (max-width: 800px) {
+  .aboutmain__numbers {
+    padding: 40px 40px 30px;
+  }
+
+  .aboutmain__number-title {
+    margin: 0 auto 10px;
+    font-size: 30px;
+    line-height: 35.4px;
+  }
+
+  .aboutmain__number-feather {
+    left: -39px;
+    top: -26px;
+    width: 58px;
+  }
+
+  .aboutmain__number-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 700px) {
+  .aboutmain__numbers {
+    padding: 30px 20px 22px;
+  }
+
+  .aboutmain__number-title {
+    font-size: 26px;
+    line-height: 29.4px;
+  }
+
+  .aboutmain__number-text {
+    font-size: 10px;
+  }
+
+  .aboutmain__number-feather {
+    left: -32px;
+    top: -21px;
+    width: 48px;
+  }
+}
+
+@media (max-width: 450px) {
+  .aboutmain__numbers {
+    padding: 20px 13px 10px;
+    border-radius: 7px;
+  }
+
+  .aboutmain__number-title {
+    font-size: 21.17px;
+    line-height: 24.88px;
+    margin: 0 auto 6px;
+  }
+
+  .aboutmain__number-text {
+    font-size: 6.18px;
+  }
+
+  .aboutmain__number-feather {
+    left: -22px;
+    top: -14px;
+    width: 34px;
+  } 
+}
 

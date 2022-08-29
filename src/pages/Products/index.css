@@ -90,5 +90,31 @@
   font-weight: 300;
 }
 
+@media (max-width: 950px) {
+  .products__wrapper {
+    gap: 27px 18px;
+    margin-top: 50px;
+  }
 
+  .products__item {
+    width: 46%;
+    padding: 20px 10px 30px;
+    border-radius: 10px;
+  }
+
+  .products__item-img {
+    width: 60%;
+  }
+}
+
+@media (max-width: 500px) {
+  .products__item-img {
+    width: 80%;
+  }
+
+  .products__item-title {
+    font-size: 14px;
+    line-height: 17.8px;
+  }
+}
 

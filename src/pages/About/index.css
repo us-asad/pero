@@ -17,3 +17,19 @@
   line-height: 26.79px;
   font-weight: 300;
 }
+
+@media (max-width: 1050px) {
+  .about {
+    padding: 80px 0;
+  }
+
+  .about__header {
+    display: none;
+  }
+}
+
+@media (max-width: 950px) {
+  .about__span {
+    display: none;
+  }
+}

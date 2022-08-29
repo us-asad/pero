@@ -10,25 +10,27 @@ export default function About() {
   return (
     <div className='about'>
       <div className="container px-normal">
-        <div className='app__title-container'>
-          <h1 className='app__title'>Топ товары</h1>
-          <div className='app__span'>
-            <select className='products__select'>
-              <option>Исходная сортировка</option>
-              <option>1</option>
-              <option>1</option>
-              <option>1</option>
-            </select>
-            <BiChevronDown className='products__select-icon' />
+        <div className='about__header'>
+          <div className='app__title-container'>
+            <h1 className='app__title'>Топ товары</h1>
+            <div className='app__span about__span'>
+              <select className='products__select'>
+                <option>Исходная сортировка</option>
+                <option>1</option>
+                <option>1</option>
+                <option>1</option>
+              </select>
+              <BiChevronDown className='products__select-icon' />
+            </div>
           </div>
+          <ul className='app__routes'>
+            {routes.map((route, i) => (
+              <li key={i}>
+                {route}
+              </li>
+            ))}
+          </ul>
         </div>
-        <ul className='app__routes'>
-          {routes.map((route, i) => (
-            <li key={i}>
-              {route}
-            </li>
-          ))}
-        </ul>
         <Main />
         <Numbers />
         <Video />
@@ -103,7 +105,7 @@ export default function About() {
       />
       <WhiteBg
         long
-        style={{ bottom: "0%", right: "0"}}
+        style={{ bottom: "0%", right: "0" }}
       />
 
     </div>

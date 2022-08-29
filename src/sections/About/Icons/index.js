@@ -6,7 +6,7 @@ export default function Icons() {
   return (
     <section className='abouticons'>
       {about_icons.map((icon, i) => (
-        <div key={icon.icon_url} className="abouticons__icon">
+        <div key={icon.icon_url} className={`abouticons__icon abouticons__icon-${i+1}`}>
           <img
             src={icon.icon_url}
             alt={`Pero ${icon.title}`}

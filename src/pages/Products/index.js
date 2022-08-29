@@ -16,13 +16,11 @@ export default function Products() {
   const itemsPerPage = 9;
 
   useEffect(() => {
-    // Fetch items from another resources.
     const endOffset = itemOffset + itemsPerPage;
     setCurrentItems(all_products.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(all_products.length / itemsPerPage));
   }, [itemOffset, itemsPerPage]);
 
-  // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % all_products.length;
     setItemOffset(newOffset);
