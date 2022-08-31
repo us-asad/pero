@@ -1,6 +1,7 @@
 import { numbers } from 'data'
 import React from 'react';
 import "./index.css";
+import CountUp from 'react-countup';
 
 export default function Numbers() {
   return (
@@ -8,7 +9,7 @@ export default function Numbers() {
       {numbers.map(item => (
         <div key={item.number} className='aboutmain__number'>
           <h4 className='aboutmain__number-title'>
-            {item.number}
+          <CountUp end={item.number} delay={1} />
             <img
               src="/assets/images/numbers-feather.png"
               alt="Pero Feather"

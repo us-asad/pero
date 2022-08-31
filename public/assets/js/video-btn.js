@@ -40,7 +40,6 @@ window.addEventListener("DOMContentLoaded", () => {
         TweenMax.to($buttonCircleSvg, 0.5, { scale: 1 });
         morph.reverse();
         TweenMax.to($buttonCircle, 0.5, { fill: '#DDDDDD' });
-        console.log($pbContainer.width())
         TweenMax.to($playTriangleSvg, 0.5,
           {
             width: $pbContainer.width(),

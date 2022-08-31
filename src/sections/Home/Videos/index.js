@@ -14,8 +14,6 @@ export default function Videos() {
   const [activeVideoIdx, setActiveVideoIdx] = useState(1);
   const slideRef = useRef();
 
-  console.log(slideRef.current?.clientWidth)
-
   return (
     <section className='videos'>
       <div className="container">

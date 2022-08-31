@@ -4,6 +4,8 @@
   padding: 80px 100px 40px;
   display: flex;
   gap: 180px;
+  position: relative;
+  z-index: 2;
 }
 
 .aboutmain__number {
@@ -19,6 +21,11 @@
   font-weight: 700;
   color: var(--pink-thin);
   text-align: center;
+  cursor: pointer;
+}
+
+.aboutmain__number-title:hover .aboutmain__number-feather {
+  transform: translate(-10px, -10px);
 }
 
 .aboutmain__number-feather {
@@ -26,6 +33,7 @@
   left: -64px;
   top: -50px;
   width: 105px;
+  transition: .7s;
 }
 
 @media (max-width: 1230px) {

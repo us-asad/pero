@@ -1,13 +1,10 @@
-console.log(gsap)
 window.addEventListener("DOMContentLoaded", () => {
-  console.log(document.querySelectorAll('.button'))
   setTimeout(() => {
     document.querySelectorAll('.button').forEach(button => {
 
       let getVar = variable => getComputedStyle(button).getPropertyValue(variable);
 
       button.addEventListener('click', e => {
-        console.log("a")
         if (!button.classList.contains('active')) {
 
           button.classList.add('active');

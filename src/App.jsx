@@ -1,5 +1,5 @@
 import { Footer, Header } from 'components';
-import { Blogs, Home, Products, TermsOfUse, TopProducts } from 'pages'
+import { Blogs, Home, Product, Products, TermsOfUse, TopProducts } from 'pages'
 import About from 'pages/About';
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
@@ -14,6 +14,7 @@ export default function App() {
         <Route path="/blog" element={<Blogs />} />
         <Route path="/top-products" element={<TopProducts />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/products/:id" element={<Product />} />
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
