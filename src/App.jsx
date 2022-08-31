@@ -6,6 +6,9 @@ import About from 'pages/About';
 import { initReactI18next } from 'react-i18next';
 import { Routes, Route } from "react-router-dom";
 import HttpApi from 'i18next-http-backend';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 i18next
   .use(initReactI18next)
@@ -24,6 +27,11 @@ i18next
   });
 
 export default function App() {
+
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: false });
+  }, []);
+  
   return (
     <div className='font-rubik'>
       <Header />

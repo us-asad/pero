@@ -4,7 +4,7 @@ import "./index.css";
 
 export default function SlideBtn({ rightIcon, onClick, style, className }) {
   return (
-    <button style={style} onClick={onClick} className={`slide-btn ${rightIcon ? "slide__next" : "slide__prev"} ${className}`}>
+    <button data-aos="zoom-in" style={style} onClick={onClick} className={`slide-btn ${rightIcon ? "slide__next" : "slide__prev"} ${className}`}>
       {rightIcon ? <FaChevronRight /> : <FaChevronLeft />}
     </button>
   )

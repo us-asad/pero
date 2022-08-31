@@ -83,7 +83,7 @@ export default function Main() {
           </div>
         </div>
       </div>
-      <SectionFooter className="homemain__footer-btn" text="Biz haqimizda batafsil" color="var(--green-normal)" />
+      <SectionFooter to="/about" className="homemain__footer-btn" text="Biz haqimizda batafsil" color="var(--green-normal)" />
       <div className={`homemain__hand ${hand ? "active" : ""}`}>
         <img src='/assets/images/hand.png' alt="Pero Hand" />
       </div>

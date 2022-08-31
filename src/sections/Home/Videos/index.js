@@ -17,9 +17,9 @@ export default function Videos() {
   return (
     <section className='videos'>
       <div className="container">
-        <h2 className='videos__title'>Bizning videolar</h2>
-        <p className="videos__text">bizning 20 dan ortiq video larimiz va vloglarimiz mavjud</p>
-        <ul className='videos__slider videos__slider-desktop'>
+        <h2 data-aos="fade-up" className='videos__title'>Bizning videolar</h2>
+        <p data-aos="fade-up" className="videos__text">bizning 20 dan ortiq video larimiz va vloglarimiz mavjud</p>
+        <ul data-aos="zoom-in" className='videos__slider videos__slider-desktop'>
           {videos.map((video, i) => (
             <li key={i} className={`videos__slide ${activeVideoIdx === i ? "active" : ""}`}>
               {/* <video

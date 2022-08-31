@@ -1,3 +1,4 @@
+import { DefaultPageDecorations } from 'components';
 import { all_products } from 'data';
 import React, { useState } from 'react'
 import { AiOutlineEye } from 'react-icons/ai';
@@ -26,14 +27,14 @@ export default function Product() {
   return (
     <section className='product'>
       <div className="container px-normal">
-        <h1 className='app__title product__title'>ВЛАЖНЫЕ CАЛФЕТКИ BABY LUX 509</h1>
-        <ul className='app__routes'>
-          {routes.map(route => (
-            <li className='app__route'>{route}</li>
+        <h1 data-aos="fade-up" className='app__title product__title'>ВЛАЖНЫЕ CАЛФЕТКИ BABY LUX 509</h1>
+        <ul data-aos="fade-right" className='app__routes'>
+          {routes.map((route, i) => (
+            <li key={i} className='app__route'>{route}</li>
           ))}
         </ul>
         <div className='product__details'>
-          <div className='product__content'>
+          <div data-aos="fade-right" className='product__content'>
             <ul className='product__features'>
               <li className='product__feature'>Артикул: <b>509</b></li>
               <li className='product__feature'>Размер: <b>20x15</b></li>
@@ -41,16 +42,17 @@ export default function Product() {
             <button className='product__btn'>Заказать</button>
           </div>
           <img
+            data-aos="fade-left"
             src="/assets/images/about-img.png"
             alt="Product Name"
             className='product__img'
           />
         </div>
         <div className="product__related">
-          <h2 className='product__related-title'>Похожие продукты</h2>
+          <h2 data-aos="zoom-in" className='product__related-title'>Похожие продукты</h2>
           <div className='products__wrapper'>
             {all_products.slice(0, 3).map((prd, i) => (
-              <div key={i} className="products__item">
+              <div data-aos={i === 0 ? "fade-right" : i === 1 ? "fade-up" : "fade-left"} key={i} className="products__item">
                 <img
                   src={prd.image_url}
                   alt={prd.title}
@@ -101,6 +103,7 @@ export default function Product() {
         className={`products__modal-bg ${modalDetails ? "active" : ""}`}
         onClick={() => handleModalDetails(null)}
       />
+      <DefaultPageDecorations />
     </section>
   )
 }

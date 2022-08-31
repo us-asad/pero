@@ -20,9 +20,9 @@ export default function Products() {
   return (
     <section className='homeproducts font-rubik'>
       <div className='container'>
-        <h2 className='homeproducts__title'>Our products</h2>
-        <p className='homeproducts__text'>Bizda 80 dan kop mahsulotlarimiz bor ular lorem ipsum color</p>
-        <div className='homeproducts__slider homeproducts__slider-desktop'>
+        <h2 data-aos="fade-up" className='homeproducts__title'>Our products</h2>
+        <p data-aos="fade-up" className='homeproducts__text'>Bizda 80 dan kop mahsulotlarimiz bor ular lorem ipsum color</p>
+        <div data-aos="fade-up" className='homeproducts__slider homeproducts__slider-desktop'>
           <div className='homeproducts__slider-container' style={{ transform: `translateX(-${(cardWidth * activeIdx) + (30 * activeIdx)}px)` }}>
             {products.map((prd, i) => (
               <div

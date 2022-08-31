@@ -5,10 +5,10 @@ import CountUp from 'react-countup';
 
 export default function Numbers() {
   return (
-    <section className='aboutmain__numbers'>
-      {numbers.map(item => (
+    <section data-aos="zoom-in" className='aboutmain__numbers'>
+      {numbers.map((item, i) => (
         <div key={item.number} className='aboutmain__number'>
-          <h4 className='aboutmain__number-title'>
+          <h4 data-aos={i === 0 ? "fade-right" : i === 1 ? "fade-up" : "fade-left"} className='aboutmain__number-title'>
           <CountUp end={item.number} delay={1} />
             <img
               src="/assets/images/numbers-feather.png"
@@ -16,7 +16,7 @@ export default function Numbers() {
               className='aboutmain__number-feather'
             />
           </h4>
-          <p className='aboutmain__number-text'>{item.text}</p>
+          <p data-aos={i === 0 ? "fade-right" : i === 1 ? "fade-up" : "fade-left"} className='aboutmain__number-text'>{item.text}</p>
         </div>
       ))}
     </section>

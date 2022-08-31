@@ -46,7 +46,7 @@ export default function Products() {
   return (
     <section className='products'>
       <div className="container px-normal">
-        <div className='app__title-container'>
+        <div data-aos="fade-up" className='app__title-container'>
           <h1 className='app__title'>Бумажные продукции</h1>
           <div className='app__span'>
             <select className='topproducts__select'>
@@ -58,14 +58,14 @@ export default function Products() {
             <BiChevronDown className='topproducts__select-icon' />
           </div>
         </div>
-        <ul className='app__routes'>
+        <ul data-aos="fade-right" className='app__routes'>
           {routes.map((route, i) => (
             <li key={i}>
               {route}
             </li>
           ))}
         </ul>
-        <div className='products__categories-wrapper'>
+        <div data-aos="zoom-in" className='products__categories-wrapper'>
           <ul className='products__categories'>
             {product_categories.map((category, i) => (
               <li
@@ -81,7 +81,7 @@ export default function Products() {
         </div>
         <div className='products__wrapper'>
           {currentItems?.map((prd, i) => (
-            <div key={i} className='products__item'>
+            <div data-aos="fade-up" key={i} className='products__item'>
               <img
                 src={prd.image_url}
                 alt={prd.title}

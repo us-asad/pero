@@ -1,6 +1,12 @@
 .product {
   background-color: var(--green-semibold);
   padding: 100px 0 120px;
+  position: relative;
+}
+
+.product .container {
+  position: relative;
+  z-index: 2;
 }
 
 .product__title {

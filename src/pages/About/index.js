@@ -11,7 +11,7 @@ export default function About() {
     <div className='about'>
       <div className="container px-normal">
         <div className='about__header'>
-          <div className='app__title-container'>
+          <div data-aos="fade-up" className='app__title-container'>
             <h1 className='app__title'>Топ товары</h1>
             <div className='app__span about__span'>
               <select className='products__select'>
@@ -23,7 +23,7 @@ export default function About() {
               <BiChevronDown className='products__select-icon' />
             </div>
           </div>
-          <ul className='app__routes'>
+          <ul data-aos="fade-right" className='app__routes'>
             {routes.map((route, i) => (
               <li key={i}>
                 {route}

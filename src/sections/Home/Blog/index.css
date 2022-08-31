@@ -71,6 +71,26 @@
   transform: translateX(-50%) scale(0.0005);
   box-shadow: 0px 28px 20px -16px #0000006e;
   transition: 1s;
+  cursor: pointer;
+}
+
+.blog__pop-up-container.active {
+  transition: .5s;
+}
+
+.blog__pop-up-1.active:hover {
+  transform: translateX(-50%) rotate(-15deg) scale(1.05) !important;
+  box-shadow: 0px 28px 20px -16px #ffffff6e;
+}
+
+.blog__pop-up-2.active:hover {
+  transform: translateX(-50%) rotate(15deg) scale(1.05) !important;
+  box-shadow: 0px 28px 20px -16px #ffffff6e;
+}
+
+.blog__pop-up-3.active:hover {
+  transform: translateX(-50%) scale(1.05) !important;
+  box-shadow: 0px 28px 20px -16px #ffffff6e;
 }
 
 .blog__pop-up-1 {

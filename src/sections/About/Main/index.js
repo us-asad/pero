@@ -4,7 +4,7 @@ import "./index.css";
 export default function Main() {
   return (
     <section className='aboutmain'>
-      <div className='aboutmain__content'>
+      <div data-aos="fade-right" className='aboutmain__content'>
         <h2 className='aboutmain__content-title-desktop'>Biz haqi- mizda</h2>
         <h2 className='aboutmain__content-title-mobile'>Biz haqimizda</h2>
         <p className='aboutmain__content-text'>
@@ -12,6 +12,7 @@ export default function Main() {
         </p>
       </div>
       <img
+        data-aos="fade-left"
         src="/assets/images/about-img.png"
         alt="About Pero"
         className='aboutmain__img'

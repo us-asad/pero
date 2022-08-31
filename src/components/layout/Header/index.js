@@ -63,10 +63,15 @@ export default function Header() {
           </ul>
         </div>
         <div className='nav__contact'>
-          <button className='nav__btn'>
+          <a
+            href="tel:+998990118934"
+            target="_blank"
+            className='nav__btn'
+            rel="noreferrer"
+          >
             <p className='nav__number'>+998 99 011 89 34</p>
             <span className='nav__contact-text'>aloqa uchun</span>
-          </button>
+          </a>
         </div>
       </div>
     </nav>

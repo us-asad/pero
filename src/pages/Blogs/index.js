@@ -28,18 +28,18 @@ export default function Blogs() {
   return (
     <section className='blogs'>
       <div className="container px-normal font-zonapro">
-        <div className='app__title-container'>
+        <div data-aos="fade-up" className='app__title-container'>
           <h2 className='app__title'>Bizning Blog</h2>
           <span className='app__span blogs__span'>последняя обновления: {`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
         </div>
-        <ul className='app__routes'>
+        <ul data-aos="fade-right" className='app__routes'>
           {routes.map((route, i) => (
             <li key={i} className='app__route'>{route}</li>
           ))}
         </ul>
         <div className='blogs__wrapper'>
           {currentItems?.map((blog, i) => (
-            <div key={i} className='blogs__blog'>
+            <div data-aos="fade-up" key={i} className='blogs__blog'>
               <img
                 src={blog.image_url}
                 alt={blog.title}

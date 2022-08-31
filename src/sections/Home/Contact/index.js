@@ -11,7 +11,7 @@ export default function Contact() {
   return (
     <section className='contact'>
       <div className="container">
-        <form onSubmit={submit} className='contact__form'>
+        <form data-aos="fade-right" onSubmit={submit} className='contact__form'>
           <h1 className='contact__title'>Aloqa uchun</h1>
           <p className='contact__text'>
             malumoitlarizzi yozb qoldiring va bizani mutahasislarimiz sizga qongiroq qlwadi
@@ -38,7 +38,7 @@ export default function Contact() {
             <SendBtn />
           </div>
         </form>
-        <div className='contact__main-content'>
+        <div data-aos="fade-left" className='contact__main-content'>
           <img
             src="/assets/images/contact-img.png"
             alt="Pero Contact"

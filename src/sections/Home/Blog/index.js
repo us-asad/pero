@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { Feather, SectionFooter, WhiteBg } from 'subcomponents';
 import "./index.css";
 
@@ -69,10 +70,10 @@ export default function Blog({ scrollY }) {
             <div className='blog__main-img'>
               <img src="/assets/images/blog-img.png" alt="Pero BLOG" />
             </div>
-            <button className='blog__main-btn'>All Blog Post</button>
+            <Link to="/blog" className='blog__main-btn'>All Blog Post</Link>
           </div>
         </div>
-        <SectionFooter text="Barcha blog postlarimiz" color="var(--orange-light)" />
+        <SectionFooter to="blog" text="Barcha blog postlarimiz" color="var(--orange-light)" />
       </div>
       <WhiteBg light long style={{ bottom: "30px", left: "50%", transform: "translateX(-50%)" }} />
       <WhiteBg long style={{ top: "30px", left: "50%", transform: "translateX(-50%)" }} />

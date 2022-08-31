@@ -4,10 +4,14 @@
   padding: 0 0 50px;
   text-align: center;
   font-weight: 600;
+  position: relative;
+  z-index: 3;
 }
 
 .section__footer-text {
   margin-bottom: 10px;
+  display: block;
+  cursor: pointer;
 }
 
 .section__footer-hr {
