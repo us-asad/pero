@@ -35,12 +35,51 @@
 
 .nav__langs {
   position: relative;
-  color: var(--green-semibold)
+  color: var(--green-semibold);
+  cursor: pointer;
+}
+
+.nav__current-lang-path {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  background-color: transparent;
+  width: 80px;
+  height: 30px;
+  display: inline-block;
 }
 
 .nav__langs-container {
   position: absolute;
-  top: -100px;
+  top: 160%;
+  background-color: #ddd;
+  padding: 15px 20px;
+  border-radius: 6px;
+  left: 40%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: .4s;
+}
+
+.nav__current-lang-path:hover + .nav__langs-container,
+.nav__langs-container:hover {
+  opacity: 1;
+  pointer-events: all;
+  top: 140%
+}
+
+.nav__lang {
+  transition: .3s;
+  cursor: pointer;
+}
+
+.nav__lang:hover {
+  opacity: .8;
 }
 
 .nav__btn {
@@ -109,6 +148,11 @@
 .nav__closer {
   font-size: 25px;
   color: var(--green-semibold);
+}
+
+.nav__item-select {
+  width: 100%;
+  text-align: center;
 }
 
 @media (max-width: 1150px) {

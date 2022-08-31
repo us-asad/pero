@@ -5,6 +5,11 @@
   overflow: hidden;
 }
 
+.blogs .container {
+  position: relative;
+  z-index: 2;
+}
+
 .blogs__wrapper {
   margin-top: 50px;
   display: flex;

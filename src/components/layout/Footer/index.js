@@ -48,9 +48,9 @@ export default function Footer() {
       </footer>
       <div className='footer__copyright'>
         <p className='footer__copyright-text'>Copyright © PERO | Designed by</p>
-        <a className='footer__copyright-link' href='#'>abba marketing</a>
+        <a className='footer__copyright-link' href='https://google.com'>abba marketing</a>
         <p className='footer__copyright-text'>- Powered by</p>
-        <a className='footer__copyright-link' href='#'>ABBA</a>
+        <a className='footer__copyright-link' href='https://google.com'>ABBA</a>
       </div>
     </>
   )

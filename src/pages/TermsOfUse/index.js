@@ -10,7 +10,7 @@ export default function TermsOfUse() {
       <div className="container px-normal">
         <div className='app__title-container'>
           <h2 className='app__title'>Foydalanish shartlari</h2>
-          <span className='app__span termsofuse__span'>последняя обновления : 21.05</span>
+          <span className='app__span termsofuse__span'>последняя обновления : {`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
         </div>
         <ul className='app__routes'>
           {routes.map((route, i) => (

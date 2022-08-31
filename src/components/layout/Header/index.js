@@ -53,6 +53,7 @@ export default function Header() {
             <span>UZ</span>
             <BiChevronDown />
           </p>
+          <span className='nav__current-lang-path' />
           <ul className='nav__langs-container'>
             {langs.map(lang => (
               <li key={lang} className='nav__lang'>

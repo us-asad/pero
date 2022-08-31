@@ -1,8 +1,27 @@
 import { Footer, Header } from 'components';
+import i18next from 'i18next';
+import I18nextBrowserLanguageDetector from 'i18next-browser-languagedetector';
 import { Blogs, Home, Product, Products, TermsOfUse, TopProducts } from 'pages'
 import About from 'pages/About';
-import React from 'react'
+import { initReactI18next } from 'react-i18next';
 import { Routes, Route } from "react-router-dom";
+import HttpApi from 'i18next-http-backend';
+
+i18next
+  .use(initReactI18next)
+  .use(I18nextBrowserLanguageDetector)
+  .use(HttpApi)
+  .init({
+    supportedLngs: ['ru', 'uz', 'en'],
+    fallbackLng: "ru",
+    detection: {
+      order: ['path', 'cookie', 'htmlTag', 'localStorage', 'subdomain'],
+      caches: ['cookie']
+    },
+    backend: {
+      loadPath: '/assets/locales/{{lng}}/translation.json',
+    },
+  });
 
 export default function App() {
   return (
