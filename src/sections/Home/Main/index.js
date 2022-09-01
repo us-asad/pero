@@ -1,5 +1,6 @@
 import { main_section_pages } from 'data';
 import React from 'react'
+import { useEffect } from 'react';
 import { useRef } from 'react';
 import { useState } from 'react'
 import { Feather, SectionFooter } from 'subcomponents'
@@ -13,6 +14,7 @@ export default function Main() {
   const [hand, setHand] = useState(false);
   const [disableBtn, setDisableBtn] = useState(false);
   const pageRef = useRef();
+  const [animate, setAnimate] = useState({ bottom: "-200%", left: "-200%", transition: "5s" });
 
   const changeActivePageIdx = () => {
     setDisableBtn(true);
@@ -39,6 +41,20 @@ export default function Main() {
     }, 1000);
   }
 
+  useEffect(() => {
+    setTimeout(() => {
+      if (disableBtn) {
+        console.log("backed")
+        setAnimate({ bottom: "-200%", left: "-200%", transition: "5s" });
+      } else {
+        console.log("changed")
+        setAnimate({ bottom: "-40px", left: "80px" });
+      }
+    }, 1000);
+  }, [activePageIdx, disableBtn]);
+
+  // console.log(pages.length - activePageIdx)
+
   return (
     <div className='homemain'>
       <div className="container">
@@ -64,7 +80,7 @@ export default function Main() {
                 <Feather
                   src="/assets/images/feathers/main/1.png"
                   style={{ bottom: "-40px", left: "80px" }}
-                  animate={pages.length - activePageIdx === i ? { bottom: "-200%", left: "-200%", transition: "5s" } : pages.length - activePageIdx - 1 === i ? { bottom: "-100%", left: "-100%" } : { bottom: "-40px", left: "80px" }}
+                  animate={pages.length - activePageIdx === i ? animate : pages.length - activePageIdx - 1 === i ? { bottom: "-100%", left: "-100%" } : { bottom: "-40px", left: "80px" }}
                 />
                 <Feather
                   src="/assets/images/feathers/main/2.png"
