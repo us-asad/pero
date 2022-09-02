@@ -25,52 +25,52 @@ export default function Blog({ scrollY }) {
 
 
   return (
-    <section ref={blogRef} className='blog'>
+    <section ref={blogRef} className='homeblog'>
       <div className='container'>
-        <h3 className='blog__bg-text'>BLOG POSTS</h3>
-        <div className='blog__header'>
+        <h3 className='homeblog__bg-text'>BLOG POSTS</h3>
+        <div className='homeblog__header'>
           <h2 className='videos__title'>Bizning videolar</h2>
           <p className="videos__text">bizning 20 dan ortiq video larimiz va vloglarimiz mavjud</p>
         </div>
-        <div className="container blog__container">
-          <div className="blog__main-container">
-            <div className={`blog__pop-up-1 blog__pop-up-container ${showPopUp1 ? "active" : ""}`}>
+        <div className="container homeblog__container">
+          <div className="homeblog__main-container">
+            <Link to="/blog/blog-page" className={`homeblog__pop-up-1 homeblog__pop-up-container ${showPopUp1 ? "active" : ""}`}>
               <img
                 src="/assets/images/blog-pop-up-img.png"
                 alt="Pero Blog"
-                className='blog__pop-up-img'
+                className='homeblog__pop-up-img'
               />
-              <p className='blog__pop-up-text'>
+              <p className='homeblog__pop-up-text'>
                 Pero nafislik nimadr brbalo text boladi
                 kjhi Pero nafislik nimadr brbalo text boladiPero nafislik
               </p>
-            </div>
-            <div className={`blog__pop-up-2 blog__pop-up-container ${showPopUp2 ? "active" : ""}`}>
+            </Link>
+            <Link to="/blog/blog-page" className={`homeblog__pop-up-2 homeblog__pop-up-container ${showPopUp2 ? "active" : ""}`}>
               <img
                 src="/assets/images/blog-pop-up-img.png"
                 alt="Pero Blog"
-                className='blog__pop-up-img'
+                className='homeblog__pop-up-img'
               />
-              <p className='blog__pop-up-text'>
+              <p className='homeblog__pop-up-text'>
                 Pero nafislik nimadr brbalo text boladi
                 kjhi Pero nafislik nimadr brbalo text boladiPero nafislik
               </p>
-            </div>
-            <div className={`blog__pop-up-3 blog__pop-up-container ${showPopUp3 ? "active" : ""}`}>
+            </Link>
+            <Link to="/blog/blog-page" className={`homeblog__pop-up-3 homeblog__pop-up-container ${showPopUp3 ? "active" : ""}`}>
               <img
                 src="/assets/images/blog-pop-up-img.png"
                 alt="Pero Blog"
-                className='blog__pop-up-img'
+                className='homeblog__pop-up-img'
               />
-              <p className='blog__pop-up-text'>
+              <p className='homeblog__pop-up-text'>
                 Pero nafislik nimadr brbalo text boladi
                 kjhi Pero nafislik nimadr brbalo text boladiPero nafislik
               </p>
+            </Link>
+            <div className='homeblog__main-img'>
+              <img src="/assets/images/blog-card.png" alt="Pero BLOG" />
             </div>
-            <div className='blog__main-img'>
-              <img src="/assets/images/blog-img.png" alt="Pero BLOG" />
-            </div>
-            <Link to="/blog" className='blog__main-btn'>All Blog Post</Link>
+            <Link to="/blog" className='homeblog__main-btn'>All Blog Post</Link>
           </div>
         </div>
         <SectionFooter to="blog" text="Barcha blog postlarimiz" color="var(--orange-light)" />

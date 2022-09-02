@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { BiChevronRight } from 'react-icons/bi';
 import { CgArrowRightO, CgCalendarDates } from "react-icons/cg";
 import ReactPaginate from 'react-paginate';
+import { Link } from 'react-router-dom';
 import "./index.css";
 
 const routes = ["Home page", ">", "our products", ">", "blog"]
@@ -52,10 +53,10 @@ export default function Blogs() {
                     <CgCalendarDates />
                     <span>{blog.date}</span>
                   </p>
-                  <button className='blogs__blog-btn'>
+                  <Link to="/blog/blog-page" className='blogs__blog-btn'>
                     <span className='blogs__btn-text'>Read More</span>
                     <CgArrowRightO className='blogs__btn-icon' />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -1,0 +1,32 @@
+.blog {
+  background-color: var(--green-semibold);
+  padding: 100px 0;
+}
+
+.blog__span-text {
+  margin-left: 20px;
+}
+
+.blog__img {
+  width: 100%;
+}
+
+.blog__post-title {
+  margin: 60px 0 40px;
+  font-weight: 400;
+}
+
+.blog__post-text {
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: .24px;
+  opacity: .8;
+  font-family: inherit;
+}
+
+@media (max-width: 400px) {
+  .blog__post-title {
+    margin: 30px 0 20px;
+  }
+}
+

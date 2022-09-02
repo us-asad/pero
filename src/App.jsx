@@ -1,7 +1,7 @@
 import { Footer, Header } from 'components';
 import i18next from 'i18next';
 import I18nextBrowserLanguageDetector from 'i18next-browser-languagedetector';
-import { Blogs, Home, Product, Products, TermsOfUse, TopProducts } from 'pages'
+import { Blog, Blogs, Home, Product, Products, TermsOfUse, TopProducts } from 'pages'
 import About from 'pages/About';
 import { initReactI18next } from 'react-i18next';
 import { Routes, Route } from "react-router-dom";
@@ -39,6 +39,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="/blog" element={<Blogs />} />
+        <Route path="/blog/:id" element={<Blog />} />
         <Route path="/top-products" element={<TopProducts />} />
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<Product />} />

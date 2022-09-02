@@ -4,3 +4,4 @@ export { default as Blogs } from "./Blogs";
 export { default as TopProducts } from "./TopProducts";
 export { default as Products } from "./Products";
 export { default as Product } from "./Product";
+export { default as Blog } from "./Blog";
