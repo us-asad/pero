@@ -4,7 +4,7 @@ import I18nextBrowserLanguageDetector from 'i18next-browser-languagedetector';
 import { Blog, Blogs, Home, Product, Products, TermsOfUse, TopProducts } from 'pages'
 import About from 'pages/About';
 import { initReactI18next } from 'react-i18next';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import HttpApi from 'i18next-http-backend';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -27,6 +27,14 @@ i18next
   });
 
 export default function App() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    document.documentElement.scrollTo({
+      top: 0,
+      left: 0,
+    });
+  }, [pathname]);
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: false });
