@@ -1,16 +1,18 @@
 import React from 'react'
 import { useState } from 'react';
+import { useEffect } from 'react';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Feather, SectionFooter, WhiteBg } from 'subcomponents';
+import { getImgUrl, request } from 'utils/request';
 import "./index.css";
 
 export default function Blog({ scrollY }) {
+  const [data, setData] = useState([]);
   const [showPopUp1, setShowPopUp1] = useState(false);
   const [showPopUp2, setShowPopUp2] = useState(false);
   const [showPopUp3, setShowPopUp3] = useState(false);
   const blogRef = useRef();
-  // const data = scrollY === window.pageYOffset + blogRef.current?.getBoundingClientRect().top ? true : ""
 
   if (!showPopUp1 && (blogRef.current?.offsetTop - blogRef.current?.scrollTop + blogRef.current?.clientTop) - blogRef.current?.clientHeight / 2 < scrollY) {
     setShowPopUp1(true);
@@ -22,7 +24,11 @@ export default function Blog({ scrollY }) {
     }, 500);
   }
 
-
+  useEffect(() => {
+    request("/top_blogs", (data) => {
+      setData(data.slice(0, 3));
+    });
+  }, []);
 
   return (
     <section ref={blogRef} className='homeblog'>
@@ -34,39 +40,18 @@ export default function Blog({ scrollY }) {
         </div>
         <div className="container homeblog__container">
           <div className="homeblog__main-container">
-            <Link to="/blog/blog-page" className={`homeblog__pop-up-1 homeblog__pop-up-container ${showPopUp1 ? "active" : ""}`}>
-              <img
-                src="/assets/images/blog-pop-up-img.png"
-                alt="Pero Blog"
-                className='homeblog__pop-up-img'
-              />
-              <p className='homeblog__pop-up-text'>
-                Pero nafislik nimadr brbalo text boladi
-                kjhi Pero nafislik nimadr brbalo text boladiPero nafislik
-              </p>
-            </Link>
-            <Link to="/blog/blog-page" className={`homeblog__pop-up-2 homeblog__pop-up-container ${showPopUp2 ? "active" : ""}`}>
-              <img
-                src="/assets/images/blog-pop-up-img.png"
-                alt="Pero Blog"
-                className='homeblog__pop-up-img'
-              />
-              <p className='homeblog__pop-up-text'>
-                Pero nafislik nimadr brbalo text boladi
-                kjhi Pero nafislik nimadr brbalo text boladiPero nafislik
-              </p>
-            </Link>
-            <Link to="/blog/blog-page" className={`homeblog__pop-up-3 homeblog__pop-up-container ${showPopUp3 ? "active" : ""}`}>
-              <img
-                src="/assets/images/blog-pop-up-img.png"
-                alt="Pero Blog"
-                className='homeblog__pop-up-img'
-              />
-              <p className='homeblog__pop-up-text'>
-                Pero nafislik nimadr brbalo text boladi
-                kjhi Pero nafislik nimadr brbalo text boladiPero nafislik
-              </p>
-            </Link>
+            {data.map((item, i) => (
+              <Link key={i} to={`/blog/${item.id}`} className={`homeblog__pop-up-${i+1} homeblog__pop-up-container ${(i === 0 && showPopUp1) || (i === 1 && showPopUp2) || (i === 2 && showPopUp3) ? "active" : ""}`}>
+                <img
+                  src={item.image ? getImgUrl(item.image) : item.video ? "/assets/images/default-video.png" : "/assets/images/default-img.png"}
+                  alt="Pero Blog"
+                  className='homeblog__pop-up-img'
+                />
+                <p className='homeblog__pop-up-text'>
+                  {item.description_uz?.slice(0, 100)}
+                </p>
+              </Link>
+            ))}
             <div className='homeblog__main-img'>
               <img src="/assets/images/blog-card.png" alt="Pero BLOG" />
             </div>

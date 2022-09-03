@@ -28,7 +28,8 @@
 
 .blogs__blog-img {
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  height: 200px;
 }
 
 .blogs__blog-content {
@@ -221,6 +222,10 @@
   
   .blogs__btn-icon {
     font-size: 10px;
+  }
+
+  .blogs__blog-img {
+    height: 145px;
   }
 }
 

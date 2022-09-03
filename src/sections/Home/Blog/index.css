@@ -124,8 +124,9 @@
 }
 
 .homeblog__pop-up-img {
+  height: 78%;
   width: 80%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 10px;
 }
 

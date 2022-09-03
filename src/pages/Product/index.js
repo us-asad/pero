@@ -1,21 +1,38 @@
 import { DefaultPageDecorations } from 'components';
-import { all_products } from 'data';
 import React, { useState } from 'react'
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { AiOutlineEye } from 'react-icons/ai';
 import { BsArrowRight } from 'react-icons/bs';
+import { FaTimes } from 'react-icons/fa';
 import { HiArrowRight } from 'react-icons/hi';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { NumberInput } from 'subcomponents';
+import { sendMessageToTG } from 'utils/functions';
+import { getImgUrl, request } from 'utils/request';
 import "./index.css";
 
 const routes = ["Home page", ">", "product"]
 
 export default function Product() {
   const [modalDetails, setModalDetails] = useState(null);
+  const [showPrdModal, setShowPrdModal] = useState(false);
+  const [product, setProduct] = useState({});
+  const [relatedProducts, setRelatedProducts] = useState([]);
+  const [ordered, setOrdered] = useState(false);
+  const [orderLoading, setOrderLoading] = useState(false);
+  const params = useParams();
   const navigate = useNavigate();
+  const [, i18next] = useTranslation();
 
   const handleModalDetails = data => {
     setModalDetails(data);
-    document.body.style.overflowY = data ? "hidden" : "auto"
+    document.body.style.overflowY = data ? "hidden" : "auto";
+  }
+
+  const handleShowPrdModal = state => {
+    setShowPrdModal(state);
+    document.body.style.overflowY = state ? "hidden" : "auto";
   }
 
   const goToProduct = id => {
@@ -24,86 +41,168 @@ export default function Product() {
     navigate(`/products/${id}`);
   }
 
+  const submit = async e => {
+    e.preventDefault();
+    setOrderLoading(true)
+    const message = `
+      Yangi Buyurtma📦!
+      %0A👤Ismi: ${e.target?.name?.value}
+      %0A☎Raqam: ${e.target?.phone_number?.value}
+    `;
+
+    const ok = await sendMessageToTG(message, false);
+
+    if (ok) {
+      setShowPrdModal(false);
+      setOrdered(true);
+    }
+
+    setOrderLoading(false)
+  }
+
+  useEffect(() => {
+    request(`/products/${params.id}`, data => setProduct(data), () => navigate("/404"));
+    request("/top_products", setRelatedProducts, () => navigate("/404"));
+  }, [params.id, navigate]);
+
   return (
-    <section className='product'>
-      <div className="container px-normal">
-        <h1 data-aos="fade-up" className='app__title product__title'>ВЛАЖНЫЕ CАЛФЕТКИ BABY LUX 509</h1>
-        <ul data-aos="fade-right" className='app__routes'>
-          {routes.map((route, i) => (
-            <li key={i} className='app__route'>{route}</li>
-          ))}
-        </ul>
-        <div className='product__details'>
-          <div data-aos="fade-right" className='product__content'>
-            <ul className='product__features'>
-              <li className='product__feature'>Артикул: <b>509</b></li>
-              <li className='product__feature'>Размер: <b>20x15</b></li>
-            </ul>
-            <button className='product__btn'>Заказать</button>
+    <div className='hide-overflow hide-scrollbar'>
+      <section className='product'>
+        <div className="container px-normal">
+          <h1 data-aos="fade-up" className='app__title product__title'>{product && product[`name_${i18next.language}`]}</h1>
+          <ul data-aos="fade-right" className='app__routes'>
+            {routes.map((route, i) => (
+              <li key={i} className='app__route'>{route}</li>
+            ))}
+          </ul>
+          <div className='product__details'>
+            <div data-aos="fade-right" className='product__content'>
+              <ul className='product__features'>
+                <li className='product__feature'>Артикул: <b>509</b></li>
+                <li className='product__feature'>Размер: <b>20x15</b></li>
+              </ul>
+              <button onClick={() => handleShowPrdModal(true)} className='product__btn'>Заказать</button>
+            </div>
+            <img
+              data-aos="fade-left"
+              src={getImgUrl(product?.image)}
+              alt="Product Name"
+              className='product__img'
+            />
+          </div>
+          <div className="product__related">
+            <h2 data-aos="zoom-in" className='product__related-title'>Похожие продукты</h2>
+            <div className='products__wrapper'>
+              {relatedProducts.map((prd, i) => (
+                <div data-aos={i === 0 ? "fade-right" : i === 1 ? "fade-up" : "fade-left"} key={i} className="products__item">
+                  <img
+                    src={getImgUrl(prd.image)}
+                    alt={prd[`name_${i18next.language}`]}
+                    className="products__item-img"
+                  />
+                  <h5 className='products__item-title'>{prd[`name_${i18next.language}`]}</h5>
+                  <div className='products__item-btns'>
+                    <button
+                      className='products__item-btn'
+                      onClick={() => handleModalDetails(prd)}
+                    >
+                      <AiOutlineEye />
+                    </button>
+                    <button onClick={() => goToProduct(prd.id)} className='products__item-btn'>
+                      <HiArrowRight />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className={`product__modal ${showPrdModal ? "active" : ""}`}>
+          <div className='product__modal-content'>
+            <h3 className='products__modal-title'>{product && product[`name_${i18next.language}`]}</h3>
+            <form className='product__modal-form' onSubmit={submit}>
+              <input
+                type="text"
+                name='name'
+                placeholder='Ismingiz'
+                required
+                minLength={2}
+                maxLength={100}
+                className='contact__feild product__'
+              />
+              <NumberInput className="product__modal-input contact__feild" />
+              <button
+                disabled={orderLoading}
+                className='products__modal-btn product__modal-btn'
+              >
+                <span className='products__modal-btn-icon'>
+                  {orderLoading ? <div className='spin'></div> : <BsArrowRight />}
+                </span>
+                <span className='products__modal-btn-text'>Yuborish</span>
+              </button>
+            </form>
           </div>
           <img
-            data-aos="fade-left"
-            src="/assets/images/about-img.png"
+            src={getImgUrl(product?.image)}
             alt="Product Name"
-            className='product__img'
+            className='product__modal-img'
           />
-        </div>
-        <div className="product__related">
-          <h2 data-aos="zoom-in" className='product__related-title'>Похожие продукты</h2>
-          <div className='products__wrapper'>
-            {all_products.slice(0, 3).map((prd, i) => (
-              <div data-aos={i === 0 ? "fade-right" : i === 1 ? "fade-up" : "fade-left"} key={i} className="products__item">
-                <img
-                  src={prd.image_url}
-                  alt={prd.title}
-                  className="products__item-img"
-                />
-                <h5 className='products__item-title'>{prd.title}</h5>
-                <div className='products__item-btns'>
-                  <button
-                    className='products__item-btn'
-                    onClick={() => handleModalDetails(prd)}
-                  >
-                    <AiOutlineEye />
-                  </button>
-                  <button onClick={() => goToProduct("product-page")} className='products__item-btn'>
-                    <HiArrowRight />
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className={`products__modal ${modalDetails ? "active" : ""}`}>
-        <div className='products__modal-content'>
-          <h3 className='products__modal-title'>ВЛАЖНЫЕ CАЛФЕТКИ BABY LUX 509</h3>
-          <ul className='products__modal-detail'>
-            <li className='products__modal-detail'>
-              Артикул: <b>509</b>
-            </li>
-            <li className='products__modal-detail'>
-              Размер: <b>20x15</b>
-            </li>
-          </ul>
-          <button onClick={() => goToProduct("product-page")} className='products__modal-btn'>
-            <span className='products__modal-btn-icon'>
-              <BsArrowRight />
-            </span>
-            <span className='products__modal-btn-text'>Перейти в каталог</span>
+          <button onClick={() => handleModalDetails(false)} className='product__modal-close'>
+            <FaTimes />
           </button>
         </div>
-        <img
-          src="/assets/images/product-demo.png"
-          alt="product title"
-          className='products__modal-img'
+        <div className={`products__modal ${modalDetails ? "active" : ""}`}>
+          <div className='products__modal-content'>
+            <h3 className='products__modal-title'>{modalDetails && modalDetails[`name_${i18next.language}`]}</h3>
+            <ul className='products__modal-detail'>
+              <li className='products__modal-detail'>
+                Артикул: <b>509</b>
+              </li>
+              <li className='products__modal-detail'>
+                Размер: <b>20x15</b>
+              </li>
+            </ul>
+            <button onClick={() => goToProduct(modalDetails?.id)} className='products__modal-btn'>
+              <span className='products__modal-btn-icon'>
+                <BsArrowRight />
+              </span>
+              <span className='products__modal-btn-text'>Перейти в каталог</span>
+            </button>
+          </div>
+          {console.log(modalDetails)}
+          <img
+            src={getImgUrl(modalDetails?.image)}
+            alt="product title"
+            className='products__modal-img'
+          />
+        </div>
+        <div className={`product__modal product__ordered-modal ${ordered ? "active" : ""}`}>
+          <div className='product__modal-content product__ordered-content'>
+            <h3 className='product__ordered-title'>Buyurtmangiz qabul qilindi</h3>
+            <p className='product__ordered-text'>
+              Tez orada mutahasislarimiz siz bilan bog`lanishadi
+            </p>
+          </div>
+          <img
+            src="/assets/images/order-done.png"
+            alt="Product Name"
+            className='product__modal-img product__ordered-img'
+          />
+          <button onClick={() => setOrdered(false)} className='product__modal-close'>
+            <FaTimes />
+          </button>
+        </div>
+        <div
+          className={`products__modal-bg ${modalDetails || showPrdModal || ordered ? "active" : ""}`}
+          onClick={() => {
+            handleShowPrdModal(false);
+            handleModalDetails(null);
+            setOrdered(false);
+            document.body.style.overflowY = "auto";
+          }}
         />
-      </div>
-      <div
-        className={`products__modal-bg ${modalDetails ? "active" : ""}`}
-        onClick={() => handleModalDetails(null)}
-      />
-      <DefaultPageDecorations />
-    </section>
+        <DefaultPageDecorations />
+      </section>
+    </div>
   )
 }

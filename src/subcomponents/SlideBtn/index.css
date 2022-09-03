@@ -14,7 +14,7 @@
   align-items: center;
   cursor: pointer;
   outline: none;
-  transition: 300ms;
+  transition: .3s !important;
   width: 60px;
   height: 60px;
   z-index: 1;

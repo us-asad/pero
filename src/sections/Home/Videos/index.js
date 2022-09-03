@@ -1,8 +1,10 @@
-import { videos } from 'data'
 import React, { useState } from 'react'
+import { useEffect } from 'react';
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Feather, SectionFooterBtn, WhiteBg } from 'subcomponents';
 import SlideBtn from 'subcomponents/SlideBtn';
+import { getImgUrl, request } from 'utils/request';
 import "./index.css"
 
 const slide_btn_styles = {
@@ -12,7 +14,15 @@ const slide_btn_styles = {
 
 export default function Videos() {
   const [activeVideoIdx, setActiveVideoIdx] = useState(1);
+  const [videos, setVideos] = useState([]);
   const slideRef = useRef();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    request("/videos", data => setVideos(data.slice(0, 3)), () => navigate("/404"));
+  }, [navigate]);
+
+  console.log(videos)
 
   return (
     <section className='videos'>
@@ -20,13 +30,14 @@ export default function Videos() {
         <h2 data-aos="fade-up" className='videos__title'>Bizning videolar</h2>
         <p data-aos="fade-up" className="videos__text">bizning 20 dan ortiq video larimiz va vloglarimiz mavjud</p>
         <ul data-aos="zoom-in" className='videos__slider videos__slider-desktop'>
-          {videos.map((video, i) => (
+          {videos.map((item, i) => (
             <li key={i} className={`videos__slide ${activeVideoIdx === i ? "active" : ""}`}>
-              {/* <video
-                src={video}
-                controls
+              <video
+                src={getImgUrl(item.video)}
+                controls={i === activeVideoIdx}
+                style={{opacity: activeVideoIdx !== i ? ".6" : 1}}
                 className='videos__slide-video'
-              /> */}
+              />
             </li>
           ))}
           <SlideBtn
@@ -43,13 +54,13 @@ export default function Videos() {
           <ul className='videos__slider videos__slider-mobile'>
             <div className='videos__slider-overflow'>
               <div className='videos__slides-wrapper' style={{ transform: `translateX(-${(activeVideoIdx * 200) + (activeVideoIdx * slideRef.current?.clientWidth)}px)` }}>
-                {videos.map((video, i) => (
+                {videos.map((item, i) => (
                   <li ref={slideRef} key={i} className={`videos__slide `}>
-                    {/* <video
-                src={video}
-                controls
-                className='videos__slide-video'
-              /> */}
+                    <video
+                      src={getImgUrl(item.video)}
+                      controls
+                      className='videos__slide-video'
+                    />
                   </li>
                 ))}
               </div>

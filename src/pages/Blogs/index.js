@@ -1,30 +1,39 @@
 import { DefaultPageDecorations } from 'components';
-import { blogs } from 'data';
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { BiChevronRight } from 'react-icons/bi';
 import { CgArrowRightO, CgCalendarDates } from "react-icons/cg";
 import ReactPaginate from 'react-paginate';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { getImgUrl, request } from 'utils/request';
 import "./index.css";
 
 const routes = ["Home page", ">", "our products", ">", "blog"]
 
 export default function Blogs() {
+  const [data, setData] = useState([]);
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
+  const navigate = useNavigate();
+  const [, i18next] = useTranslation();
   const itemsPerPage = 6;
+
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * itemsPerPage) % data.length;
+    setItemOffset(newOffset);
+  }; 
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
-    setCurrentItems(blogs.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(blogs.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage]);
-
-  const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % blogs.length;
-    setItemOffset(newOffset);
-  };
+    setCurrentItems(data.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(data.length / itemsPerPage));
+  }, [itemOffset, itemsPerPage, data]);
+ 
+  useEffect(() => {
+    request("/blogs", data => setData(data), () => navigate("/404"));
+    /* eslint-disable react-hooks/exhaustive-deps */
+  }, []);
 
   return (
     <section className='blogs'>
@@ -42,18 +51,18 @@ export default function Blogs() {
           {currentItems?.map((blog, i) => (
             <div data-aos="fade-up" key={i} className='blogs__blog'>
               <img
-                src={blog.image_url}
-                alt={blog.title}
+                src={blog.image ? getImgUrl(blog.image) : blog.video ? "/assets/images/default-video.png" : "/assets/images/default-img.png"}
+                alt={blog[`name_${i18next.language}`]}
                 className="blogs__blog-img"
               />
               <div className='blogs__blog-content'>
-                <h4 className='blogs__blog-title'>{blog.title}</h4>
+                <h4 className='blogs__blog-title'>{blog[`name_${i18next.language}`]}</h4>
                 <div className='blogs__blog-details'>
                   <p className='blogs__blog-date'>
                     <CgCalendarDates />
-                    <span>{blog.date}</span>
+                    <span>{blog.date || "20.30.1002"}</span>
                   </p>
-                  <Link to="/blog/blog-page" className='blogs__blog-btn'>
+                  <Link to={`/blog/${blog.id}`} className='blogs__blog-btn'>
                     <span className='blogs__btn-text'>Read More</span>
                     <CgArrowRightO className='blogs__btn-icon' />
                   </Link>

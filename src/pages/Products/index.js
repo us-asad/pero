@@ -1,5 +1,4 @@
 import { DefaultPageDecorations } from 'components';
-import { all_products, product_categories } from 'data';
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { AiOutlineEye } from 'react-icons/ai';
@@ -9,6 +8,8 @@ import { BsArrowRight } from "react-icons/bs"
 import ReactPaginate from 'react-paginate';
 import "./index.css";
 import { useNavigate } from 'react-router-dom';
+import { getImgUrl, request } from 'utils/request';
+import { useTranslation } from 'react-i18next';
 
 const routes = ["Home page", ">", "our products", ">", "all products"];
 
@@ -18,11 +19,15 @@ export default function Products() {
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
   const [modalDetails, setModalDetails] = useState(null);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
+  const [, i18next] = useTranslation();
   const itemsPerPage = 9;
 
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % all_products.length;
+    const newOffset = (event.selected * itemsPerPage) % filteredProducts.length;
     setItemOffset(newOffset);
   };
 
@@ -39,9 +44,24 @@ export default function Products() {
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
-    setCurrentItems(all_products.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(all_products.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage]);
+    setCurrentItems(filteredProducts.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(filteredProducts.length / itemsPerPage));
+  }, [itemOffset, itemsPerPage, filteredProducts]);
+
+  useEffect(() => {
+    request(`/categories?format=json`, categoriesData => {
+      setCategories(categoriesData);
+      request("/products", prdsData => {
+        setAllProducts(prdsData);
+        setFilteredProducts(prdsData.filter(prd => prd.category_id === categoriesData[0].id));
+      }, () => navigate("/404"));
+    }, () => navigate("/404"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    setFilteredProducts(allProducts.filter(prd => prd.category_id === categories[activeCategoryIdx].id));
+  }, [activeCategoryIdx, categories, allProducts]);
 
   return (
     <section className='products'>
@@ -67,13 +87,13 @@ export default function Products() {
         </ul>
         <div data-aos="zoom-in" className='products__categories-wrapper'>
           <ul className='products__categories'>
-            {product_categories.map((category, i) => (
+            {categories.map((category, i) => (
               <li
                 key={i}
                 className={`products__category ${activeCategoryIdx === i ? "active" : ""}`}
                 onClick={() => setActiveCategoryIdx(i)}
               >
-                <p className='products__category-text'>{category}</p>
+                <p className='products__category-text'>{category[`name_${i18next.language}`]}</p>
               </li>
             ))}
             <div className='products__categories-underline' style={{ transform: `translateX(${activeCategoryIdx * 210}px)` }} />
@@ -83,11 +103,11 @@ export default function Products() {
           {currentItems?.map((prd, i) => (
             <div data-aos="fade-up" key={i} className='products__item'>
               <img
-                src={prd.image_url}
-                alt={prd.title}
+                src={getImgUrl(prd.image)}
+                alt={prd[`name_${i18next.language}`]}
                 className="products__item-img"
               />
-              <h5 className='products__item-title'>{prd.title}</h5>
+              <h5 className='products__item-title'>{prd[`name_${i18next.language}`]}</h5>
               <div className='products__item-btns'>
                 <button
                   className='products__item-btn'
@@ -95,7 +115,7 @@ export default function Products() {
                 >
                   <AiOutlineEye />
                 </button>
-                <button onClick={() => goToProduct("product-page")} className='products__item-btn'>
+                <button onClick={() => goToProduct(prd.id)} className='products__item-btn'>
                   <HiArrowRight />
                 </button>
               </div>
@@ -119,7 +139,7 @@ export default function Products() {
       </div>
       <div className={`products__modal ${modalDetails ? "active" : ""}`}>
         <div className='products__modal-content'>
-          <h3 className='products__modal-title'>ВЛАЖНЫЕ CАЛФЕТКИ BABY LUX 509</h3>
+          <h3 className='products__modal-title'>{modalDetails && modalDetails[`name_${i18next.language}`]}</h3>
           <ul className='products__modal-detail'>
             <li className='products__modal-detail'>
               Артикул: <b>509</b>
@@ -128,7 +148,7 @@ export default function Products() {
               Размер: <b>20x15</b>
             </li>
           </ul>
-          <button onClick={() => goToProduct("product-page")} className='products__modal-btn'>
+          <button onClick={() => goToProduct(modalDetails.id)} className='products__modal-btn'>
             <span className='products__modal-btn-icon'>
               <BsArrowRight />
             </span>
@@ -136,8 +156,8 @@ export default function Products() {
           </button>
         </div>
         <img
-          src="/assets/images/product-demo.png"
-          alt="product title"
+          src={getImgUrl(modalDetails?.image)}
+          alt={modalDetails && modalDetails[`name_${i18next.language}`]}
           className='products__modal-img'
         />
       </div>

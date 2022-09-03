@@ -6,10 +6,6 @@ window.addEventListener("DOMContentLoaded", () => {
       const contactForm = document.getElementById("contact-form");
       
       button.addEventListener('click', e => {
-        console.log((contactForm.children.name.value.length < 2 || contactForm.children.name.value.length > 100),
-        (contactForm.children.phone_number.value.length !== 13),
-        (contactForm.children.message.value.length < 3 || contactForm.children.message.value.length > 10000))
-
         if (
           (contactForm.children.name.value.length < 2 || contactForm.children.name.value.length > 100) ||
           (contactForm.children.phone_number.value.length !== 13) ||

@@ -8,7 +8,7 @@ export default function Feather({ src, width, style, animate }) {
 
   useEffect(() => {
     setAnimateStyles(animate);
-  }, []);
+  }, [animate]);
 
   return (
     <img

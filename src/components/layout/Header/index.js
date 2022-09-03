@@ -2,6 +2,7 @@ import { langs, nav_items } from 'data';
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { BiChevronDown } from "react-icons/bi";
 import { FaTimes } from 'react-icons/fa';
 import { GiHamburgerMenu } from "react-icons/gi"
@@ -10,6 +11,7 @@ import "./index.css";
 
 export default function Header() {
   const [navbarOpened, setNavbarOpened] = useState(false);
+  const [, i18next] = useTranslation();
 
   const toggleNav = state => {
     setNavbarOpened(state);
@@ -50,14 +52,14 @@ export default function Header() {
       <div className='nav__details'>
         <div className='nav__langs'>
           <p className='nav__current-lang'>
-            <span>UZ</span>
+            <span>{i18next.language.toUpperCase()}</span>
             <BiChevronDown />
           </p>
           <span className='nav__current-lang-path' />
           <ul className='nav__langs-container'>
-            {langs.map(lang => (
-              <li key={lang} className='nav__lang'>
-                {lang}
+            {langs.filter(item => item !== i18next.language).map(lang => (
+              <li onClick={() => i18next.changeLanguage(lang)} key={lang} className='nav__lang'>
+                {lang.toUpperCase()}
               </li>
             ))}
           </ul>

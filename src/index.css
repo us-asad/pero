@@ -64,12 +64,48 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.hide-overflow {
+  overflow: hidden;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 .font-rubik {
   font-family: 'Rubik', sans-serif;
 }
 
 .px-normal {
   padding: 0 150px !important;
+}
+
+.spin {
+  border: 3px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 3px solid var(--green-semibold);
+  width: 18px;
+  height: 18px;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .app__title-container {
@@ -106,6 +142,7 @@ input[type=number] {
   width: 1400px;
   margin: auto;
   padding: 0px 20px;
+  position: relative;
   z-index: 2;
 }
 

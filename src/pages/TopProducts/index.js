@@ -1,10 +1,12 @@
 import { DefaultPageDecorations } from 'components';
-import { products_page } from 'data';
 import React, { useEffect, useState } from 'react';
-import { AiFillStar } from 'react-icons/ai';
+import { useTranslation } from 'react-i18next';
+// import { AiFillStar } from 'react-icons/ai';
 import { BiChevronDown, BiChevronRight } from 'react-icons/bi';
+import { BsArrowRight } from 'react-icons/bs';
 import ReactPaginate from 'react-paginate';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { getImgUrl, request } from 'utils/request';
 import "./index.css";
 
 const routes = ["Home page", ">", "our products", ">", "top products"];
@@ -13,19 +15,27 @@ export default function TopProducts() {
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
+  const [topProducts, setTopProducts] = useState([]);
+  const navigate = useNavigate();
+  const [, i18next] = useTranslation();
   const itemsPerPage = 2;
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
-    setCurrentItems(products_page.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(products_page.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage]);
+    setCurrentItems(topProducts.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(topProducts.length / itemsPerPage));
+  }, [itemOffset, itemsPerPage, topProducts]);
 
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % products_page.length;
+    const newOffset = (event.selected * itemsPerPage) % topProducts.length;
     setItemOffset(newOffset);
   };
 
+  useEffect(() => {
+    request("/top_products", setTopProducts, () => navigate("/404"));
+  }, [navigate]);
+
+  console.log(topProducts)
 
   return (
     <section className='topproducts'>
@@ -34,7 +44,7 @@ export default function TopProducts() {
           <h1 className='app__title'>Топ товары</h1>
           <div className='app__span'>
             <select className='topproducts__select'>
-              <option>Исходная сортировка</option>
+              <option disabled selected>Исходная сортировка</option>
               <option>1</option>
               <option>1</option>
               <option>1</option>
@@ -53,9 +63,9 @@ export default function TopProducts() {
           {currentItems?.map((product, i) => (
             <div data-aos="fade-up" key={i} className='topproducts__product'>
               <div className='topproducts__product-details'>
-                <h2 className='topproducts__product-title'>{product.title}</h2>
-                <p className='topproducts__product-text'>{product.text}</p>
-                <div className='topproducts__comment'>
+                <h2 className='topproducts__product-title'>{product && product[`name_${i18next.language}`]}</h2>
+                <p className='topproducts__product-text'>{product && product[`description_${i18next.language}`]}</p>
+                {/* <div className='topproducts__comment'>
                   <img
                     src={product.comment.picture}
                     alt={product.comment.user_name}
@@ -75,12 +85,18 @@ export default function TopProducts() {
                       </li>
                     </ul>
                   </div>
-                </div>
+                </div> */}
+                <Link to={`/products/${product.id}`} className='products__modal-btn'>
+                  <span className='products__modal-btn-icon'>
+                    <BsArrowRight />
+                  </span>
+                  <span className='products__modal-btn-text'>View Product</span>
+                </Link>
               </div>
               <div className='topproducts__product-img'>
                 <img
-                  src={product.image_url}
-                  alt={product.title}
+                  src={getImgUrl(product?.image)}
+                  alt={product && product[`name_${i18next.language}`]}
                 />
               </div>
             </div>

@@ -1,10 +1,28 @@
 import React from 'react'
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FaRegCalendarAlt } from 'react-icons/fa';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Loader } from 'subcomponents';
+import { getImgUrl, request } from 'utils/request';
 import "./index.css";
 
 const routes = ["Home page", ">", "our blog", ">", "blog post"]
 
 export default function Blog() {
+  const [data, setData] = useState({});
+  const params = useParams();
+  const [, i18next] = useTranslation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    request(`/blogs/${params.id}`, setData, () => navigate("/404"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [params.id]);
+
+  if (!data) return <Loader />;
+
   return (
     <section className='blog'>
       <div className="container px-normal">
@@ -22,18 +40,25 @@ export default function Blog() {
             </li>
           ))}
         </ul>
-        <img
-          src="/assets/images/blog-img.png"
-          alt="Blog img"
-          className='blog__img'
-          data-aos="zoom-in"
-        />
-        <h1 data-aos="fade-up" className='blog__post-title'>What is the most fun thing to become a designer?</h1>
+        {data.image ? (
+          <img
+            src={getImgUrl(data.image)}
+            alt="Blog img"
+            className='blog__img'
+            data-aos="zoom-in"
+          />
+        ) : null}
+        {data.video ? (
+          <video
+            src={getImgUrl(data.video)}
+            controls
+            className='blog__img'
+            data-aos="zoom-in"
+          />
+        ) : null}
+        <h1 data-aos="fade-up" className='blog__post-title'>{data[`name_${i18next.language}`]}</h1>
         <p data-aos="fade-up" className='blog__post-text'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          {data.description_uz}
         </p>
       </div>
     </section>

@@ -1,8 +1,11 @@
-import { products } from 'data';
 import React from 'react'
+import { useEffect } from 'react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link, useNavigate } from 'react-router-dom';
 import { Feather, SectionFooterBtn, WhiteBg } from 'subcomponents';
 import SlideBtn from 'subcomponents/SlideBtn';
+import { getImgUrl, request } from 'utils/request';
 import "./index.css";
 
 const btnText = `Barcha tovarlarimizni korish 
@@ -15,7 +18,15 @@ const slide_btn_styles = {
 export default function Products() {
   const [activeIdx, setActiveIdx] = useState(1);
   const [activeIdxMob, setActiveIdxMob] = useState(0);
-  const cardWidth = 200
+  const [data, setData] = useState([]);
+  const navigate = useNavigate();
+  const [, i18next] = useTranslation();
+  const cardWidth = 200;
+
+  useEffect(() => {
+    request(`/categories`, setData, () => navigate("/404"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <section className='homeproducts font-rubik'>
@@ -24,23 +35,26 @@ export default function Products() {
         <p data-aos="fade-up" className='homeproducts__text'>Bizda 80 dan kop mahsulotlarimiz bor ular lorem ipsum color</p>
         <div data-aos="fade-up" className='homeproducts__slider homeproducts__slider-desktop'>
           <div className='homeproducts__slider-container' style={{ transform: `translateX(-${(cardWidth * activeIdx) + (30 * activeIdx)}px)` }}>
-            {products.map((prd, i) => (
-              <div
+            {data.map((prd, i) => (
+              <Link
+                to={`/products?category=${prd.id}`}
                 key={i}
                 className='homeproducts__slide'
                 style={activeIdx - 1 === i || activeIdx + 1 === i || activeIdx === i ? {} : { opacity: 0, pointerEvents: "none" }}
               >
-                <h4 className='homeproducts__slide-title'>{prd.title}</h4>
-                <img
-                  src={prd.image_url}
-                  alt={prd.title}
-                  className="homeproducts__slide-img"
-                />
-              </div>
+                <h4 className='homeproducts__slide-title'>{prd[`name_${i18next.language}`]}</h4>
+                <div className='homeproducts__slide-img-wrapper'>
+                  <img
+                    src={getImgUrl(prd.image)}
+                    alt={prd[`name_${i18next.language}`]}
+                    className="homeproducts__slide-img"
+                  />
+                </div>
+              </Link>
             ))}
           </div>
           <div className='homeproducts__pagination'>
-            {products.map((_, i) => (
+            {data.map((_, i) => (
               <button
                 key={i}
                 className={`homeproducts__pagination-btn ${activeIdx === i ? "active" : ""}`}
@@ -56,29 +70,31 @@ export default function Products() {
           <SlideBtn
             rightIcon
             className="homeproducts__slide-next"
-            onClick={() => setActiveIdx(prev => prev + 1 > products.length - 2 ? prev : prev + 1)}
+            onClick={() => setActiveIdx(prev => prev + 1 > data.length - 2 ? prev : prev + 1)}
             style={{ ...slide_btn_styles, right: "-100px" }}
           />
         </div>
         <div className='homeproducts__slider homeproducts__slider-tablet'>
           <div className='homeproducts__slider-container' style={{ transform: `translateX(-${(cardWidth * activeIdxMob) + (30 * activeIdxMob)}px)` }}>
-            {products.map((prd, i) => (
+            {data.map((prd, i) => (
               <div
                 key={i}
                 className='homeproducts__slide'
-                style={(activeIdxMob === products.length - 1 && activeIdxMob - 1 === i) || activeIdxMob + 1 === i || activeIdxMob === i ? {} : { opacity: 0, pointerEvents: "none" }}
+                style={(activeIdxMob === data.length - 1 && activeIdxMob - 1 === i) || activeIdxMob + 1 === i || activeIdxMob === i ? {} : { opacity: 0, pointerEvents: "none" }}
               >
-                <h4 className='homeproducts__slide-title'>{prd.title}</h4>
-                <img
-                  src={prd.image_url}
-                  alt={prd.title}
-                  className="homeproducts__slide-img"
-                />
+                <h4 className='homeproducts__slide-title'>{prd[`name_${i18next.language}`]}</h4>
+                <div className='homeproducts__slide-img-wrapper'>
+                  <img
+                    src={getImgUrl(prd.image)}
+                    alt={prd[`name_${i18next.language}`]}
+                    className="homeproducts__slide-img"
+                  />
+                </div>
               </div>
             ))}
           </div>
           <div className='homeproducts__pagination'>
-            {products.map((_, i) => (
+            {data.map((_, i) => (
               <button
                 key={i}
                 className={`homeproducts__pagination-btn ${activeIdxMob === i ? "active" : ""}`}
@@ -94,29 +110,31 @@ export default function Products() {
           <SlideBtn
             rightIcon
             className="homeproducts__slide-next"
-            onClick={() => setActiveIdxMob(prev => prev + 1 > products.length - 2 ? prev : prev + 1)}
+            onClick={() => setActiveIdxMob(prev => prev + 1 > data.length - 2 ? prev : prev + 1)}
             style={{ ...slide_btn_styles, right: "-100px" }}
           />
         </div>
         <div className='homeproducts__slider homeproducts__slider-mobile'>
           <div className='homeproducts__slider-container' style={{ transform: `translateX(-${(cardWidth * activeIdxMob) + (30 * activeIdxMob)}px)` }}>
-            {products.map((prd, i) => (
+            {data.map((prd, i) => (
               <div
                 key={i}
                 className='homeproducts__slide'
                 style={activeIdxMob === i ? {} : { opacity: 0, pointerEvents: "none" }}
               >
-                <h4 className='homeproducts__slide-title'>{prd.title}</h4>
-                <img
-                  src={prd.image_url}
-                  alt={prd.title}
-                  className="homeproducts__slide-img"
-                />
+                <h4 className='homeproducts__slide-title'>{prd[`name_${i18next.language}`]}</h4>
+                <div className='homeproducts__slide-img-wrapper'>
+                  <img
+                    src={getImgUrl(prd.image)}
+                    alt={prd[`name_${i18next.language}`]}
+                    className="homeproducts__slide-img"
+                  />
+                </div>
               </div>
             ))}
           </div>
           <div className='homeproducts__pagination'>
-            {products.map((_, i) => (
+            {data.map((_, i) => (
               <button
                 key={i}
                 className={`homeproducts__pagination-btn ${activeIdxMob === i ? "active" : ""}`}
@@ -132,7 +150,7 @@ export default function Products() {
           <SlideBtn
             className="homeproducts__slide-next"
             rightIcon
-            onClick={() => setActiveIdxMob(prev => prev + 1 > products.length - 1 ? prev : prev + 1)}
+            onClick={() => setActiveIdxMob(prev => prev + 1 > data.length - 1 ? prev : prev + 1)}
             style={{ ...slide_btn_styles, right: "-100px" }}
           />
         </div>

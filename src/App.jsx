@@ -1,14 +1,14 @@
 import { Footer, Header } from 'components';
 import i18next from 'i18next';
 import I18nextBrowserLanguageDetector from 'i18next-browser-languagedetector';
-import { Blog, Blogs, Home, Product, Products, TermsOfUse, TopProducts } from 'pages'
-import About from 'pages/About';
+import { Blog, Blogs, Home, Product, Products, TermsOfUse, TopProducts, About } from 'pages';
 import { initReactI18next } from 'react-i18next';
 import { Routes, Route, useLocation } from "react-router-dom";
 import HttpApi from 'i18next-http-backend';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import { langs } from 'data';
 
 i18next
   .use(initReactI18next)
@@ -16,7 +16,7 @@ i18next
   .use(HttpApi)
   .init({
     supportedLngs: ['ru', 'uz', 'en'],
-    fallbackLng: "ru",
+    fallbackLng: 'ru',
     detection: {
       order: ['path', 'cookie', 'htmlTag', 'localStorage', 'subdomain'],
       caches: ['cookie']

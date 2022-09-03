@@ -36,7 +36,7 @@ export const numbers = [
   }
 ]
 
-export const langs = ["EN", "RU"];
+export const langs = ["en", "ru", "uz"];
 
 export const main_section_pages = [
   {

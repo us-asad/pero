@@ -1,19 +1,24 @@
-import { main_section_pages } from 'data';
 import React from 'react'
 import { useEffect } from 'react';
 import { useRef } from 'react';
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import { Feather, SectionFooter } from 'subcomponents'
+import { request } from 'utils/request';
 import "./index.css"
 
 export default function Main() {
   const [activePageIdx, setActivePageIdx] = useState(0);
   const [activePageIdx2, setActivePageIdx2] = useState(0);
-  const [pages, setPages] = useState([...main_section_pages]);
+  const [pages, setPages] = useState([]);
   const [addTr, setAddTr] = useState(false);
   const [hand, setHand] = useState(false);
   const [disableBtn, setDisableBtn] = useState(false);
+  const [allPages, setAllPages] = useState([]);
   const pageRef = useRef();
+  const navigate = useNavigate();
+  const [, i18next] = useTranslation();
   const [animate, setAnimate] = useState({ bottom: "-200%", left: "-200%", transition: "5s" });
 
   const changeActivePageIdx = () => {
@@ -32,7 +37,7 @@ export default function Main() {
       setActivePageIdx(prevIdx => {
         setPages(prev => {
           const data = [...prev];
-          data.unshift(data[main_section_pages.length - 1]);
+          data.unshift(data[allPages.length - 1]);
           return data;
         })
 
@@ -44,16 +49,19 @@ export default function Main() {
   useEffect(() => {
     setTimeout(() => {
       if (disableBtn) {
-        console.log("backed")
         setAnimate({ bottom: "-200%", left: "-200%", transition: "5s" });
       } else {
-        console.log("changed")
         setAnimate({ bottom: "-40px", left: "80px" });
       }
     }, 1000);
   }, [activePageIdx, disableBtn]);
 
-  // console.log(pages.length - activePageIdx)
+  useEffect(() => {
+    request("/sliders", (data) => {
+      setAllPages(data);
+      setPages(data?.reverse());
+    }, () => navigate("/404"));
+  }, [navigate]);
 
   return (
     <div className='homemain'>
@@ -71,9 +79,9 @@ export default function Main() {
             {pages.map((page, i) => (
               <div ref={pageRef} key={i} className={`homemain__page ${pages.length - activePageIdx - 1 === i ? "active" : ""}`} style={pages.length - activePageIdx2 <= i ? { transform: "translateX(350px)", transition: addTr ? "1s" : "0", position: pages.length - activePageIdx2 === i ? "relative" : "relative" } : { position: pages.length - activePageIdx2 === i ? "static" : "relative" }}>
                 <div className="homemain__page-container">
-                  <h1 className='homemain__page-title'>{page.title}</h1>
+                  <h1 className='homemain__page-title'>{page && page[`name_${i18next.language}`]}</h1>
                   <p className='homemain__page-text'>
-                    {page.text}
+                    {page && page[`description_${i18next.language}`]}
                   </p>
                 </div>
                 {/* {console.log(pages.length - activePageIdx - 1 === i ? pages.length - activePageIdx - 1 === i : "")} */}

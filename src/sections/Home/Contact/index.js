@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Feather, WhiteBg } from 'subcomponents';
+import { Feather, NumberInput, WhiteBg } from 'subcomponents';
 import SendBtn from 'subcomponents/SendBtn';
 import { sendMessageToTG } from 'utils/functions';
 import "./index.css";
@@ -10,8 +10,6 @@ export default function Contact() {
   const submit = async e => {
     e.preventDefault();
 
-    console.log(formRef.current.children)
-
     const message = `
       Yangi Xabar😊!
       %0A👤Ismi: ${formRef.current.children?.name?.value}
@@ -20,33 +18,6 @@ export default function Contact() {
     `;
 
     await sendMessageToTG(message);
-  }
-
-  const numberInputChange = e => {
-    const value = e.target.value;
-
-    console.log(e.target.value)
-    if (value.length < 2) {
-      formRef.current.phone_number.value =
-        value[0] === "+"
-        ? value : value.slice(0, -1)
-    } else if (value.length < 3) {
-      formRef.current.phone_number.value =
-        value[1] === "9"
-        ? value : value.slice(0, -1)
-    } else if (value.length < 4) {
-      formRef.current.phone_number.value =
-        value[2] === "8"
-        ? value : value.slice(0, -1)
-    } else if (value.length < 5) {
-      formRef.current.phone_number.value =
-        value[3] === "8"
-        ? value : value.slice(0, -1)
-    } else {
-      formRef.current.phone_number.value = isNaN(+value[value.length - 1])
-      ? value.slice(0, -1)
-      : value
-    }
   }
 
   return (
@@ -66,16 +37,7 @@ export default function Contact() {
             required
             className='contact__feild'
           />
-          <input
-            type="text"
-            placeholder='Telefon raqamingiz'
-            name='phone_number'
-            className='contact__feild'
-            minLength={13}
-            maxLength={13}
-            required
-            onChange={numberInputChange}
-          />
+          <NumberInput className="contact__feild" />
           <textarea
             placeholder='Xabar'
             name='message'
