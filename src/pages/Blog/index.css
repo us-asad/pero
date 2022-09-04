@@ -10,11 +10,17 @@
 .blog__img-wrapper {
   width: 100%;
   text-align: center;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
 }
 
 .blog__img {
   width: 500px;
   object-fit: contain;
+  border-radius: 20px;
 }
 
 .blog__post-title {

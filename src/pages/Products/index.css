@@ -150,7 +150,7 @@
   top: 50px;
   left: 50%;
   transform: translateX(-50%) scale(0.9);
-  z-index: 3;
+  z-index: 8;
   background-color: var(--orange-thin);
   padding: 50px 80px;
   border-radius: 32px;
