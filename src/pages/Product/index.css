@@ -58,9 +58,9 @@
 
 .product__modal {
   position: fixed;
-  top: 10%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   z-index: 100;
   background-color: var(--orange-thin);
   padding: 50px 80px;
@@ -75,7 +75,7 @@
 }
 
 .product__modal.active {
-  transform: translateX(-50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
   opacity: 1;
   pointer-events: all;
 }
