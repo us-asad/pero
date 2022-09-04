@@ -36,7 +36,7 @@
 }
 
 .footer__social-item {
-  transition: .5s;
+  transition: 0.5s;
   cursor: pointer;
 }
 
@@ -54,8 +54,16 @@
   display: flex;
   flex-direction: column;
   gap: 13px;
-  opacity: 0.5;
   cursor: pointer;
+}
+
+.footer__item-link {
+  transition: 0.3s;
+  opacity: 0.5;
+}
+
+.footer__item-link:hover {
+  opacity: 1;
 }
 
 .footer__copyright {
@@ -93,7 +101,6 @@
     font-size: 10.46px;
     flex-wrap: wrap;
   }
-
 }
 
 @media (max-width: 500px) {
@@ -133,5 +140,5 @@
 
   .footer__copyright-text:last-of-type {
     margin-left: 0;
-}
+  }
 }

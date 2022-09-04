@@ -20,6 +20,11 @@
   z-index: 1;
 }
 
+.slide-btn:hover {
+  width: 65px;
+  height: 65px;
+}
+
 .slide-btn:active {
   width: 55px;
   height: 55px;

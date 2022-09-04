@@ -48,6 +48,10 @@
   cursor: pointer;
 }
 
+.homeproducts__slide:hover {
+  transform: scale(1.05);
+}
+
 .homeproducts__slide:active {
   transform: scale(.95);
 }

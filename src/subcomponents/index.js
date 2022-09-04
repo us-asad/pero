@@ -6,3 +6,4 @@ export { default as YTVideoBtn } from "./YTVideoBtn";
 export { default as NumberInput } from "./NumberInput";
 export { default as Loader } from "./Loader";
 export { default as Feather2 } from "./Feather2";
+export { default as PageRoutes } from "./PageRoutes";

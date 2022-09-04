@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaRegCalendarAlt } from 'react-icons/fa';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Loader } from 'subcomponents';
+import { Loader, PageRoutes } from 'subcomponents';
 import { getImgUrl, request } from 'utils/request';
 import "./index.css";
 
@@ -31,29 +31,37 @@ export default function Blog() {
             <span className='blog__span-text'>24 Oct,2021</span>
           </span>
         </div>
-        <ul className="app__routes">
-          {[t("home.title"), ">", data[`name_${i18next.language}`]].map((route, i) => (
-            <li key={i} className="app_route">
-              {route}
-            </li>
-          ))}
-        </ul>
-        {data.image ? (
-          <img
-            src={getImgUrl(data.image)}
-            alt="Blog img"
-            className='blog__img'
-            data-aos="zoom-in"
-          />
-        ) : null}
-        {data.video ? (
-          <video
-            src={getImgUrl(data.video)}
-            controls
-            className='blog__img'
-            data-aos="zoom-in"
-          />
-        ) : null}
+        <PageRoutes
+          routes={[
+            {
+              name: t("home.title"),
+              link: "/"
+            },
+            {
+              name: t("blog.title"),
+              link: "/blog"
+            },
+            { name: data[`name_${i18next.language}`] }
+          ]}
+        />
+        <div className='blog__img-wrapper'>
+          {data.image ? (
+            <img
+              src={getImgUrl(data.image)}
+              alt="Blog img"
+              className='blog__img'
+              data-aos="zoom-in"
+            />
+          ) : null}
+          {data.video ? (
+            <video
+              src={getImgUrl(data.video)}
+              controls
+              className='blog__img'
+              data-aos="zoom-in"
+            />
+          ) : null}
+        </div>
         {/* <h1 data-aos="fade-up" className='blog__post-title'>{data[`name_${i18next.language}`]}</h1> */}
         <p data-aos="fade-up" className='blog__post-text'>
           {data.description_uz}

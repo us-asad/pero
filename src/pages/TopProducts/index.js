@@ -5,6 +5,7 @@ import { BiChevronRight } from 'react-icons/bi';
 import { BsArrowRight } from 'react-icons/bs';
 import ReactPaginate from 'react-paginate';
 import { Link, useNavigate } from 'react-router-dom';
+import { PageRoutes } from 'subcomponents';
 import { getImgUrl, request } from 'utils/request';
 import "./index.css";
 
@@ -48,13 +49,15 @@ export default function TopProducts() {
             <BiChevronDown className='topproducts__select-icon' />
           </div> */}
         </div>
-        <ul data-aos="fade-right" className='app__routes'>
-          {[t("home.title"), ">", t("products.top_products")].map((route, i) => (
-            <li key={i}>
-              {route}
-            </li>
-          ))}
-        </ul>
+        <PageRoutes
+          routes={[
+            {
+              name: t("home.title"),
+              link: "/"
+            },
+            { name: t("products.top_products") }
+          ]}
+        />
         <div className='topproducts__wrapper'>
           {currentItems?.map((product, i) => (
             <div data-aos="fade-up" key={i} className='topproducts__product'>

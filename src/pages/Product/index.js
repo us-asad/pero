@@ -7,7 +7,7 @@ import { BsArrowRight } from 'react-icons/bs';
 import { FaTimes } from 'react-icons/fa';
 import { HiArrowRight } from 'react-icons/hi';
 import { useNavigate, useParams } from 'react-router-dom';
-import { NumberInput } from 'subcomponents';
+import { NumberInput, PageRoutes } from 'subcomponents';
 import { sendMessageToTG } from 'utils/functions';
 import { getImgUrl, request } from 'utils/request';
 import "./index.css";
@@ -68,11 +68,19 @@ export default function Product() {
       <section className='product'>
         <div className="container px-normal">
           <h1 data-aos="fade-up" className='app__title product__title'>{product && product[`name_${i18next.language}`]}</h1>
-          <ul data-aos="fade-right" className='app__routes'>
-            {[t("home.title"), ">", product && product[`name_${i18next.language}`]].map((route, i) => (
-              <li key={i} className='app__route'>{route}</li>
-            ))}
-          </ul>
+          <PageRoutes
+            routes={[
+              {
+                name: t("home.title"),
+                link: "/"
+              },
+              {
+                name: t("products.all_products"),
+                link: "/products"
+              },
+              { name: product && product[`name_${i18next.language}`] }
+            ]}
+          />
           <div className='product__details'>
             <div data-aos="fade-right" className='product__content'>
               <ul className='product__features'>

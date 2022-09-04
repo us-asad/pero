@@ -31,7 +31,7 @@ export default function Videos() {
         <p data-aos="fade-up" className="videos__text">{t("videos.subtitle")}</p>
         <ul data-aos="zoom-in" className='videos__slider videos__slider-desktop'>
           {videos.map((item, i) => (
-            <li key={i} className={`videos__slide ${activeVideoIdx === i ? "active" : ""}`}>
+            <li onClick={() => setActiveVideoIdx(i)} key={i} className={`videos__slide ${activeVideoIdx === i ? "active" : ""}`}>
               <video
                 src={getImgUrl(item.video)}
                 controls={i === activeVideoIdx}
@@ -55,7 +55,7 @@ export default function Videos() {
             <div className='videos__slider-overflow'>
               <div className='videos__slides-wrapper' style={{ transform: `translateX(-${(activeVideoIdx * 200) + (activeVideoIdx * slideRef.current?.clientWidth)}px)` }}>
                 {videos.map((item, i) => (
-                  <li ref={slideRef} key={i} className={`videos__slide `}>
+                  <li onClick={() => setActiveVideoIdx(i)} ref={slideRef} key={i} className={`videos__slide `}>
                     <video
                       src={getImgUrl(item.video)}
                       controls

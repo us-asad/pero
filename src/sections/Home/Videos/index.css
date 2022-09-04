@@ -38,6 +38,15 @@
   background-color: var(--white-light);
   border-radius: 16px;
   transition: 500ms;
+  cursor: pointer;
+}
+
+.videos__slide:hover {
+  transform: scale(1.05);
+}
+
+.videos__slide:active {
+  transform: scale(.95);
 }
 
 .videos__slide.active {

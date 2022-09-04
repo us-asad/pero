@@ -5,6 +5,7 @@ import { BiChevronRight } from 'react-icons/bi';
 import { CgArrowRightO, CgCalendarDates } from "react-icons/cg";
 import ReactPaginate from 'react-paginate';
 import { Link, useNavigate } from 'react-router-dom';
+import { PageRoutes } from 'subcomponents';
 import { getImgUrl, request } from 'utils/request';
 import "./index.css";
 
@@ -20,14 +21,14 @@ export default function Blogs() {
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % data.length;
     setItemOffset(newOffset);
-  }; 
+  };
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
     setCurrentItems(data.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(data.length / itemsPerPage));
   }, [itemOffset, itemsPerPage, data]);
- 
+
   useEffect(() => {
     request("/blogs", data => setData(data), () => navigate("/404"));
     /* eslint-disable react-hooks/exhaustive-deps */
@@ -40,11 +41,15 @@ export default function Blogs() {
           <h2 className='app__title'>{t("blog.title")}</h2>
           <span className='app__span blogs__span'>{t("last_update")}: {`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
         </div>
-        <ul data-aos="fade-right" className='app__routes'>
-          {[t("home.title"), ">", t("blog.title")].map((route, i) => (
-            <li key={i} className='app__route'>{route}</li>
-          ))}
-        </ul>
+        <PageRoutes
+          routes={[
+            {
+              name: t("home.title"),
+              link: "/"
+            },
+            { name: t("blog.title") }
+          ]}
+        />
         <div className='blogs__wrapper'>
           {currentItems?.map((blog, i) => (
             <div data-aos="fade-up" key={i} className='blogs__blog'>

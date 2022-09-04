@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
 import { Icons, Main, Numbers, Production, Video } from 'sections/About';
-import { Feather, WhiteBg } from 'subcomponents';
+import { Feather, PageRoutes, WhiteBg } from 'subcomponents';
 import "./index.css";
 
 export default function About() {
@@ -24,13 +24,15 @@ export default function About() {
               <BiChevronDown className='products__select-icon' />
             </div> */}
           </div>
-          <ul data-aos="fade-right" className='app__routes'>
-            {[t("home.title"), ">", t("about.title")].map((route, i) => (
-              <li key={i}>
-                {route}
-              </li>
-            ))}
-          </ul>
+          <PageRoutes
+            routes={[
+              {
+                name: t("home.title"),
+                link: "/"
+              },
+              { name: t("about.title") }
+            ]}
+          />
         </div>
         <Main />
         <Numbers />

@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Feather, WhiteBg } from 'subcomponents';
+import { Feather, PageRoutes, WhiteBg } from 'subcomponents';
 import { request } from 'utils/request';
 import "./index.css";
 
@@ -21,13 +21,15 @@ export default function TermsOfUse() {
           <h2 className='app__title'>{t("terms.title")}</h2>
           <span className='app__span termsofuse__span'>{t("last_update")}: {`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
         </div>
-        <ul data-aos="fade-right" className='app__routes'>
-          {[t("home.title"), ">", t("terms.title")].map((route, i) => (
-            <li key={i} className="app__route">
-              {route}
-            </li>
-          ))}
-        </ul>
+        <PageRoutes
+          routes={[
+            {
+              name: t("home.title"),
+              link: "/"
+            },
+            { name: t("terms.title") }
+          ]}
+        />
         {data.map(term => (
           <div key={term.id} data-aos="fade-up">
             <h2 data-aos="fade-up" className='termsofuse__title app__title'>{term && term[`name_${i18next.language}`]}</h2>

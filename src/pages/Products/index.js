@@ -10,6 +10,7 @@ import "./index.css";
 import { useNavigate } from 'react-router-dom';
 import { getImgUrl, request } from 'utils/request';
 import { useTranslation } from 'react-i18next';
+import { PageRoutes } from 'subcomponents';
 
 export default function Products() {
   const [activeCategoryIdx, setActiveCategoryIdx] = useState(0);
@@ -77,13 +78,15 @@ export default function Products() {
             <BiChevronDown className='topproducts__select-icon' />
           </div> */}
         </div>
-        <ul data-aos="fade-right" className='app__routes'>
-          {[t("home.title"), ">", t("products.all_products")].map((route, i) => (
-            <li key={i}>
-              {route}
-            </li>
-          ))}
-        </ul>
+        <PageRoutes
+          routes={[
+            {
+              name: t("home.title"),
+              link: "/"
+            },
+            { name: t("products.all_products") }
+          ]}
+        />
         <div data-aos="zoom-in" className='products__categories-wrapper'>
           <ul className='products__categories'>
             {categories.map((category, i) => (

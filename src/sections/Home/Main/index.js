@@ -78,6 +78,7 @@ export default function Main() {
                   <p className='homemain__page-text'>
                     {page && page[`description_${i18next.language}`]}
                   </p>
+                  {/* <Link to="/" className="homemain__page-link">More</Link> */}
                 </div>
               </div>
             ))}

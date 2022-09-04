@@ -144,6 +144,17 @@
   font-weight: 400;
   line-height: 29.46px;
 }
+/* 
+.homemain__page-link {
+  text-decoration: underline;
+  font-size: 20px;
+  margin-top: 20px;
+  display: block;
+  cursor: pointer;
+  opacity: .8;
+  position: relative;
+  z-index: 3;
+} */
 
 .homemain .section__footer {
   color: var(--green-normal);
