@@ -1,4 +1,4 @@
-const api_uri = process.env.REACT_APP_API_URI || "https://api-pero.abba.uz";
+const api_uri = process.env.REACT_APP_API_URI;
 
 export const getImgUrl = imgName => {
   if (imgName?.includes("/files/"))
@@ -11,7 +11,6 @@ export const request = async (endpoint = '', cb = Function.prototype, errCb = Fu
   try {
     const res = await fetch(api_uri + "/api" + endpoint)
     const data = await res.json();
-    console.log(data === undefined || data === null || data.length === 0)
     if (data === undefined || data === null || data.length === 0)
       return errCb("Data not found")
     

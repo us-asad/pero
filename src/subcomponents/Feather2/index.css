@@ -1,0 +1,5 @@
+.feather2__img {
+  position: absolute;
+  z-index: 0;
+  transition: 200s;
+}

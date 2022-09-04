@@ -169,7 +169,6 @@ export default function Product() {
               <span className='products__modal-btn-text'>Перейти в каталог</span>
             </button>
           </div>
-          {console.log(modalDetails)}
           <img
             src={getImgUrl(modalDetails?.image)}
             alt="product title"

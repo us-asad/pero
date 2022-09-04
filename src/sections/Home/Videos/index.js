@@ -22,8 +22,6 @@ export default function Videos() {
     request("/videos", data => setVideos(data.slice(0, 3)), () => navigate("/404"));
   }, [navigate]);
 
-  console.log(videos)
-
   return (
     <section className='videos'>
       <div className="container">

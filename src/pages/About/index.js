@@ -13,7 +13,8 @@ export default function About() {
         <div className='about__header'>
           <div data-aos="fade-up" className='app__title-container'>
             <h1 className='app__title'>Топ товары</h1>
-            <div className='app__span about__span'>
+            <span className='app__span blogs__span'>последняя обновления: {`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
+            {/* <div className='app__span about__span'>
               <select className='products__select'>
                 <option>Исходная сортировка</option>
                 <option>1</option>
@@ -21,7 +22,7 @@ export default function About() {
                 <option>1</option>
               </select>
               <BiChevronDown className='products__select-icon' />
-            </div>
+            </div> */}
           </div>
           <ul data-aos="fade-right" className='app__routes'>
             {routes.map((route, i) => (

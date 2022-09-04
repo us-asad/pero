@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import "./index.css";
 
-export default function Feather({ src, width, style, animate }) {
+export default function Feather({ src, width, style, animate, className }) {
   const [animateStyles, setAnimateStyles] = useState({});
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export default function Feather({ src, width, style, animate }) {
       src={src}
       alt="Feather"
       style={{ width, ...style, ...animateStyles }}
-      className="feather__img"
+      className={`feather__img ${className}`}
     />
   )
 }

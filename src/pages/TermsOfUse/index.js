@@ -16,8 +16,6 @@ export default function TermsOfUse() {
     request("/terms", setData, () => { });
   }, []);
 
-  console.log(data)
-
   return (
     <section className='termsofuse'>
       <div className="container px-normal">

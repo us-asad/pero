@@ -35,14 +35,13 @@ export default function TopProducts() {
     request("/top_products", setTopProducts, () => navigate("/404"));
   }, [navigate]);
 
-  console.log(topProducts)
-
   return (
     <section className='topproducts'>
       <div className="container px-normal">
         <div data-aos="fade-up" className='app__title-container'>
           <h1 className='app__title'>Топ товары</h1>
-          <div className='app__span'>
+          <span className='app__span blogs__span'>последняя обновления: {`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
+          {/* <div className='app__span'>
             <select className='topproducts__select'>
               <option disabled selected>Исходная сортировка</option>
               <option>1</option>
@@ -50,7 +49,7 @@ export default function TopProducts() {
               <option>1</option>
             </select>
             <BiChevronDown className='topproducts__select-icon' />
-          </div>
+          </div> */}
         </div>
         <ul data-aos="fade-right" className='app__routes'>
           {routes.map((route, i) => (
