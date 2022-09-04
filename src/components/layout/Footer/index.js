@@ -24,26 +24,30 @@ export default function Footer() {
             <p className='footer__text' style={notHomePage ? { opacity: 1 } : {}}>
               {t("footer.text")}
             </p>
-            <ul className='footer__social-items'>
-              <li className='footer__social-item'>
+            <div className='footer__social-items'>
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" className='footer__social-item'>
                 <FaFacebookF />
-              </li>
-              <li className='footer__social-item'>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noreferrer" className='footer__social-item'>
                 <BsTwitter />
-              </li>
-              <li className='footer__social-item'>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" className='footer__social-item'>
                 <AiOutlineInstagram />
-              </li>
-            </ul>
+              </a>
+            </div>
           </div>
           {footer_links.map((link, i) => (
             <div key={i} className='footer__item'>
               <h4 className='footer__item-title'>{t(`footer.links.${i}.title`)}</h4>
-              <ul className='footer__item-links'>
+              <div className='footer__item-links'>
                 {link.links.map((linkItem, idx) => (
-                  <li className='footer__item-link' key={idx}>{t(`footer.links.${i}.links.${idx}`)}</li>
+                  linkItem.startsWith("/") ? (
+                    <Link to={linkItem} className='footer__item-link' key={idx}>{t(`footer.links.${i}.links.${idx}`)}</Link>
+                  ) : (
+                    <a href={linkItem} target={linkItem.startsWith("#") ? "" : "_blank"} rel="noreferrer" className='footer__item-link' key={idx}>{t(`footer.links.${i}.links.${idx}`)}</a>
+                  )
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>

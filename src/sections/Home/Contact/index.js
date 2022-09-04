@@ -23,7 +23,7 @@ export default function Contact() {
   }
 
   return (
-    <section className='contact'>
+    <section id="contact" className='contact'>
       <div className="container">
         <form ref={formRef} id="contact-form" data-aos="fade-right" onSubmit={submit} className='contact__form'>
           <h1 className='contact__title'>{t("contact.title")}</h1>
