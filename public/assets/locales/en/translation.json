@@ -1,3 +1,116 @@
 {
-  "name": "EN"
+  "name": "EN",
+  "home": {
+    "title": "Home"
+  },
+  "slider_click": "click to change",
+  "last_update": "last update",
+  "nav": [
+    "About us",
+    "Top Products",
+    "Products",
+    "News",
+    "Terms of use"
+  ],
+  "products": {
+    "top_products": "Top products",
+    "all_products": "All products",
+    "title": "our products",
+    "subtitle": "Bizda 80 dan kop mahsulotlarimiz bor ular lorem ipsum color",
+    "order": "Order",
+    "related": "Related Products",
+    "property_1": "Aricle",
+    "property_2": "Size",
+    "success_title": "Your order has been accepted",
+    "success_subtitle": "Our experts will contact you soon",
+    "view": "View Product",
+    "download": "Download All Products"
+  },
+  "about": {
+    "title": "About us",
+    "subtitle": "Pero ko’plab ishchilarni bir maqsad yo’lida jamlagan korxona bo'lib, u turli xildagi salfetkalar ishlab chiqarishga ixtisoslashgan. Biz o’z mijozlarimizga doim eng yaxshi va sifatlisini ulashamiz.",
+    "title_2": "The secret of purity",
+    "icons": [
+      {
+        "title": "High quality",
+        "subtitle": "Quality control of products and rejection at the production stage, passing the Quality Control Department, compliance with GOSTs and quality standards"
+      },
+      {
+        "title": "Safety",
+        "subtitle": "All our products are tested and certified according to world-class standards."
+      },
+      {
+        "title": "Innovation and innovation",
+        "subtitle": "Our products are always multifunctional and keep up with the times, responding to the needs of today's demanding users."
+      }
+    ],
+    "video": {
+      "title": "LLC 'International Paper'",
+      "text": "LLC International Paper is the largest manufacturer of paper products for sanitary purposes. Our company has been operating since 2000 under the ELMA brand. LLC International Paper is the largest manufacturer of paper products for sanitary purposes. Our company has been operating since 2000 under the ELMA brand. LLC International Paper is the largest manufacturer"
+    },
+    "production": {
+      "title": "Production",
+      "text": "Our production workshops are very interesting platforms for enthusiastic people. We treat every product we produce with great care and love. Feel our care and love.",
+      "more": "more"
+    }
+  },
+  "videos": {
+    "title": "Bizning videolar",
+    "subtitle": "bizning 20 dan ortiq video larimiz va vloglarimiz mavjud",
+    "download": "download videos"
+  },
+  "blog": {
+    "title": "Our Blog",
+    "all": "All Blog Posts",
+    "more": "All Blog Posts",
+    "route": "blog",
+    "read": "Read More"
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "Write down your information and our specialists will call you",
+    "info_title": "Pero - The secret of purity",
+    "info_subtitle": "OOO Pero holding company 2022",
+    "name": "Name",
+    "phone": "Phone Number",
+    "message": "Message",
+    "send": "Send",
+    "sent": "Sent",
+    "contact_btn": "contact"
+  },
+  "footer": {
+    "text": "Quo is the most easier way for transaction with your friends and family, No matter where are you. An exceptional way for make your life one step easier.",
+    "links": [
+      {
+        "title": "Company",
+        "links": [
+          "About Us",
+          "Contact Us",
+          "Support",
+          "News/Blog"
+        ]
+      },
+      {
+        "title": "Terms",
+        "links": [
+          "Privacy Policy",
+          "Terms of Usage",
+          "Areas of Coverage"
+        ]
+      },
+      {
+        "title": "Contact",
+        "links": [
+          "84/E/2 West Jafrabad, Liverpool, Uk",
+          "+8801757410907"
+        ]
+      }
+    ],
+    "copyright": "Copyright © PERO | Designed by0",
+    "powered": "- Powered by"
+  },
+  "terms": {
+    "title": "Terms of use",
+    "route": "Terms of use"
+  }
 }

@@ -1,19 +1,19 @@
 import React from 'react'
-import { BiChevronDown } from 'react-icons/bi'
+import { useTranslation } from 'react-i18next';
 import { Icons, Main, Numbers, Production, Video } from 'sections/About';
 import { Feather, WhiteBg } from 'subcomponents';
 import "./index.css";
 
-const routes = ["Home page", ">", "About us"];
-
 export default function About() {
+  const [t] = useTranslation();
+
   return (
     <div className='about'>
       <div className="container px-normal">
         <div className='about__header'>
           <div data-aos="fade-up" className='app__title-container'>
-            <h1 className='app__title'>Топ товары</h1>
-            <span className='app__span blogs__span'>последняя обновления: {`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
+            <h1 className='app__title'>{t("about.title")}</h1>
+            <span className='app__span blogs__span'>{t("last_update")}: {`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
             {/* <div className='app__span about__span'>
               <select className='products__select'>
                 <option>Исходная сортировка</option>
@@ -25,7 +25,7 @@ export default function About() {
             </div> */}
           </div>
           <ul data-aos="fade-right" className='app__routes'>
-            {routes.map((route, i) => (
+            {[t("home.title"), ">", t("about.title")].map((route, i) => (
               <li key={i}>
                 {route}
               </li>
@@ -108,7 +108,6 @@ export default function About() {
         long
         style={{ bottom: "0%", right: "0" }}
       />
-
     </div>
   )
 }

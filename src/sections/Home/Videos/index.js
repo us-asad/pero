@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { Feather, SectionFooterBtn, WhiteBg } from 'subcomponents';
 import SlideBtn from 'subcomponents/SlideBtn';
@@ -17,6 +18,7 @@ export default function Videos() {
   const [videos, setVideos] = useState([]);
   const slideRef = useRef();
   const navigate = useNavigate();
+  const [t] = useTranslation();
 
   useEffect(() => {
     request("/videos", data => setVideos(data.slice(0, 3)), () => navigate("/404"));
@@ -25,8 +27,8 @@ export default function Videos() {
   return (
     <section className='videos'>
       <div className="container">
-        <h2 data-aos="fade-up" className='videos__title'>Bizning videolar</h2>
-        <p data-aos="fade-up" className="videos__text">bizning 20 dan ortiq video larimiz va vloglarimiz mavjud</p>
+        <h2 data-aos="fade-up" className='videos__title'>{t("videos.title")}</h2>
+        <p data-aos="fade-up" className="videos__text">{t("videos.subtitle")}</p>
         <ul data-aos="zoom-in" className='videos__slider videos__slider-desktop'>
           {videos.map((item, i) => (
             <li key={i} className={`videos__slide ${activeVideoIdx === i ? "active" : ""}`}>
@@ -74,7 +76,7 @@ export default function Videos() {
             />
           </ul>
         </div>
-        <SectionFooterBtn text="Videolarni yuklab olsh" bgColor="#DC4848" width="" />
+        <SectionFooterBtn text={t("videos.download")} bgColor="#DC4848" width="" />
       </div>
       <WhiteBg long style={{ top: "40px", left: "50%", transform: "translate(-50%)" }} />
       <WhiteBg style={{ bottom: "5px", left: "0" }} />

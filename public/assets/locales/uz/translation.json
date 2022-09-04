@@ -1,3 +1,118 @@
 {
-  "name": "UZ"
+  "name": "UZ",
+  "home": {
+    "title": "Bosh sahifa"
+  },
+  "slider_click": "O'zgartirsh uchun bosing",
+  "last_update": "oxirgi yangilanish",
+  "nav": [
+    "Biz haqimizda",
+    "Top mahsulotlar",
+    "Mahsulotlar",
+    "Yangiliklar",
+    "Foydalanish shartlari"
+  ],
+  "products": {
+    "top_products": "Top Mahsulotlar",
+    "all_products": "Barcha Mahsulotlar",
+    "title": "Bizning mahsulotlar",
+    "subtitle": "Bizda 80 dan kop mahsulotlarimiz bor ular lorem ipsum color",
+    "order": "Buyurtma berish",
+    "related": "O'xshash mahsulotlar",
+    "property_1": "Maqola",
+    "property_2": "O'lcham",
+    "success_title": "Buyurtmangiz qabul qilindi",
+    "success_subtitle": "Tez orada mutahasislarimiz siz bilan bog`lanishadi",
+    "view": "Ko'proq",
+    "download": "Barcha tovarlarimizni yuklash"
+  },
+  "about": {
+    "title": "Biz haqimizda",
+    "subtitle": "Pero ko’plab ishchilarni bir maqsad yo’lida jamlagan korxona bo'lib, u turli xildagi salfetkalar ishlab chiqarishga ixtisoslashgan. Biz o’z mijozlarimizga doim eng yaxshi va sifatlisini ulashamiz.",
+    "title_2": "Poklik siri",
+    "icons": [
+      {
+        "title": "Yuqiri sifat",
+        "subtitle": "Mahsulot sifatini nazorat qilish va ishlab chiqarish bosqichida rad etish, sifat nazorati bo'limidan o'tish, GOST va sifat standartlariga muvofiqligi."
+      },
+      {
+        "title": "Xavfsizlik",
+        "subtitle": "Barcha mahsulotlarimiz sinovdan o'tgan va jahon standartlariga muvofiq sertifikatlangan."
+      },
+      {
+        "title": "Inovatsiya",
+        "subtitle": "Mahsulotlarimiz har doim ko‘p funksiyali va zamon bilan hamnafas bo‘lib, bugungi talabchan foydalanuvchilarning ehtiyojlariga javob beradi."
+      }
+    ],
+    "video": {
+      "title": "MChJ 'International Paper'",
+      "text": "MChJ International Paper - sanitariya maqsadlarida qog'oz mahsulotlarining eng yirik ishlab chiqaruvchisi. Kompaniyamiz 2000 yildan buyon ELMA brendi ostida faoliyat yuritib kelmoqda. MChJ International Paper - sanitariya maqsadlarida qog'oz mahsulotlarining eng yirik ishlab chiqaruvchisi. Kompaniyamiz 2000 yildan buyon ELMA brendi ostida faoliyat yuritib kelmoqda. MChJ International Paper - sanitariya maqsa"
+    },
+    "production": {
+      "title": "Ishlab chiqarish",
+      "text": "Bizning ishlab chiqarish ustaxonalarimiz g'ayratli odamlar uchun juda qiziqarli platformalardir. Biz ishlab chiqarayotgan har bir mahsulotga katta e'tibor va mehr bilan qaraymiz. Bizning g'amxo'rlik va sevgimizni his eting.",
+      "more": "Ko'proq"
+    },
+    "main_btn": "Biz haqimizda batafsil",
+    "more": "more"
+  },
+  "videos": {
+    "title": "Bizning videolar",
+    "subtitle": "bizning 20 dan ortiq video larimiz va vloglarimiz mavjud",
+    "download": "download videos"
+  },
+  "blog": {
+    "title": "Bizning Blog",
+    "all": "Barcha bloglar",
+    "more": "Barcah blog postlar",
+    "route": "blog",
+    "read": "Ko'proq o'qish"
+  },
+  "contact": {
+    "title": "Aloqa uchun",
+    "subtitle": "malumoitlarizzi yozb qoldiring va bizani mutahasislarimiz sizga qongiroq qlwadi",
+    "info_title": "Pero - Poklik siri",
+    "info_subtitle": "OOO Pero holding company 2022",
+    "name": "Ismingiz",
+    "phone": "Telefon Raqamingiz",
+    "message": "Xabar",
+    "send": "Yuborish",
+    "sent": "Yuborildi",
+    "contact_btn": "aloqa uchun"
+  },
+  "footer": {
+    "text": "Quo is the most easier way for transaction with your friends and family, No matter where are you. An exceptional way for make your life one step easier.",
+    "links": [
+      {
+        "title": "Kompaniya",
+        "links": [
+          "Biz haqimizda",
+          "Aloqa",
+          "Qo'llab quvvatlash",
+          "Yangiliklar/Blog"
+        ]
+      },
+      {
+        "title": "Foydalanish",
+        "links": [
+          "Maxfiylik siyosati",
+          "Foydalanish shartlari",
+          "Qoplash sohalari"
+        ]
+      },
+      {
+        "title": "Aloqa",
+        "links": [
+          "84/E/2 West Jafrabad, Liverpool, Uk",
+          "+8801757410907"
+        ]
+      }
+    ],
+    "copyright": "Mualliflik huquqi © PERO | tomonidan chizildi",
+    "powered": "- Tomonidan ishlab chiqilid"
+  },
+  "terms": {
+    "title": "Foydalanish",
+    "route": "Terms of use"
+  }
 }

@@ -22,6 +22,7 @@
   letter-spacing: .24px;
   opacity: .8;
   font-family: inherit;
+  margin-top: 40px;
 }
 
 @media (max-width: 400px) {

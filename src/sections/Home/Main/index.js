@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { Feather, Feather2, SectionFooter } from 'subcomponents'
+import { Feather2, SectionFooter } from 'subcomponents'
 import { request } from 'utils/request';
 import "./index.css"
 
@@ -18,11 +18,9 @@ export default function Main() {
   const [allPages, setAllPages] = useState([]);
   const pageRef = useRef();
   const navigate = useNavigate();
-  const [, i18next] = useTranslation();
+  const [t, i18next] = useTranslation();
   const [clicked, setClicked] = useState(false);
-
-  const [feathersCount, setFeathersCount] = useState(2);
-
+  const [, setFeathersCount] = useState(2);
 
   const changeActivePageIdx = () => {
     setFeathersCount(prev => prev + 1);
@@ -66,7 +64,7 @@ export default function Main() {
         <div className='homemain__image'>
           <button disabled={disableBtn} className='homemain__click' onClick={changeActivePageIdx}>
             <img src="/assets/icons/click-icon.png" alt="Click Icon" />
-            <span>O'zgartirish uchun bosing</span>
+            <span>{t("slider_click")}</span>
           </button>
           <img src="/assets/images/main-click.png" alt="Click" className='homemain__clicker' />
           <img src="/assets/images/paper.png" alt="Pero paper" />
@@ -84,27 +82,6 @@ export default function Main() {
               </div>
             ))}
           </div>
-          {/* {[...new Array(2)].map((_, i) => (
-            <div key={i} className={`homemain__feathers ${i === 1 ? "active" : i}`}>
-              <Feather
-                src="/assets/images/feathers/main/1.png"
-                style={{ bottom: "100px", left: "300px" }}
-                animate={i > 0 ? disableBtn ? { bottom: "-50000px", left: "-50000px" } : { bottom: "-1000px", left: "-1000px" } : { bottom: "100px", left: "300px" }}
-              />
-              <Feather
-                src="/assets/images/feathers/main/2.png"
-                style={{ top: "70px", left: "300px" }}
-              />
-              <Feather
-                src="/assets/images/feathers/main/3.png"
-                style={{ top: "70px", right: "340px", transform: "rotate(249deg)" }}
-              />
-              <Feather
-                src="/assets/images/feathers/main/4.png"
-                style={{ bottom: "230px", right: "350px" }}
-              />
-            </div>
-          ))} */}
           <div className={`homemain__feathers ${activePageIdx % 2 !== 0 ? "active" : ""} ${clicked ? "speedUp" : ""}`}>
             <Feather2
               src="/assets/images/feathers/main/2.png"

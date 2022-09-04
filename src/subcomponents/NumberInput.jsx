@@ -1,6 +1,9 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next';
 
 export default function NumberInput({ className }) {
+  const [t] = useTranslation();
+  
   const numberInputChange = e => {
     const value = e.target.value;
 
@@ -30,7 +33,7 @@ export default function NumberInput({ className }) {
   return (
     <input
       type="text"
-      placeholder='Telefon raqamingiz'
+      placeholder={t("contact.phone")}
       name='phone_number'
       className={className}
       minLength={13}

@@ -8,12 +8,10 @@ import { Loader } from 'subcomponents';
 import { getImgUrl, request } from 'utils/request';
 import "./index.css";
 
-const routes = ["Home page", ">", "our blog", ">", "blog post"]
-
 export default function Blog() {
   const [data, setData] = useState({});
   const params = useParams();
-  const [, i18next] = useTranslation();
+  const [t, i18next] = useTranslation();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -27,14 +25,14 @@ export default function Blog() {
     <section className='blog'>
       <div className="container px-normal">
         <div className="app__title-container">
-          <h2 className="app__title">Blog posts</h2>
+          <h2 className="app__title">{data[`name_${i18next.language}`]}</h2>
           <span className='app__span'>
             <FaRegCalendarAlt className="blog__span-icon" />
             <span className='blog__span-text'>24 Oct,2021</span>
           </span>
         </div>
         <ul className="app__routes">
-          {routes.map((route, i) => (
+          {[t("home.title"), ">", data[`name_${i18next.language}`]].map((route, i) => (
             <li key={i} className="app_route">
               {route}
             </li>
@@ -56,7 +54,7 @@ export default function Blog() {
             data-aos="zoom-in"
           />
         ) : null}
-        <h1 data-aos="fade-up" className='blog__post-title'>{data[`name_${i18next.language}`]}</h1>
+        {/* <h1 data-aos="fade-up" className='blog__post-title'>{data[`name_${i18next.language}`]}</h1> */}
         <p data-aos="fade-up" className='blog__post-text'>
           {data.description_uz}
         </p>

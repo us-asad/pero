@@ -2,7 +2,7 @@ import { DefaultPageDecorations } from 'components';
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { AiOutlineEye } from 'react-icons/ai';
-import { BiChevronDown, BiChevronRight } from 'react-icons/bi'
+import { BiChevronRight } from 'react-icons/bi'
 import { HiArrowRight } from "react-icons/hi";
 import { BsArrowRight } from "react-icons/bs"
 import ReactPaginate from 'react-paginate';
@@ -10,8 +10,6 @@ import "./index.css";
 import { useNavigate } from 'react-router-dom';
 import { getImgUrl, request } from 'utils/request';
 import { useTranslation } from 'react-i18next';
-
-const routes = ["Home page", ">", "our products", ">", "all products"];
 
 export default function Products() {
   const [activeCategoryIdx, setActiveCategoryIdx] = useState(0);
@@ -23,7 +21,7 @@ export default function Products() {
   const [allProducts, setAllProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
-  const [, i18next] = useTranslation();
+  const [t, i18next] = useTranslation();
   const itemsPerPage = 9;
 
   const handlePageClick = (event) => {
@@ -67,8 +65,8 @@ export default function Products() {
     <section className='products'>
       <div className="container px-normal">
         <div data-aos="fade-up" className='app__title-container'>
-          <h1 className='app__title'>Бумажные продукции</h1>
-          <span className='app__span blogs__span'>последняя обновления: {`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
+          <h1 className='app__title'>{t("products.all_products")}</h1>
+          <span className='app__span blogs__span'>{t("last_update")}: {`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
           {/* <div className='app__span'>
             <select className='topproducts__select'>
               <option>Исходная сортировка</option>
@@ -80,7 +78,7 @@ export default function Products() {
           </div> */}
         </div>
         <ul data-aos="fade-right" className='app__routes'>
-          {routes.map((route, i) => (
+          {[t("home.title"), ">", t("products.all_products")].map((route, i) => (
             <li key={i}>
               {route}
             </li>
@@ -143,17 +141,17 @@ export default function Products() {
           <h3 className='products__modal-title'>{modalDetails && modalDetails[`name_${i18next.language}`]}</h3>
           <ul className='products__modal-detail'>
             <li className='products__modal-detail'>
-              Артикул: <b>509</b>
+              {t("products.property_1")}: <b>509</b>
             </li>
             <li className='products__modal-detail'>
-              Размер: <b>20x15</b>
+              {t("products.property_2")}: <b>20x15</b>
             </li>
           </ul>
           <button onClick={() => goToProduct(modalDetails.id)} className='products__modal-btn'>
             <span className='products__modal-btn-icon'>
               <BsArrowRight />
             </span>
-            <span className='products__modal-btn-text'>Перейти в каталог</span>
+            <span className='products__modal-btn-text'>{t("products.view")}</span>
           </button>
         </div>
         <img

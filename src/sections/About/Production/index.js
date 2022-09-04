@@ -1,15 +1,18 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next';
 import "./index.css";
 
 export default function Production() {
+  const [t] = useTranslation();
+
   return (
     <section className='aboutproduction'>
       <div data-aos="fade-right" className='aboutproduction__details'>
-        <h3 className='about__title aboutproduction__details-title'>Производство</h3>
+        <h3 className='about__title aboutproduction__details-title'>{t("about.production.title")}</h3>
         <p className='about__text aboutproduction__details-text'>
-          Наши производственные цеха очень интересные площадки для людей увлеченных. Мы с большой заботой и любовью относимся к каждому продукту, производимому нами. Почувствуйте и вы нашу заботу и любовь.
+          {t("about.production.text")}
         </p>
-        <button className='aboutproduction__details-btn'>Подробнее</button>
+        <button className='aboutproduction__details-btn'>{t("about.production.more")}</button>
       </div>
       <img
         data-aos="fade-left"

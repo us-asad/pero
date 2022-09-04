@@ -8,8 +8,6 @@ import SlideBtn from 'subcomponents/SlideBtn';
 import { getImgUrl, request } from 'utils/request';
 import "./index.css";
 
-const btnText = `Barcha tovarlarimizni korish 
-/ skachat katalog`;
 const slide_btn_styles = {
   color: "#5f9c95",
   borderColor: "#5f9c95"
@@ -20,7 +18,7 @@ export default function Products() {
   const [activeIdxMob, setActiveIdxMob] = useState(0);
   const [data, setData] = useState([]);
   const navigate = useNavigate();
-  const [, i18next] = useTranslation();
+  const [t, i18next] = useTranslation();
   const cardWidth = 200;
 
   useEffect(() => {
@@ -31,8 +29,8 @@ export default function Products() {
   return (
     <section className='homeproducts font-rubik'>
       <div className='container'>
-        <h2 data-aos="fade-up" className='homeproducts__title'>Our products</h2>
-        <p data-aos="fade-up" className='homeproducts__text'>Bizda 80 dan kop mahsulotlarimiz bor ular lorem ipsum color</p>
+        <h2 data-aos="fade-up" className='homeproducts__title'>{t(`products.title`)}</h2>
+        <p data-aos="fade-up" className='homeproducts__text'>{t(`products.subtitle`)}</p>
         <div data-aos="fade-up" className='homeproducts__slider homeproducts__slider-desktop'>
           <div className='homeproducts__slider-container' style={{ transform: `translateX(-${(cardWidth * activeIdx) + (30 * activeIdx)}px)` }}>
             {data.map((prd, i) => (
@@ -154,10 +152,10 @@ export default function Products() {
             style={{ ...slide_btn_styles, right: "-100px" }}
           />
         </div>
-        <SectionFooterBtn className="homeproducts__footer-btn-desktop" text={btnText} bgColor="var(--green-light)" width="0px" />
+        <SectionFooterBtn className="homeproducts__footer-btn-desktop" text={t("products.download")} bgColor="var(--green-light)" width="0px" />
         <div className='homeproducts__footer-btns-mobile'>
-          <SectionFooterBtn text="Skachat katalog" bgColor="var(--green-light)" />
-          <SectionFooterBtn text="Top Products" bgColor="var(--green-light)" />
+          <SectionFooterBtn text={t("products.download")} bgColor="var(--green-light)" />
+          <SectionFooterBtn text={t("products.download")} bgColor="var(--green-light)" />
         </div>
       </div>
       <WhiteBg

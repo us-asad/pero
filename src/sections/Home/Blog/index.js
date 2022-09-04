@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Feather, SectionFooter, WhiteBg } from 'subcomponents';
 import { getImgUrl, request } from 'utils/request';
@@ -13,6 +14,7 @@ export default function Blog({ scrollY }) {
   const [showPopUp2, setShowPopUp2] = useState(false);
   const [showPopUp3, setShowPopUp3] = useState(false);
   const blogRef = useRef();
+  const [t] = useTranslation();
 
   if (!showPopUp1 && (blogRef.current?.offsetTop - blogRef.current?.scrollTop + blogRef.current?.clientTop) - blogRef.current?.clientHeight / 2 < scrollY) {
     setShowPopUp1(true);
@@ -35,7 +37,7 @@ export default function Blog({ scrollY }) {
       <div className='container'>
         <h3 className='homeblog__bg-text'>BLOG POSTS</h3>
         <div className='homeblog__header'>
-          <h2 className='videos__title'>Bizning videolar</h2>
+          <h2 className='videos__title'>{t("blog.title")}</h2>
           <p className="videos__text">bizning 20 dan ortiq video larimiz va vloglarimiz mavjud</p>
         </div>
         <div className="container homeblog__container">
@@ -55,10 +57,10 @@ export default function Blog({ scrollY }) {
             <div className='homeblog__main-img'>
               <img src="/assets/images/blog-card.png" alt="Pero BLOG" />
             </div>
-            <Link to="/blog" className='homeblog__main-btn'>All Blog Post</Link>
+            <Link to="/blog" className='homeblog__main-btn'>{t("blog.more")}</Link>
           </div>
         </div>
-        <SectionFooter to="blog" text="Barcha blog postlarimiz" color="var(--orange-light)" />
+        <SectionFooter to="blog" text={t("blog.more")} color="var(--orange-light)" />
       </div>
       <WhiteBg light long style={{ bottom: "30px", left: "50%", transform: "translateX(-50%)" }} />
       <WhiteBg long style={{ top: "30px", left: "50%", transform: "translateX(-50%)" }} />

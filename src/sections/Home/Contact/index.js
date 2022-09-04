@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Feather, NumberInput, WhiteBg } from 'subcomponents';
 import SendBtn from 'subcomponents/SendBtn';
 import { sendMessageToTG } from 'utils/functions';
@@ -6,6 +7,7 @@ import "./index.css";
 
 export default function Contact() {
   const formRef = useRef();
+  const [t] = useTranslation();
 
   const submit = async e => {
     e.preventDefault();
@@ -24,13 +26,13 @@ export default function Contact() {
     <section className='contact'>
       <div className="container">
         <form ref={formRef} id="contact-form" data-aos="fade-right" onSubmit={submit} className='contact__form'>
-          <h1 className='contact__title'>Aloqa uchun</h1>
+          <h1 className='contact__title'>{t("contact.title")}</h1>
           <p className='contact__text'>
-            malumoitlarizzi yozb qoldiring va bizani mutahasislarimiz sizga qongiroq qlwadi
+            {t("contact.subtitle")}
           </p>
           <input
             type="text"
-            placeholder='Ismingiz'
+            placeholder={t("contact.name")}
             name='name'
             minLength={2}
             maxLength={100}
@@ -39,7 +41,7 @@ export default function Contact() {
           />
           <NumberInput className="contact__feild" />
           <textarea
-            placeholder='Xabar'
+            placeholder={t("contact.message")}
             name='message'
             className='contact__feild font-rubik'
             rows={5}
@@ -57,8 +59,8 @@ export default function Contact() {
             alt="Pero Contact"
             className='contact__main-img'
           />
-          <h3 className='contact__main-title'>Pero - poklik siri</h3>
-          <p className='contact__main-text'>OOO Pero holding company 2022</p>
+          <h3 className='contact__main-title'>{t("contact.info_title")}</h3>
+          <p className='contact__main-text'>{t("contact.info_subtitle")}</p>
         </div>
       </div>
       <Feather

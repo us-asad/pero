@@ -8,15 +8,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { getImgUrl, request } from 'utils/request';
 import "./index.css";
 
-const routes = ["Home page", ">", "our products", ">", "blog"]
-
 export default function Blogs() {
   const [data, setData] = useState([]);
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
   const navigate = useNavigate();
-  const [, i18next] = useTranslation();
+  const [t, i18next] = useTranslation();
   const itemsPerPage = 6;
 
   const handlePageClick = (event) => {
@@ -39,11 +37,11 @@ export default function Blogs() {
     <section className='blogs'>
       <div className="container px-normal font-zonapro">
         <div data-aos="fade-up" className='app__title-container'>
-          <h2 className='app__title'>Bizning Blog</h2>
-          <span className='app__span blogs__span'>последняя обновления: {`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
+          <h2 className='app__title'>{t("blog.title")}</h2>
+          <span className='app__span blogs__span'>{t("last_update")}: {`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
         </div>
         <ul data-aos="fade-right" className='app__routes'>
-          {routes.map((route, i) => (
+          {[t("home.title"), ">", t("blog.title")].map((route, i) => (
             <li key={i} className='app__route'>{route}</li>
           ))}
         </ul>
@@ -63,7 +61,7 @@ export default function Blogs() {
                     <span>{blog.date || "20.30.1002"}</span>
                   </p>
                   <Link to={`/blog/${blog.id}`} className='blogs__blog-btn'>
-                    <span className='blogs__btn-text'>Read More</span>
+                    <span className='blogs__btn-text'>{t("blog.read")}</span>
                     <CgArrowRightO className='blogs__btn-icon' />
                   </Link>
                 </div>

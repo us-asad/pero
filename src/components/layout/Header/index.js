@@ -11,7 +11,7 @@ import "./index.css";
 
 export default function Header() {
   const [navbarOpened, setNavbarOpened] = useState(false);
-  const [, i18next] = useTranslation();
+  const [t, i18next] = useTranslation();
 
   const toggleNav = state => {
     setNavbarOpened(state);
@@ -30,7 +30,7 @@ export default function Header() {
         {nav_items.map((item, i) => (
           <li key={i} className="nav__item">
             <Link to={item.link} className="nav__link">
-              {item.name}
+              {t(`nav.${i}`)}
             </Link>
           </li>
         ))}
@@ -47,7 +47,7 @@ export default function Header() {
             <FaTimes />
           </button>
         </div>
-        {nav_items.map((item, i) => <MobileHeaderItem key={i} {...item} animateDelay={i * 200} navbarOpened={navbarOpened} toggleNav={toggleNav} />)}
+        {nav_items.map((item, i) => <MobileHeaderItem key={i} {...item} animateDelay={i * 200} navbarOpened={navbarOpened} toggleNav={toggleNav} name={t(`nav.${i}`)} />)}
       </ul>
       <div className='nav__details'>
         <div className='nav__langs'>
@@ -72,7 +72,7 @@ export default function Header() {
             rel="noreferrer"
           >
             <p className='nav__number'>+998 99 011 89 34</p>
-            <span className='nav__contact-text'>aloqa uchun</span>
+            <span className='nav__contact-text'>{t("contact.contact_btn")}</span>
           </a>
         </div>
       </div>

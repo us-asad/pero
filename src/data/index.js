@@ -4,11 +4,11 @@ export const nav_items = [
     link: "/about"
   },
   {
-    name: "Products",
+    name: "Top Products",
     link: "/top-products"
   },
   {
-    name: "Videolarimiz",
+    name: "Products",
     link: "/products"
   },
   {

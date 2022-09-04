@@ -6,11 +6,9 @@ import { Feather, WhiteBg } from 'subcomponents';
 import { request } from 'utils/request';
 import "./index.css";
 
-const routes = ["Home page", ">", "our products", ">", "foydalanish shartlari"]
-
 export default function TermsOfUse() {
   const [data, setData] = useState([]);
-  const [, i18next] = useTranslation();
+  const [t, i18next] = useTranslation();
 
   useEffect(() => {
     request("/terms", setData, () => { });
@@ -20,11 +18,11 @@ export default function TermsOfUse() {
     <section className='termsofuse'>
       <div className="container px-normal">
         <div data-aos="fade-up" className='app__title-container'>
-          <h2 className='app__title'>Foydalanish shartlari</h2>
-          <span className='app__span termsofuse__span'>последняя обновления : {`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
+          <h2 className='app__title'>{t("terms.title")}</h2>
+          <span className='app__span termsofuse__span'>{t("last_update")}: {`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
         </div>
         <ul data-aos="fade-right" className='app__routes'>
-          {routes.map((route, i) => (
+          {[t("home.title"), ">", t("terms.title")].map((route, i) => (
             <li key={i} className="app__route">
               {route}
             </li>

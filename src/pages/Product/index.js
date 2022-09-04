@@ -12,8 +12,6 @@ import { sendMessageToTG } from 'utils/functions';
 import { getImgUrl, request } from 'utils/request';
 import "./index.css";
 
-const routes = ["Home page", ">", "product"]
-
 export default function Product() {
   const [modalDetails, setModalDetails] = useState(null);
   const [showPrdModal, setShowPrdModal] = useState(false);
@@ -23,7 +21,7 @@ export default function Product() {
   const [orderLoading, setOrderLoading] = useState(false);
   const params = useParams();
   const navigate = useNavigate();
-  const [, i18next] = useTranslation();
+  const [t, i18next] = useTranslation();
 
   const handleModalDetails = data => {
     setModalDetails(data);
@@ -71,17 +69,17 @@ export default function Product() {
         <div className="container px-normal">
           <h1 data-aos="fade-up" className='app__title product__title'>{product && product[`name_${i18next.language}`]}</h1>
           <ul data-aos="fade-right" className='app__routes'>
-            {routes.map((route, i) => (
+            {[t("home.title"), ">", product && product[`name_${i18next.language}`]].map((route, i) => (
               <li key={i} className='app__route'>{route}</li>
             ))}
           </ul>
           <div className='product__details'>
             <div data-aos="fade-right" className='product__content'>
               <ul className='product__features'>
-                <li className='product__feature'>Артикул: <b>509</b></li>
-                <li className='product__feature'>Размер: <b>20x15</b></li>
+                <li className='product__feature'>{t("products.property_1")}: <b>509</b></li>
+                <li className='product__feature'>{t("products.property_2")}: <b>20x15</b></li>
               </ul>
-              <button onClick={() => handleShowPrdModal(true)} className='product__btn'>Заказать</button>
+              <button onClick={() => handleShowPrdModal(true)} className='product__btn'>{t("products.order")}</button>
             </div>
             <img
               data-aos="fade-left"
@@ -91,7 +89,7 @@ export default function Product() {
             />
           </div>
           <div className="product__related">
-            <h2 data-aos="zoom-in" className='product__related-title'>Похожие продукты</h2>
+            <h2 data-aos="zoom-in" className='product__related-title'>{t("products.related")}</h2>
             <div className='products__wrapper'>
               {relatedProducts.map((prd, i) => (
                 <div data-aos={i === 0 ? "fade-right" : i === 1 ? "fade-up" : "fade-left"} key={i} className="products__item">
@@ -124,7 +122,7 @@ export default function Product() {
               <input
                 type="text"
                 name='name'
-                placeholder='Ismingiz'
+                placeholder={t("contact.name")}
                 required
                 minLength={2}
                 maxLength={100}
@@ -138,7 +136,7 @@ export default function Product() {
                 <span className='products__modal-btn-icon'>
                   {orderLoading ? <div className='spin'></div> : <BsArrowRight />}
                 </span>
-                <span className='products__modal-btn-text'>Yuborish</span>
+                <span className='products__modal-btn-text'>{t("contact.send")}</span>
               </button>
             </form>
           </div>
@@ -156,17 +154,17 @@ export default function Product() {
             <h3 className='products__modal-title'>{modalDetails && modalDetails[`name_${i18next.language}`]}</h3>
             <ul className='products__modal-detail'>
               <li className='products__modal-detail'>
-                Артикул: <b>509</b>
+                {t("products.property_1")}: <b>509</b>
               </li>
               <li className='products__modal-detail'>
-                Размер: <b>20x15</b>
+                {t("products.property_2")}: <b>20x15</b>
               </li>
             </ul>
             <button onClick={() => goToProduct(modalDetails?.id)} className='products__modal-btn'>
               <span className='products__modal-btn-icon'>
                 <BsArrowRight />
               </span>
-              <span className='products__modal-btn-text'>Перейти в каталог</span>
+              <span className='products__modal-btn-text'>{t("products.view")}</span>
             </button>
           </div>
           <img
@@ -177,9 +175,9 @@ export default function Product() {
         </div>
         <div className={`product__modal product__ordered-modal ${ordered ? "active" : ""}`}>
           <div className='product__modal-content product__ordered-content'>
-            <h3 className='product__ordered-title'>Buyurtmangiz qabul qilindi</h3>
+            <h3 className='product__ordered-title'>{t("products.success_title")}</h3>
             <p className='product__ordered-text'>
-              Tez orada mutahasislarimiz siz bilan bog`lanishadi
+              {t("products.success_subtitle")}
             </p>
           </div>
           <img
@@ -187,7 +185,10 @@ export default function Product() {
             alt="Product Name"
             className='product__modal-img product__ordered-img'
           />
-          <button onClick={() => setOrdered(false)} className='product__modal-close'>
+          <button onClick={() => {
+            setOrdered(false);
+            document.body.style.overflowY = "auto";
+          }} className='product__modal-close'>
             <FaTimes />
           </button>
         </div>

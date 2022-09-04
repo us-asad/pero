@@ -1,15 +1,12 @@
 import { DefaultPageDecorations } from 'components';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-// import { AiFillStar } from 'react-icons/ai';
-import { BiChevronDown, BiChevronRight } from 'react-icons/bi';
+import { BiChevronRight } from 'react-icons/bi';
 import { BsArrowRight } from 'react-icons/bs';
 import ReactPaginate from 'react-paginate';
 import { Link, useNavigate } from 'react-router-dom';
 import { getImgUrl, request } from 'utils/request';
 import "./index.css";
-
-const routes = ["Home page", ">", "our products", ">", "top products"];
 
 export default function TopProducts() {
   const [currentItems, setCurrentItems] = useState(null);
@@ -17,7 +14,7 @@ export default function TopProducts() {
   const [itemOffset, setItemOffset] = useState(0);
   const [topProducts, setTopProducts] = useState([]);
   const navigate = useNavigate();
-  const [, i18next] = useTranslation();
+  const [t, i18next] = useTranslation();
   const itemsPerPage = 2;
 
   useEffect(() => {
@@ -39,8 +36,8 @@ export default function TopProducts() {
     <section className='topproducts'>
       <div className="container px-normal">
         <div data-aos="fade-up" className='app__title-container'>
-          <h1 className='app__title'>Топ товары</h1>
-          <span className='app__span blogs__span'>последняя обновления: {`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
+          <h1 className='app__title'>{t("products.top_products")}</h1>
+          <span className='app__span blogs__span'>{t("last_update")}: {`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
           {/* <div className='app__span'>
             <select className='topproducts__select'>
               <option disabled selected>Исходная сортировка</option>
@@ -52,7 +49,7 @@ export default function TopProducts() {
           </div> */}
         </div>
         <ul data-aos="fade-right" className='app__routes'>
-          {routes.map((route, i) => (
+          {[t("home.title"), ">", t("products.top_products")].map((route, i) => (
             <li key={i}>
               {route}
             </li>
@@ -89,7 +86,7 @@ export default function TopProducts() {
                   <span className='products__modal-btn-icon'>
                     <BsArrowRight />
                   </span>
-                  <span className='products__modal-btn-text'>View Product</span>
+                  <span className='products__modal-btn-text'>{t("products.view")}</span>
                 </Link>
               </div>
               <div className='topproducts__product-img'>
