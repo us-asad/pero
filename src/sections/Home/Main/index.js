@@ -58,6 +58,16 @@ export default function Main() {
     }, () => navigate("/404"));
   }, [navigate]);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      changeActivePageIdx();
+    }, 5000);
+
+    return () => {
+      clearInterval(interval);
+    }
+  }, []);
+
   return (
     <div className='homemain'>
       <div className="container">

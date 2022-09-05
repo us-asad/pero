@@ -15,7 +15,7 @@ export default function Video() {
   }
 
   return (
-    <section className='aboutvideo'>
+    <section id="video" className='aboutvideo'>
       <div className='aboutvideo__title-container'>
         <h3 data-aos="fade-right" className='about__title aboutvideo__title'>{t("about.video.title")}</h3>
         <button onClick={() => handleShowVideo(true)} className='aboutvideo__button'>

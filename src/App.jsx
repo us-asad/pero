@@ -3,7 +3,7 @@ import i18next from 'i18next';
 import I18nextBrowserLanguageDetector from 'i18next-browser-languagedetector';
 import { Blog, Blogs, Home, Product, Products, TermsOfUse, TopProducts, About } from 'pages';
 import { initReactI18next } from 'react-i18next';
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import HttpApi from 'i18next-http-backend';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -27,19 +27,24 @@ i18next
   });
 
 export default function App() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    document.documentElement.scrollTo({
-      top: 0,
-      left: 0,
-    });
-  }, [pathname]);
+    if (!hash) {
+      document.documentElement.scrollTo({
+        top: 0,
+        left: 0,
+      });
+    } else {
+      navigate(pathname + hash)
+    }
+  }, [pathname, hash, navigate]);
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: false });
   }, []);
-  
+
   return (
     <div className='font-rubik'>
       <Header />

@@ -16,7 +16,7 @@ export default function Numbers() {
   }, [navigate]);
 
   return (
-    <section data-aos="zoom-in" className='aboutmain__numbers'>
+    <section id="numbers" data-aos="zoom-in" className='aboutmain__numbers'>
       {numbers.map((item, i) => (
         <div key={item.id} className='aboutmain__number'>
           <h4 data-aos={i === 0 ? "fade-right" : i === 1 ? "fade-up" : "fade-left"} className='aboutmain__number-title'>
