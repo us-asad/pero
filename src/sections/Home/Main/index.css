@@ -116,6 +116,7 @@
   height: 100%;
   left: -100%;
   transition: 1s;
+  overflow: visible;
 }
 
 .homemain__feathers.active {

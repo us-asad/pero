@@ -85,9 +85,10 @@ export default function Main() {
           </div>
         </div>
         <div className="homemain__overflow" style={{
-          overflowY: "visible",
           height: "119%",
           top: "-8%",
+          overscrollBehavior: "auto",
+          overflow: "visible",
         }}>
           <div className={`homemain__feathers ${activePageIdx % 2 !== 0 ? "active" : ""} ${clicked ? "speedUp" : ""}`}>
             <Feather2
