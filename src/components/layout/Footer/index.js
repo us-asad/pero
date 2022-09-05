@@ -35,6 +35,8 @@ export default function Footer() {
                 {link.links.map((linkItem, idx) => (
                   linkItem.startsWith("/") ? (
                     <Link to={linkItem} className='footer__item-link' key={idx}>{t(`footer.links.${i}.links.${idx}`)}</Link>
+                  ) : linkItem.startsWith("#") ?  (
+                    <a href={`/${linkItem}`} target={linkItem.startsWith("#") ? "" : "_blank"} rel="noreferrer" className='footer__item-link' key={idx}>{t(`footer.links.${i}.links.${idx}`)}</a>
                   ) : (
                     <a href={linkItem} target={linkItem.startsWith("#") ? "" : "_blank"} rel="noreferrer" className='footer__item-link' key={idx}>{t(`footer.links.${i}.links.${idx}`)}</a>
                   )
