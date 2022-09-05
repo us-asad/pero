@@ -36,9 +36,9 @@ export default function Footer() {
                   linkItem.startsWith("/") ? (
                     <Link to={linkItem} className='footer__item-link' key={idx}>{t(`footer.links.${i}.links.${idx}`)}</Link>
                   ) : linkItem.startsWith("#") ?  (
-                    <a href={`/${linkItem}`} target={linkItem.startsWith("#") ? "" : "_blank"} rel="noreferrer" className='footer__item-link' key={idx}>{t(`footer.links.${i}.links.${idx}`)}</a>
+                    <a href={`/${linkItem}`} className='footer__item-link' key={idx}>{t(`footer.links.${i}.links.${idx}`)}</a>
                   ) : (
-                    <a href={linkItem} target={linkItem.startsWith("#") ? "" : "_blank"} rel="noreferrer" className='footer__item-link' key={idx}>{t(`footer.links.${i}.links.${idx}`)}</a>
+                    <a href={linkItem} target="_blank" rel="noreferrer" className='footer__item-link' key={idx}>{t(`footer.links.${i}.links.${idx}`)}</a>
                   )
                 ))}
               </div>

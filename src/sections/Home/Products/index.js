@@ -27,7 +27,7 @@ export default function Products() {
   }, []);
 
   return (
-    <section className='homeproducts font-rubik'>
+    <section id="products" className='homeproducts font-rubik'>
       <div className='container'>
         <h2 data-aos="fade-up" className='homeproducts__title'>{t(`products.title`)}</h2>
         <p data-aos="fade-up" className='homeproducts__text'>{t(`products.subtitle`)}</p>

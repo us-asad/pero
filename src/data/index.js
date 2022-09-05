@@ -245,7 +245,7 @@ export const footer_links =  [
     title: "Company",
     links: [
       "/about",
-      "#contact",
+      "/products",
       "#contact",
       "/blog"
     ]
@@ -253,8 +253,8 @@ export const footer_links =  [
   {
     title: "Terms",
     links: [
-      "/terms-of-use",
-      "/terms-of-use",
+      "#videos",
+      "#products",
       "/terms-of-use"
     ]
   },

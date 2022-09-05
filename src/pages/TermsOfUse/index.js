@@ -32,7 +32,7 @@ export default function TermsOfUse() {
         />
         {data.map(term => (
           <div key={term.id} data-aos="fade-up">
-            <h2 data-aos="fade-up" className='termsofuse__title app__title'>{term && term[`name_${i18next.language}`]}</h2>
+            {/* <h2 data-aos="fade-up" className='termsofuse__title app__title'>{term && term[`name_${i18next.language}`]}</h2> */}
             <p data-aos="fade-up" className='termsofuse__content'>
               {term && term[`description_${i18next.language}`]}
             </p>

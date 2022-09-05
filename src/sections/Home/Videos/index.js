@@ -25,7 +25,7 @@ export default function Videos() {
   }, [navigate]);
 
   return (
-    <section className='videos'>
+    <section id="videos" className='videos'>
       <div className="container">
         <h2 data-aos="fade-up" className='videos__title'>{t("videos.title")}</h2>
         <p data-aos="fade-up" className="videos__text">{t("videos.subtitle")}</p>

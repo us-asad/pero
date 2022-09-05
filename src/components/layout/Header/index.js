@@ -71,7 +71,7 @@ export default function Header() {
             className='nav__btn'
             rel="noreferrer"
           >
-            <p className='nav__number'>+998 98 888 44 46</p>
+            <p className='nav__number'>+998 78 888 09 99</p>
             <span className='nav__contact-text'>{t("contact.contact_btn")}</span>
           </a>
         </div>
