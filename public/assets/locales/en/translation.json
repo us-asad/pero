@@ -15,8 +15,8 @@
   "products": {
     "top_products": "Top products",
     "all_products": "All products",
-    "title": "our products",
-    "subtitle": "Bizda 80 dan kop mahsulotlarimiz bor ular lorem ipsum color",
+    "title": "Our products",
+    "subtitle": "We have about 20 kinds of products",
     "order": "Order",
     "related": "Related Products",
     "property_1": "Aricle",
@@ -24,9 +24,10 @@
     "success_title": "Your order has been accepted",
     "success_subtitle": "Our experts will contact you soon",
     "view": "View Product",
-    "download": "Download All Products"
+    "download": "Top products"
   },
   "about": {
+    "time_name": "Yesterday", 
     "title": "About us",
     "subtitle": "Pero ko’plab ishchilarni bir maqsad yo’lida jamlagan korxona bo'lib, u turli xildagi salfetkalar ishlab chiqarishga ixtisoslashgan. Biz o’z mijozlarimizga doim eng yaxshi va sifatlisini ulashamiz.",
     "title_2": "The secret of purity",
@@ -46,29 +47,32 @@
     ],
     "video": {
       "title": "LLC 'International Paper'",
-      "text": "LLC International Paper is the largest manufacturer of paper products for sanitary purposes. Our company has been operating since 2000 under the ELMA brand. LLC International Paper is the largest manufacturer of paper products for sanitary purposes. Our company has been operating since 2000 under the ELMA brand. LLC International Paper is the largest manufacturer"
+      "text": "Pero is a manufacturer of paper products for sanitary purposes. Our company has been operating for many years"
     },
     "production": {
-      "title": "Production",
-      "text": "Our production workshops are very interesting platforms for enthusiastic people. We treat every product we produce with great care and love. Feel our care and love.",
+      "title": "Pero uz",
+      "text": "Our products are made from high quality raw materials. Our product is of high quality and complies with international standards. The main indicators of the quality of our products are strength, softness and hygiene, which corresponds to the analogues of the best world samples.",
       "more": "more"
-    }
+    },
+    "main_btn": "More about us",
+    "more": "More",
+    "footer_text": "We are in numbers"
   },
   "videos": {
     "title": "Bizning videolar",
-    "subtitle": "bizning 20 dan ortiq video larimiz va vloglarimiz mavjud",
-    "download": "download videos"
+    "subtitle": "Follow us on our videos",
+    "download": "Another video"
   },
   "blog": {
     "title": "Our Blog",
-    "all": "All Blog Posts",
-    "more": "All Blog Posts",
+    "all": "All news",
+    "more": "All news",
     "route": "blog",
     "read": "Read More"
   },
   "contact": {
     "title": "Contact us",
-    "subtitle": "Write down your information and our specialists will call you",
+    "subtitle": "Fill out the special form and our experts will contact you soon",
     "info_title": "Pero - The secret of purity",
     "info_subtitle": "OOO Pero holding company 2022",
     "name": "Name",
@@ -76,10 +80,10 @@
     "message": "Message",
     "send": "Send",
     "sent": "Sent",
-    "contact_btn": "contact"
+    "contact_btn": "Contact"
   },
   "footer": {
-    "text": "Quo is the most easier way for transaction with your friends and family, No matter where are you. An exceptional way for make your life one step easier.",
+    "text": "Soft and fluffy napkins. You will find the best quality products at Pero. All amenities are for valued customers. Feel the elegance with us. A feather is the secret of purity",
     "links": [
       {
         "title": "Company",
@@ -106,7 +110,7 @@
         ]
       }
     ],
-    "copyright": "Copyright © PERO | Designed by0",
+    "copyright": "© Pero - All rights reserved. Developed by abba media, abba coding",
     "powered": "- Powered by"
   },
   "terms": {

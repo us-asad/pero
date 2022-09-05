@@ -39,7 +39,7 @@ export default function Blogs() {
       <div className="container px-normal font-zonapro">
         <div data-aos="fade-up" className='app__title-container'>
           <h2 className='app__title'>{t("blog.title")}</h2>
-          <span className='app__span blogs__span'>{t("last_update")}: {`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
+          <span className='app__span blogs__span'>{t("last_update")}: {t("about.time_name")}</span>
         </div>
         <PageRoutes
           routes={[

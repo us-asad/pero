@@ -152,7 +152,7 @@ export default function Products() {
             style={{ ...slide_btn_styles, right: "-100px" }}
           />
         </div>
-        <SectionFooterBtn className="homeproducts__footer-btn-desktop" text={t("products.download")} bgColor="var(--green-light)" width="0px" />
+        <SectionFooterBtn onClick={() => navigate("/top-products")} eye className="homeproducts__footer-btn-desktop" text={t("products.download")} bgColor="var(--green-light)" width="0px" />
         <div className='homeproducts__footer-btns-mobile'>
           <SectionFooterBtn text={t("products.download")} bgColor="var(--green-light)" />
           <SectionFooterBtn text={t("products.download")} bgColor="var(--green-light)" />

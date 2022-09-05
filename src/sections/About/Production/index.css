@@ -15,7 +15,7 @@
 .aboutproduction__details-btn {
   margin-top: 40px;
   padding: 14px 60px;
-  background-color: #2D8D80;
+  background-color: #2d8d80;
   font-size: 16.07px;
   line-height: 17.52px;
   border-radius: 15px;
@@ -24,7 +24,8 @@
 }
 
 .aboutproduction__img {
-  width: 90%;
+  width: 60%;
+  object-fit: contain;
 }
 
 @media (max-width: 950px) {
@@ -56,4 +57,3 @@
     border-radius: 10px;
   }
 }
-

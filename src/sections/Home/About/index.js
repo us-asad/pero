@@ -21,7 +21,7 @@ export default function About() {
         </div>
         <div className="homeabout__right-side">
           <h3 data-aos="fade-left" className="homeabout__right-title">{t("about.title_2")}</h3>
-          <Link data-aos="fade-left" to="/about" className='homeabout__right-btn'>moree</Link>
+          <Link data-aos="fade-left" to="/about" className='homeabout__right-btn'>{t("about.more")}</Link>
         </div>
       </div>
       <div className="container homeabout__container-mobile">
@@ -35,10 +35,10 @@ export default function About() {
           <img src='/assets/images/about-img.png' alt="Pero About" className='homeabout__center-img' />
         </div>
         <div className="homeabout__right-side">
-          <Link to="/about" className='homeabout__right-btn'>moree</Link>
+          <Link to="/about" className='homeabout__right-btn'>{t("about.more")}</Link>
         </div>
       </div>
-      <SectionFooter to="/about" className="homeabout__footer-btn" text="Biz haqimizda batafsil" color="var(--orange-normal)" />
+      <SectionFooter to="/about" className="homeabout__footer-btn" text={t("about.footer_text")} color="var(--orange-normal)" />
       <WhiteBg long light style={{ bottom: "30px", left: "50%", transform: "translateX(-50%)", opacity: 1 }} />
       <WhiteBg long light style={{ top: "-100px", left: "30px", transform: "rotate(90deg)" }} />
       <Feather

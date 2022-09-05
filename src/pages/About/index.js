@@ -13,7 +13,7 @@ export default function About() {
         <div className='about__header'>
           <div data-aos="fade-up" className='app__title-container'>
             <h1 className='app__title'>{t("about.title")}</h1>
-            <span className='app__span blogs__span'>{t("last_update")}: {`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
+            <span className='app__span blogs__span'>{t("last_update")}: {t("about.time_name")}</span>
             {/* <div className='app__span about__span'>
               <select className='products__select'>
                 <option>Исходная сортировка</option>

@@ -16,7 +16,7 @@
     "top_products": "Top Mahsulotlar",
     "all_products": "Barcha Mahsulotlar",
     "title": "Bizning mahsulotlar",
-    "subtitle": "Bizda 80 dan kop mahsulotlarimiz bor ular lorem ipsum color",
+    "subtitle": "Bizda 20ga yaqin mahsulot turlari mavjud",
     "order": "Buyurtma berish",
     "related": "O'xshash mahsulotlar",
     "property_1": "Maqola",
@@ -24,9 +24,10 @@
     "success_title": "Buyurtmangiz qabul qilindi",
     "success_subtitle": "Tez orada mutahasislarimiz siz bilan bog`lanishadi",
     "view": "Ko'proq",
-    "download": "Barcha tovarlarimizni yuklash"
+    "download": "Mashxur mahsulotlarimiz"
   },
   "about": {
+    "time_name": "Kecha",
     "title": "Biz haqimizda",
     "subtitle": "Pero ko’plab ishchilarni bir maqsad yo’lida jamlagan korxona bo'lib, u turli xildagi salfetkalar ishlab chiqarishga ixtisoslashgan. Biz o’z mijozlarimizga doim eng yaxshi va sifatlisini ulashamiz.",
     "title_2": "Poklik siri",
@@ -45,32 +46,33 @@
       }
     ],
     "video": {
-      "title": "MChJ 'International Paper'",
-      "text": "MChJ International Paper - sanitariya maqsadlarida qog'oz mahsulotlarining eng yirik ishlab chiqaruvchisi. Kompaniyamiz 2000 yildan buyon ELMA brendi ostida faoliyat yuritib kelmoqda. MChJ International Paper - sanitariya maqsadlarida qog'oz mahsulotlarining eng yirik ishlab chiqaruvchisi. Kompaniyamiz 2000 yildan buyon ELMA brendi ostida faoliyat yuritib kelmoqda. MChJ International Paper - sanitariya maqsa"
+      "title": "Pero uz",
+      "text": "Pero - sanitariya maqsadlarida qog'oz mahsulotlari ishlab chiqaruvchisi. Kompaniyamiz ko'p yillardan buyon faoliyat yuritadi"
     },
     "production": {
       "title": "Ishlab chiqarish",
-      "text": "Bizning ishlab chiqarish ustaxonalarimiz g'ayratli odamlar uchun juda qiziqarli platformalardir. Biz ishlab chiqarayotgan har bir mahsulotga katta e'tibor va mehr bilan qaraymiz. Bizning g'amxo'rlik va sevgimizni his eting.",
+      "text": "Mahsulotlarimiz yuqori sifatli xom ashyolardan tayyorlanadi. Mahsulotimiz yuqori sifatga ega va xalqaro standartlarga javob beradi. Mahsulotlarimiz sifatining asosiy ko'rsatkichlari kuchlilik, yumshoqlik va gigiena bo'lib, bu eng yaxshi jahon namunalarining analoglariga mos keladi.",
       "more": "Ko'proq"
     },
     "main_btn": "Biz haqimizda batafsil",
-    "more": "more"
+    "more": "Batafsil",
+    "footer_text": "Biz sonlarda"
   },
   "videos": {
     "title": "Bizning videolar",
-    "subtitle": "bizning 20 dan ortiq video larimiz va vloglarimiz mavjud",
-    "download": "download videos"
+    "subtitle": "Bizni videolarimizda kuzatib boring",
+    "download": "Boshqa video"
   },
   "blog": {
     "title": "Bizning Blog",
-    "all": "Barcha bloglar",
-    "more": "Barcah blog postlar",
+    "all": "Barcha yangiliklar",
+    "more": "Barcha yangiliklar",
     "route": "blog",
     "read": "Ko'proq o'qish"
   },
   "contact": {
-    "title": "Aloqa uchun",
-    "subtitle": "malumoitlarizzi yozb qoldiring va bizani mutahasislarimiz sizga qongiroq qlwadi",
+    "title": "Biz bilan bog'laning",
+    "subtitle": "Maxsus formani to'ldiring va bizning mutaxassislarimiz tez orada siz bilan bog'lanishadi",
     "info_title": "Pero - Poklik siri",
     "info_subtitle": "OOO Pero holding company 2022",
     "name": "Ismingiz",
@@ -78,10 +80,10 @@
     "message": "Xabar",
     "send": "Yuborish",
     "sent": "Yuborildi",
-    "contact_btn": "aloqa uchun"
+    "contact_btn": "Aloqa"
   },
   "footer": {
-    "text": "Quo is the most easier way for transaction with your friends and family, No matter where are you. An exceptional way for make your life one step easier.",
+    "text": "Yumshoq va mayin salfetkalar. Mahsulotlarning eng sifatlisni siz Pero'dan topasiz. Barcha qulayliklar qadrli mijozlar uchun. Biz bilan nafislikni his eting. Pero - poklik siri",
     "links": [
       {
         "title": "Kompaniya",
@@ -108,7 +110,7 @@
         ]
       }
     ],
-    "copyright": "Mualliflik huquqi © PERO | tomonidan chizildi",
+    "copyright": "© Pero - barcha huquqlar himoyalangan. Ishlab chiqildi abba media, abba coding",
     "powered": "- Tomonidan ishlab chiqilid"
   },
   "terms": {

@@ -1,6 +1,4 @@
 import React from 'react'
-import { FaFacebookF } from 'react-icons/fa';
-import { BsTwitter } from "react-icons/bs";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { footer_links } from 'data';
 import "./index.css"
@@ -25,13 +23,7 @@ export default function Footer() {
               {t("footer.text")}
             </p>
             <div className='footer__social-items'>
-              <a href="https://facebook.com" target="_blank" rel="noreferrer" className='footer__social-item'>
-                <FaFacebookF />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer" className='footer__social-item'>
-                <BsTwitter />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" className='footer__social-item'>
+              <a href="https://www.instagram.com/pero_uz" target="_blank" rel="noreferrer" className='footer__social-item'>
                 <AiOutlineInstagram />
               </a>
             </div>
@@ -54,9 +46,6 @@ export default function Footer() {
       </footer>
       <div className='footer__copyright'>
         <p className='footer__copyright-text'>{t("footer.copyright")}</p>
-        <a className='footer__copyright-link' href='https://google.com'>abba marketing</a>
-        <p className='footer__copyright-text'>{t("footer.powered")}</p>
-        <a className='footer__copyright-link' href='https://google.com'>ABBA</a>
       </div>
     </>
   )

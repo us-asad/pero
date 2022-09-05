@@ -67,7 +67,7 @@ export default function Products() {
       <div className="container px-normal">
         <div data-aos="fade-up" className='app__title-container'>
           <h1 className='app__title'>{t("products.all_products")}</h1>
-          <span className='app__span blogs__span'>{t("last_update")}: {`${new Date().getHours()}:${new Date().getMinutes()}`}</span>
+          <span className='app__span blogs__span'>{t("last_update")}: {t("about.time_name")}</span>
           {/* <div className='app__span'>
             <select className='topproducts__select'>
               <option>Исходная сортировка</option>
