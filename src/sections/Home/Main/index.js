@@ -21,6 +21,7 @@ export default function Main() {
   const [t, i18next] = useTranslation();
   const [clicked, setClicked] = useState(false);
   const [, setFeathersCount] = useState(2);
+  const btnRef = useRef();
 
   const changeActivePageIdx = () => {
     setFeathersCount(prev => prev + 1);
@@ -40,6 +41,7 @@ export default function Main() {
       setActivePageIdx(prevIdx => {
         setPages(prev => {
           const data = [...prev];
+          console.log("sadasdsd")
           data.unshift(data[allPages.length - 1]);
           return data;
         })
@@ -53,14 +55,16 @@ export default function Main() {
 
   useEffect(() => {
     request("/sliders", (data) => {
-      setAllPages(data);
+      setAllPages(data)
       setPages(data?.reverse());
     }, () => navigate("/404"));
-  }, [navigate]);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      changeActivePageIdx();
+      if (!disableBtn) {
+        btnRef.current?.click();
+      }
     }, 5000);
 
     return () => {
@@ -72,7 +76,7 @@ export default function Main() {
     <div className='homemain'>
       <div className="container">
         <div className='homemain__image'>
-          <button disabled={disableBtn} className='homemain__click' onClick={changeActivePageIdx}>
+          <button ref={btnRef} disabled={disableBtn} className='homemain__click' onClick={changeActivePageIdx}>
             <img src="/assets/icons/click-icon.png" alt="Click Icon" />
             <span>{t("slider_click")}</span>
           </button>
@@ -98,7 +102,8 @@ export default function Main() {
           height: "119%",
           top: "-8%",
           overscrollBehavior: "auto",
-          overflow: "visible",
+          overflowY: "visible",
+          overflowX: "hidden",
         }}>
           <div className={`homemain__feathers ${activePageIdx % 2 !== 0 ? "active" : ""} ${clicked ? "speedUp" : ""}`}>
             <Feather2
