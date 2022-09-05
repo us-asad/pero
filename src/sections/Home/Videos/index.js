@@ -76,7 +76,7 @@ export default function Videos() {
             />
           </ul>
         </div>
-        <SectionFooterBtn onClick={() => navigate("/about#video")} text={t("videos.download")} bgColor="#DC4848" width="" />
+        <SectionFooterBtn top={1300} onClick={() => navigate("/about#video")} text={t("videos.download")} bgColor="#DC4848" width="" />
       </div>
       <WhiteBg long style={{ top: "40px", left: "50%", transform: "translate(-50%)" }} />
       <WhiteBg style={{ bottom: "5px", left: "0" }} />

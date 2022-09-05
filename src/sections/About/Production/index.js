@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import "./index.css";
 
 export default function Production() {
@@ -12,7 +13,7 @@ export default function Production() {
         <p className='about__text aboutproduction__details-text'>
           {t("about.production.text")}
         </p>
-        <button className='aboutproduction__details-btn'>{t("about.production.more")}</button>
+        <Link to="/#videos" onClick={() => window.scrollTo({ top: 4000 })} className='aboutproduction__details-btn'>{t("about.production.more")}</Link>
       </div>
       <img
         data-aos="fade-left"

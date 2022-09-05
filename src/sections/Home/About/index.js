@@ -38,7 +38,7 @@ export default function About() {
           <Link to="/about" className='homeabout__right-btn'>{t("about.more")}</Link>
         </div>
       </div>
-      <SectionFooter to="/about#numbers" className="homeabout__footer-btn" text={t("about.footer_text")} color="var(--orange-normal)" />
+      <SectionFooter top={800} to="/about#numbers" className="homeabout__footer-btn" text={t("about.footer_text")} color="var(--orange-normal)" />
       <WhiteBg long light style={{ bottom: "30px", left: "50%", transform: "translateX(-50%)", opacity: 1 }} />
       <WhiteBg long light style={{ top: "-100px", left: "30px", transform: "rotate(90deg)" }} />
       <Feather

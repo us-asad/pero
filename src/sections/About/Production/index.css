@@ -21,6 +21,8 @@
   border-radius: 15px;
   color: var(--white-color);
   cursor: pointer;
+  display: block;
+  width: max-content;
 }
 
 .aboutproduction__img {
