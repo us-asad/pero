@@ -6,14 +6,15 @@ import { BiChevronRight } from 'react-icons/bi'
 import { HiArrowRight } from "react-icons/hi";
 import { BsArrowRight } from "react-icons/bs"
 import ReactPaginate from 'react-paginate';
-import "./index.css";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { getImgUrl, request } from 'utils/request';
 import { useTranslation } from 'react-i18next';
 import { PageRoutes } from 'subcomponents';
 import { useRef } from 'react';
+import "./index.css";
 
 export default function Products() {
+  const [searchParams] = useSearchParams();
   const [activeCategoryIdx, setActiveCategoryIdx] = useState(0);
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
@@ -26,6 +27,8 @@ export default function Products() {
   const [t, i18next] = useTranslation();
   const categoryRef = useRef();
   const itemsPerPage = 9;
+
+  console.log(categories)
 
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % filteredProducts.length;
@@ -51,6 +54,9 @@ export default function Products() {
 
   useEffect(() => {
     request(`/categories?format=json`, categoriesData => {
+      console.log(categoriesData.findIndex(ctg => +ctg.id === +searchParams.get("category")))
+      const idx = categoriesData.findIndex(ctg => +ctg.id === +searchParams.get("category"));
+      setActiveCategoryIdx(idx !== -1 ? idx : 0);
       setCategories(categoriesData);
       request("/products", prdsData => {
         setAllProducts(prdsData);
@@ -60,11 +66,12 @@ export default function Products() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(categoryRef)
-
   useEffect(() => {
     setFilteredProducts(allProducts.filter(prd => prd.category_id === categories[activeCategoryIdx].id));
   }, [activeCategoryIdx, categories, allProducts]);
+
+
+  console.log(categoryRef)
 
   return (
     <section className='products'>
@@ -92,18 +99,20 @@ export default function Products() {
           ]}
         />
         <div data-aos="zoom-in" className='products__categories-wrapper'>
-          <ul className='products__categories'>
+          <ul ref={categoryRef} className='products__categories'>
             {categories.map((category, i) => (
-              <li
-                ref={categoryRef}
-                key={i}
-                className={`products__category ${activeCategoryIdx === i ? "active" : ""}`}
-                onClick={() => setActiveCategoryIdx(i)}
-              >
-                <p className='products__category-text'>{category[`name_${i18next.language}`]}</p>
-              </li>
+              <>
+                <li
+                  key={i}
+                  id={`category_${i}`}
+                  className={`products__category ${activeCategoryIdx === i ? "active" : ""}`}
+                  onClick={() => setActiveCategoryIdx(i)}
+                >
+                  <p className='products__category-text'>{category[`name_${i18next.language}`]}</p>
+                  <div className='products__categories-underline' style={{ opacity: activeCategoryIdx === i ? "1" : "0"}} />
+                </li>
+              </>
             ))}
-            <div className='products__categories-underline' style={{ transform: `translateX(${activeCategoryIdx * (categoryRef.current?.clientWidth + 20)}px)`, width: categoryRef.current?.clientWidth + 20 + "px" }} />
           </ul>
         </div>
         <div className='products__wrapper'>
@@ -147,14 +156,7 @@ export default function Products() {
       <div className={`products__modal ${modalDetails ? "active" : ""}`}>
         <div className='products__modal-content'>
           <h3 className='products__modal-title'>{modalDetails && modalDetails[`name_${i18next.language}`]}</h3>
-          <ul className='products__modal-detail'>
-            <li className='products__modal-detail'>
-              {t("products.property_1")}: <b>509</b>
-            </li>
-            <li className='products__modal-detail'>
-              {t("products.property_2")}: <b>20x15</b>
-            </li>
-          </ul>
+          <p>{modalDetails && modalDetails[`description_${i18next.language}`]}</p>
           <button onClick={() => goToProduct(modalDetails.id)} className='products__modal-btn'>
             <span className='products__modal-btn-icon'>
               <BsArrowRight />

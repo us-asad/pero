@@ -18,6 +18,15 @@
   justify-content: space-between;
   align-items: center;
   margin-top: -70px;
+  gap: 100px;
+}
+
+.product__details p {
+  line-height: 22px;
+}
+
+.product__btn {
+  width: fit-content;
 }
 
 .product__content {
@@ -186,6 +195,10 @@
   .product__ordered-title {
     line-height: 28.79px;
     font-size: 24.44px;
+  }
+
+  .products__modal {
+    width: 71vw;
   }
 
   .product__ordered-text {

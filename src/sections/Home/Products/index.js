@@ -21,6 +21,11 @@ export default function Products() {
   const [t, i18next] = useTranslation();
   const cardWidth = 200;
 
+  // const changeActiveIdx = state => {
+  //   setActiveIdx(state);
+  //   s
+  // }
+
   useEffect(() => {
     request(`/categories`, setData, () => navigate("/404"));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -56,19 +61,22 @@ export default function Products() {
               <button
                 key={i}
                 className={`homeproducts__pagination-btn ${activeIdx === i ? "active" : ""}`}
-                onClick={() => setActiveIdx(prev => i < 1 ? 1 : i > prev.length - 2 ? prev.length - 2 : i)}
+                onClick={() => setActiveIdx(prev => {
+                  console.log(i < 1 ? 1 : i > prev.length - 2 ? prev.length - 2 : i, )
+                  return i < 1 ? 1 : i > data.length - 2 ? data.length - 2 : i
+                })}
               ></button>
             ))}
           </div>
           <SlideBtn
             className="homeproducts__slide-prev"
-            onClick={() => setActiveIdx(prev => prev - 1 < 1 ? prev : prev - 1)}
+            onClick={() => setActiveIdx(prev => prev - 1 < 1 ? data.length - 2 : prev - 1)}
             style={{ ...slide_btn_styles, left: "-100px" }}
           />
           <SlideBtn
             rightIcon
             className="homeproducts__slide-next"
-            onClick={() => setActiveIdx(prev => prev + 1 > data.length - 2 ? prev : prev + 1)}
+            onClick={() => setActiveIdx(prev => prev + 1 > data.length - 2 ? 1 : prev + 1)}
             style={{ ...slide_btn_styles, right: "-100px" }}
           />
         </div>

@@ -36,6 +36,7 @@
   line-height: 16.82px;
   font-weight: 400;
   width: max-content;
+  position: relative;
 }
 
 .products__category.active {
@@ -52,13 +53,14 @@
 
 .products__categories-underline {
   position: absolute;
-  width: 150px;
-  height: 3px;
+  width: 130%;
+  left: -15%;
+  height: 2.5px;
   background-color: var(--pink-thin);
-  bottom: -1px;
-  left: 0;
+  bottom: -15px;
   z-index: 2;
-  transition: 0.3s;
+  transition: .7s;
+  opacity: 0;
 }
 
 .products__wrapper {
@@ -178,6 +180,8 @@
   display: flex;
   flex-direction: column;
   gap: 60px;
+  max-width: 26vw;
+
 }
 
 .products__modal-img {
@@ -260,6 +264,7 @@
 
   .products__modal-content {
     gap: 30px;
+    min-width: 100%;
   }
 
   .products__modal-img {
@@ -314,6 +319,10 @@
   .products__item-title {
     font-size: 14px;
     line-height: 17.8px;
+  }
+
+  .products__modal-title + p {
+    font-size: 13px;
   }
 
   .products__modal {

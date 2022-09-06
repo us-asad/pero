@@ -28,12 +28,9 @@ export default function Blog({ scrollY }) {
 
   useEffect(() => {
     request("/blogs", (data) => {
-      console.log(data, "request")
       setData(data.reverse().slice(0, 3));
     });
   }, []);
-
-  // console.log(data)
 
   return (
     <section ref={blogRef} className='homeblog'>

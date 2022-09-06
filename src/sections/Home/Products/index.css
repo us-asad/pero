@@ -46,6 +46,11 @@
   border-radius: 23px;
   transition: 0.5s;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* height: 101%; */
+  align-items: center;
 }
 
 .homeproducts__slide:hover {
@@ -53,7 +58,7 @@
 }
 
 .homeproducts__slide:active {
-  transform: scale(.95);
+  transform: scale(0.95);
 }
 
 .homeproducts__slide-title {
@@ -62,6 +67,11 @@
   line-height: 23.26px;
   color: var(--green-bold);
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 10px;
 }
 
 .homeproducts__slide-img {
@@ -99,7 +109,6 @@
   border-radius: 20px;
   opacity: 1;
 }
-
 
 .homeproducts__slider-tablet,
 .homeproducts__slider-mobile,

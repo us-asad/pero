@@ -86,10 +86,7 @@ export default function Product() {
           />
           <div className='product__details'>
             <div data-aos="fade-right" className='product__content'>
-              <ul className='product__features'>
-                <li className='product__feature'>{t("products.property_1")}: <b>509</b></li>
-                <li className='product__feature'>{t("products.property_2")}: <b>20x15</b></li>
-              </ul>
+              <p>{product && product[`description_${i18next.language}`]}</p>
               <button onClick={() => handleShowPrdModal(true)} className='product__btn'>{t("products.order")}</button>
             </div>
             <img
@@ -163,14 +160,7 @@ export default function Product() {
         <div className={`products__modal ${modalDetails ? "active" : ""}`}>
           <div className='products__modal-content'>
             <h3 className='products__modal-title'>{modalDetails && modalDetails[`name_${i18next.language}`]}</h3>
-            <ul className='products__modal-detail'>
-              <li className='products__modal-detail'>
-                {t("products.property_1")}: <b>509</b>
-              </li>
-              <li className='products__modal-detail'>
-                {t("products.property_2")}: <b>20x15</b>
-              </li>
-            </ul>
+            <p>{modalDetails && modalDetails[`description_${i18next.language}`]}</p>
             <button onClick={() => goToProduct(modalDetails?.id)} className='products__modal-btn'>
               <span className='products__modal-btn-icon'>
                 <BsArrowRight />
