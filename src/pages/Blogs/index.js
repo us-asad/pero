@@ -63,7 +63,7 @@ export default function Blogs() {
                 <div className='blogs__blog-details'>
                   <p className='blogs__blog-date'>
                     <CgCalendarDates />
-                    <span>{blog.date || "20.30.1002"}</span>
+                    <span>{blog.date || "05.09.2022"}</span>
                   </p>
                   <Link to={`/blog/${blog.id}`} className='blogs__blog-btn'>
                     <span className='blogs__btn-text'>{t("blog.read")}</span>

@@ -28,7 +28,7 @@ export default function Blog() {
           <h2 className="app__title">{data[`name_${i18next.language}`]}</h2>
           <span className='app__span'>
             <FaRegCalendarAlt className="blog__span-icon" />
-            <span className='blog__span-text'>24 Oct,2021</span>
+            <span className='blog__span-text'>05.09.2022</span>
           </span>
         </div>
         <PageRoutes
@@ -53,14 +53,14 @@ export default function Blog() {
               data-aos="zoom-in"
             />
           ) : null}
-          {data.video ? (
+          {/* {data.video ? (
             <video
               src={getImgUrl(data.video)}
               controls
               className='blog__img'
               data-aos="zoom-in"
             />
-          ) : null}
+          ) : null} */}
         </div>
         {/* <h1 data-aos="fade-up" className='blog__post-title'>{data[`name_${i18next.language}`]}</h1> */}
         <p data-aos="fade-up" className='blog__post-text'>
