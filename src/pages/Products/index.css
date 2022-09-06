@@ -191,7 +191,7 @@
 }
 
 .products__modal-btn {
-  background-color: var(--green-semibold);
+  background-color: #126259;
   border-radius: 28px;
   font-size: 15.45px;
   width: fit-content;
@@ -254,7 +254,7 @@
 
   .products__modal {
     flex-direction: column-reverse;
-    top: 5vw;
+    /* top: 5vw; */
     gap: 50px;
   }
 
@@ -318,7 +318,7 @@
 
   .products__modal {
     width: 80%;
-    top: 10%;
+    /* top: 10%; */
   }
 
   .products__modal-img {

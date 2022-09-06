@@ -75,7 +75,8 @@ export default function Products() {
         <div className='homeproducts__slider homeproducts__slider-tablet'>
           <div className='homeproducts__slider-container' style={{ transform: `translateX(-${(cardWidth * activeIdxMob) + (30 * activeIdxMob)}px)` }}>
             {data.map((prd, i) => (
-              <div
+              <Link
+                to={`/products?category=${prd.id}`}
                 key={i}
                 className='homeproducts__slide'
                 style={(activeIdxMob === data.length - 1 && activeIdxMob - 1 === i) || activeIdxMob + 1 === i || activeIdxMob === i ? {} : { opacity: 0, pointerEvents: "none" }}
@@ -88,7 +89,7 @@ export default function Products() {
                     className="homeproducts__slide-img"
                   />
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           <div className='homeproducts__pagination'>
@@ -115,7 +116,8 @@ export default function Products() {
         <div className='homeproducts__slider homeproducts__slider-mobile'>
           <div className='homeproducts__slider-container' style={{ transform: `translateX(-${(cardWidth * activeIdxMob) + (30 * activeIdxMob)}px)` }}>
             {data.map((prd, i) => (
-              <div
+              <Link
+                to={`/products?category=${prd.id}`}
                 key={i}
                 className='homeproducts__slide'
                 style={activeIdxMob === i ? {} : { opacity: 0, pointerEvents: "none" }}
@@ -128,7 +130,7 @@ export default function Products() {
                     className="homeproducts__slide-img"
                   />
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           <div className='homeproducts__pagination'>
@@ -153,10 +155,10 @@ export default function Products() {
           />
         </div>
         <SectionFooterBtn onClick={() => navigate("/top-products")} eye className="homeproducts__footer-btn-desktop" text={t("products.download")} bgColor="var(--green-light)" width="0px" />
-        <div className='homeproducts__footer-btns-mobile'>
+        {/* <div className='homeproducts__footer-btns-mobile'>
           <SectionFooterBtn text={t("products.download")} bgColor="var(--green-light)" />
           <SectionFooterBtn text={t("products.download")} bgColor="var(--green-light)" />
-        </div>
+        </div> */}
       </div>
       <WhiteBg
         style={{ top: ".5%", left: "0" }}

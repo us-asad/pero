@@ -153,7 +153,7 @@ export default function Product() {
             alt="Product Name"
             className='product__modal-img'
           />
-          <button onClick={() => handleModalDetails(false)} className='product__modal-close'>
+          <button onClick={() => handleShowPrdModal(false)} className='product__modal-close'>
             <FaTimes />
           </button>
         </div>

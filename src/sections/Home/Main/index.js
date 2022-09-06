@@ -41,7 +41,6 @@ export default function Main() {
       setActivePageIdx(prevIdx => {
         setPages(prev => {
           const data = [...prev];
-          console.log("sadasdsd")
           data.unshift(data[allPages.length - 1]);
           return data;
         })
