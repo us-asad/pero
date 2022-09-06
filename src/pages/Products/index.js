@@ -72,16 +72,16 @@ export default function Products() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const prevBtn = document.querySelector(".blogs__pagination-prev");
-      prevBtn.click();
-      prevBtn.click();
-      prevBtn.click();
-      prevBtn.click();
-      prevBtn.click();
-      prevBtn.click();
-      prevBtn.click();
-      prevBtn.click();
-      prevBtn.click();
+      const prevBtn = document?.querySelector(".blogs__pagination-prev");
+      prevBtn?.click();
+      prevBtn?.click();
+      prevBtn?.click();
+      prevBtn?.click();
+      prevBtn?.click();
+      prevBtn?.click();
+      prevBtn?.click();
+      prevBtn?.click();
+      prevBtn?.click();
     }
   }, [activeCategoryIdx]);
 
