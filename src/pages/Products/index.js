@@ -27,12 +27,12 @@ export default function Products() {
   const [t, i18next] = useTranslation();
   const categoryRef = useRef();
   const itemsPerPage = 9;
-
-  console.log(categories)
+  const [showPagination, setShowPagination] = useState(true);
 
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % filteredProducts.length;
     setItemOffset(newOffset);
+    window.scrollTo({ top: 10 })
   };
 
   const handleModalDetails = data => {
@@ -54,7 +54,6 @@ export default function Products() {
 
   useEffect(() => {
     request(`/categories?format=json`, categoriesData => {
-      console.log(categoriesData.findIndex(ctg => +ctg.id === +searchParams.get("category")))
       const idx = categoriesData.findIndex(ctg => +ctg.id === +searchParams.get("category"));
       setActiveCategoryIdx(idx !== -1 ? idx : 0);
       setCategories(categoriesData);
@@ -71,7 +70,20 @@ export default function Products() {
   }, [activeCategoryIdx, categories, allProducts]);
 
 
-  console.log(categoryRef)
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const prevBtn = document.querySelector(".blogs__pagination-prev");
+      prevBtn.click();
+      prevBtn.click();
+      prevBtn.click();
+      prevBtn.click();
+      prevBtn.click();
+      prevBtn.click();
+      prevBtn.click();
+      prevBtn.click();
+      prevBtn.click();
+    }
+  }, [activeCategoryIdx]);
 
   return (
     <section className='products'>
@@ -109,7 +121,7 @@ export default function Products() {
                   onClick={() => setActiveCategoryIdx(i)}
                 >
                   <p className='products__category-text'>{category[`name_${i18next.language}`]}</p>
-                  <div className='products__categories-underline' style={{ opacity: activeCategoryIdx === i ? "1" : "0"}} />
+                  <div className='products__categories-underline' style={{ opacity: activeCategoryIdx === i ? "1" : "0" }} />
                 </li>
               </>
             ))}
@@ -138,20 +150,20 @@ export default function Products() {
             </div>
           ))}
         </div>
-        <ReactPaginate
+        {showPagination ? <ReactPaginate
           breakLabel="..."
           nextLabel={<BiChevronRight />}
           onPageChange={handlePageClick}
           pageRangeDisplayed={3}
           pageCount={pageCount}
           previousLabel={<BiChevronRight />}
-          renderOnZeroPageCount={null}
+          renderOnZeroPageCount={(data) => console.log(data)}
           className="blogs__pagination"
           pageClassName="blogs__pagination-item"
           previousLinkClassName="blogs__pagination-btn blogs__pagination-prev"
           nextLinkClassName="blogs__pagination-btn blogs__pagination-next"
           activeClassName="active"
-        />
+        /> : null}
       </div>
       <div className={`products__modal ${modalDetails ? "active" : ""}`}>
         <div className='products__modal-content'>
