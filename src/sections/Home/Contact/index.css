@@ -61,15 +61,13 @@
 
 .contact__main-content {
   text-align: start;
+  width: 52%;
+  margin-left: 77px;
 }
 
 .contact__main-img {
   margin-bottom: -100px;
-}
-
-.contact__main-title,
-.contact__main-text {
-  margin-left: 200px;
+  margin-left: -151px;
 }
 
 .contact__main-title {
@@ -77,7 +75,7 @@
   font-weight: 400;
   line-height: 60.1px;
   color: var(--pink-thin);
-  width: 50%;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 1450px) {
@@ -122,12 +120,18 @@
 
   .contact__main-img {
     margin-top: -100px;
+    margin-bottom: -104px;
   }
 
   .contact__main-title,
   .contact__main-text {
     margin: 0;
     text-align: center;
+  }
+
+  .contact__main-content {
+    margin-left: 0;
+    width: 100%;
   }
 
   .contact__form {
@@ -156,6 +160,15 @@
 
   .contact__form {
     width: 100%;
+  }
+
+  .contact__main-img {
+    margin-bottom: -41px;
+  }
+
+  .contact__main-title {
+    line-height: 45.1px;
+    margin-bottom: 20px;
   }
 }
 

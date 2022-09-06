@@ -50,10 +50,11 @@
 }
 
 .product__related-title {
-  font-size: 34px;
+  font-size: 44px;
   text-align: center;
   margin-bottom: -50px;
   margin-top: 100px;
+  width: 100%;
 }
 
 .product__modal {

@@ -26,7 +26,12 @@ export default function Video() {
         {t("about.video.text")} 
       </p>
       <div className={`aboutvideo__video ${showVideo ? "active" : ""}`}>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/ugjauOih6Pw" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        <video
+          src="/assets/videos/about-video.mp4"
+          width={560}
+          height={315}
+          controls
+        ></video>
       </div>
       <div
         className={`aboutvideo__bg ${showVideo ? "active" : ""}`}

@@ -14,12 +14,18 @@ export default function Contact() {
 
     const message = `
       Yangi Xabar😊!
-      %0A👤Ismi: ${formRef.current.children?.name?.value}
-      %0A☎Raqam: ${formRef.current.children?.phone_number?.value}
-      %0A📧Xabar: ${formRef.current.children?.message?.value}
+      %0A👤Ismi: ${formRef.current?.name?.value}
+      %0A☎Raqam: ${formRef.current?.phone_number?.value}
+      %0A📧Xabar: ${formRef.current?.message?.value}
     `;
 
-    await sendMessageToTG(message);
+    const ok = await sendMessageToTG(message);
+
+    if (ok) {
+      formRef.current.name.value = ""
+      formRef.current.phone_number.value = ""
+      formRef.current.message.value = ""
+    }
   }
 
   return (

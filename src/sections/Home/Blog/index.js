@@ -28,7 +28,7 @@ export default function Blog({ scrollY }) {
 
   useEffect(() => {
     request("/top_blogs", (data) => {
-      setData(data.slice(0, 3));
+      setData(data.reverse().slice(0, 3));
     });
   }, []);
 

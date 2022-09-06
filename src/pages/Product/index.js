@@ -53,6 +53,9 @@ export default function Product() {
     if (ok) {
       setShowPrdModal(false);
       setOrdered(true);
+
+      e.target.name.value = "";
+      e.target.phone_number.value = "";
     }
 
     setOrderLoading(false)
@@ -60,7 +63,7 @@ export default function Product() {
 
   useEffect(() => {
     request(`/products/${params.id}`, data => setProduct(data), () => navigate("/404"));
-    request("/top_products", setRelatedProducts, () => navigate("/404"));
+    request("/top_products", data => setRelatedProducts(data.slice(0, 3)), () => navigate("/404"));
   }, [params.id, navigate]);
 
   return (
@@ -97,7 +100,7 @@ export default function Product() {
             />
           </div>
           <div className="product__related">
-            <h2 data-aos="zoom-in" className='product__related-title'>{t("products.related")}</h2>
+            <h2 data-aos="zoom-in" className='product__related-title product__title app__title'>{t("products.related")}</h2>
             <div className='products__wrapper'>
               {relatedProducts.map((prd, i) => (
                 <div data-aos={i === 0 ? "fade-right" : i === 1 ? "fade-up" : "fade-left"} key={i} className="products__item">

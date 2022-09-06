@@ -30,7 +30,7 @@ export default function Blogs() {
   }, [itemOffset, itemsPerPage, data]);
 
   useEffect(() => {
-    request("/blogs", data => setData(data), () => navigate("/404"));
+    request("/blogs", data => setData(data.reverse()), () => navigate("/404"));
     /* eslint-disable react-hooks/exhaustive-deps */
   }, []);
 

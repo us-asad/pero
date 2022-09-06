@@ -12,6 +12,15 @@
   margin-bottom: 10px;
   display: block;
   cursor: pointer;
+  transition: .4s;
+}
+
+.section__footer-text:hover {
+  transform: scale(.9);
+}
+
+.section__footer-text:active {
+  transform: scale(1.1);
 }
 
 .section__footer-hr {

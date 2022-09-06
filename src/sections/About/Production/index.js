@@ -13,7 +13,7 @@ export default function Production() {
         <p className='about__text aboutproduction__details-text'>
           {t("about.production.text")}
         </p>
-        <Link to="/#videos" onClick={() => window.scrollTo({ top: 4000 })} className='aboutproduction__details-btn'>{t("about.production.more")}</Link>
+        <Link to="/#contact" onClick={() => window.scrollTo({ top: 400000000 })} className='aboutproduction__details-btn'>{t("contact.contact_btn")}</Link>
       </div>
       <img
         data-aos="fade-left"

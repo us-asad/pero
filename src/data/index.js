@@ -262,7 +262,9 @@ export const footer_links =  [
     title: "Contact",
     links: [
       "https://www.google.com/maps/place/Tashkent,+Uzbekistan/@41.2825125,69.1392822,11z/data=!3m1!4b1!4m5!3m4!1s0x38ae8b0cc379e9c3:0xa5a9323b4aa5cb98!8m2!3d41.2994922!4d69.240067",
-      "tel:+8801757410907"
+      "mailto:info@pero.uz",
+      "tel:+998988884446",
+      "tel:+998981260919"
     ]
   }
 ]

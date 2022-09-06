@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import { getImgUrl, request } from 'utils/request';
 import { useTranslation } from 'react-i18next';
 import { PageRoutes } from 'subcomponents';
+import { useRef } from 'react';
 
 export default function Products() {
   const [activeCategoryIdx, setActiveCategoryIdx] = useState(0);
@@ -23,6 +24,7 @@ export default function Products() {
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
   const [t, i18next] = useTranslation();
+  const categoryRef = useRef();
   const itemsPerPage = 9;
 
   const handlePageClick = (event) => {
@@ -58,6 +60,8 @@ export default function Products() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  console.log(categoryRef)
+
   useEffect(() => {
     setFilteredProducts(allProducts.filter(prd => prd.category_id === categories[activeCategoryIdx].id));
   }, [activeCategoryIdx, categories, allProducts]);
@@ -91,6 +95,7 @@ export default function Products() {
           <ul className='products__categories'>
             {categories.map((category, i) => (
               <li
+                ref={categoryRef}
                 key={i}
                 className={`products__category ${activeCategoryIdx === i ? "active" : ""}`}
                 onClick={() => setActiveCategoryIdx(i)}
@@ -98,7 +103,7 @@ export default function Products() {
                 <p className='products__category-text'>{category[`name_${i18next.language}`]}</p>
               </li>
             ))}
-            <div className='products__categories-underline' style={{ transform: `translateX(${activeCategoryIdx * 210}px)` }} />
+            <div className='products__categories-underline' style={{ transform: `translateX(${activeCategoryIdx * (categoryRef.current?.clientWidth + 20)}px)`, width: categoryRef.current?.clientWidth + 20 + "px" }} />
           </ul>
         </div>
         <div className='products__wrapper'>

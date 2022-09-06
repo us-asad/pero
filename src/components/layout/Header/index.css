@@ -24,6 +24,18 @@
   align-items: center;
 }
 
+.nav__item {
+  transition: .7s;
+}
+
+.nav__item:hover {
+  transform: scale(.95);
+}
+
+.nav__item:active {
+  transform: scale(1.05);
+}
+
 .nav__current-lang {
   gap: 3px;
 }
@@ -99,6 +111,11 @@
   align-items: center;
   font-family: sans-serif;
   cursor: pointer;
+  transition: .7s;
+}
+
+.nav__btn:hover {
+  opacity: .8;
 }
 
 .nav__number {

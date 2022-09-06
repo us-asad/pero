@@ -57,6 +57,7 @@ export default function Main() {
       setAllPages(data)
       setPages(data?.reverse());
     }, () => navigate("/404"));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -64,11 +65,12 @@ export default function Main() {
       if (!disableBtn) {
         btnRef.current?.click();
       }
-    }, 5000);
+    }, 7000);
 
     return () => {
       clearInterval(interval);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
