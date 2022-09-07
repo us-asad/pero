@@ -231,8 +231,8 @@
 
 @media (max-width: 400px) {
   .blogs__pagination-item {
-    font-size: 8.65px;
-    padding: 4px 3px;
+    font-size: 12.65px;
+    padding: 5px 4px;
     border-radius: 3px;
   }
 
