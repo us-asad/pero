@@ -21,6 +21,8 @@ export default function Blog() {
 
   if (!data) return <Loader />;
 
+  console.log(data)
+
   return (
     <section className='blog'>
       <div className="container px-normal">
@@ -64,8 +66,11 @@ export default function Blog() {
         </div>
         {/* <h1 data-aos="fade-up" className='blog__post-title'>{data[`name_${i18next.language}`]}</h1> */}
         <p data-aos="fade-up" className='blog__post-text'>
-          {data.description_uz}
+          {data[`description_${i18next.language}`]}
         </p>
+        {data[`text_${i18next.language}`] ? <p style={{marginTop: "20px"}} data-aos="fade-up" className='blog__post-text'>
+          {data[`text_${i18next.language}`]}
+        </p> : ""}
       </div>
     </section>
   )
