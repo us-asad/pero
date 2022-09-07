@@ -14,7 +14,7 @@ export default function Blog({ scrollY }) {
   const [showPopUp2, setShowPopUp2] = useState(false);
   const [showPopUp3, setShowPopUp3] = useState(false);
   const blogRef = useRef();
-  const [t] = useTranslation();
+  const [t, i18next] = useTranslation();
 
   if (!showPopUp1 && (blogRef.current?.offsetTop - blogRef.current?.scrollTop + blogRef.current?.clientTop) - blogRef.current?.clientHeight / 2 < scrollY) {
     setShowPopUp1(true);
@@ -50,7 +50,7 @@ export default function Blog({ scrollY }) {
                   className='homeblog__pop-up-img'
                 />
                 <p className='homeblog__pop-up-text'>
-                  {item.description_uz?.slice(0, 100)}
+                  {item[`description_${i18next.language}`].slice(0, 100)}
                 </p>
               </Link>
             ))}
