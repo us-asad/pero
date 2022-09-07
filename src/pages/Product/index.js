@@ -46,6 +46,7 @@ export default function Product() {
       Yangi Buyurtma📦!
       %0A👤Ismi: ${e.target?.name?.value}
       %0A☎Raqam: ${e.target?.phone_number?.value}
+      %0A🆔Mahsulot: ${product && product[`name_${i18next.language}`]}
     `;
 
     const ok = await sendMessageToTG(message, false);

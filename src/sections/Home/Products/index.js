@@ -62,7 +62,6 @@ export default function Products() {
                 key={i}
                 className={`homeproducts__pagination-btn ${activeIdx === i ? "active" : ""}`}
                 onClick={() => setActiveIdx(prev => {
-                  console.log(i < 1 ? 1 : i > prev.length - 2 ? prev.length - 2 : i, )
                   return i < 1 ? 1 : i > data.length - 2 ? data.length - 2 : i
                 })}
               ></button>

@@ -21,8 +21,6 @@ export default function Blog() {
 
   if (!data) return <Loader />;
 
-  console.log(data)
-
   return (
     <section className='blog'>
       <div className="container px-normal">
