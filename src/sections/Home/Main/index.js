@@ -57,7 +57,7 @@ export default function Main() {
       setAllPages(data)
       setPages(data?.reverse());
     }, () => navigate("/404"));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -70,7 +70,7 @@ export default function Main() {
     return () => {
       clearInterval(interval);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -100,7 +100,7 @@ export default function Main() {
           </div>
         </div>
         <div className="homemain__overflow" style={{
-          height: "119%",
+          height: "172%",
           top: "-8%",
           overscrollBehavior: "auto",
           overflowY: "visible",
@@ -116,12 +116,30 @@ export default function Main() {
               animate={activePageIdx % 2 !== 0 ? { top: "-1000%", left: "-600%", transition: "15s" } : { top: "70px", left: "300px", transition: "0s" }}
             />
             <Feather2
+              className="mobile"
+              src="/assets/images/feathers/main/2.png"
+              style={{ top: "70px", left: "198px" }}
+              extra={{ top: "-100%", left: "-100%" }}
+              clicked={clicked}
+              active={activePageIdx % 2 !== 0}
+              animate={activePageIdx % 2 !== 0 ? { top: "-1000%", left: "-600%", transition: "15s" } : { top: "70px", left: "198px", transition: "0s" }}
+            />
+            <Feather2
               src="/assets/images/feathers/main/3.png"
               style={{ top: "70px", right: "340px", transform: "rotate(249deg)" }}
               extra={{ top: "-100%", right: "-100%" }}
               clicked={clicked}
               active={activePageIdx % 2 !== 0}
               animate={activePageIdx % 2 !== 0 ? { top: "-1000%", right: "-600%", transition: "15s" } : { top: "70px", right: "350px", transition: "0s" }}
+            />
+            <Feather2
+              className="mobile"
+              src="/assets/images/feathers/main/3.png"
+              style={{ bottom: "315px", right: "250px", transform: "rotate(249deg)" }}
+              extra={{ bottom: "100%", right: "-100%" }}
+              clicked={clicked}
+              active={activePageIdx % 2 !== 0}
+              animate={activePageIdx % 2 !== 0 ? { bottom: "1000%", right: "-600%", transition: "15s" } : { bottom: "315px", right: "250px", transition: "0s" }}
             />
             <Feather2
               src="/assets/images/feathers/main/4.png"
@@ -132,12 +150,30 @@ export default function Main() {
               animate={activePageIdx % 2 !== 0 ? { bottom: "-1000%", right: "-600%", transition: "15s" } : { bottom: "230px", right: "350px", transition: "0s" }}
             />
             <Feather2
+              className="mobile"
+              src="/assets/images/feathers/main/4.png"
+              style={{ bottom: "64px", right: "254px" }}
+              extra={{ bottom: "-100%", right: "-100%" }}
+              clicked={clicked}
+              active={activePageIdx % 2 !== 0}
+              animate={activePageIdx % 2 !== 0 ? { bottom: "-1000%", right: "-600%", transition: "15s" } : { bottom: "64px", right: "254px", transition: "0s" }}
+            />
+            <Feather2
               src="/assets/images/feathers/main/1.png"
               style={{ bottom: "150px", left: "300px" }}
               extra={{ bottom: "-100%", left: "-100%" }}
               clicked={clicked}
               active={activePageIdx % 2 !== 0}
               animate={activePageIdx % 2 !== 0 ? { bottom: "-1000%", left: "-600%", transition: "15s" } : { bottom: "150px", left: "300px", transition: "0s" }}
+            />
+            <Feather2
+              className="mobile"
+              src="/assets/images/feathers/main/1.png"
+              style={{ top: "350px", left: "200px" }}
+              extra={{ top: "100%", left: "-100%" }}
+              clicked={clicked}
+              active={activePageIdx % 2 !== 0}
+              animate={activePageIdx % 2 !== 0 ? { top: "1000%", left: "-600%", transition: "15s" } : { top: "350px", left: "200px", transition: "0s" }}
             />
           </div>
           <div className={`homemain__feathers ${activePageIdx % 2 === 0 ? "active" : ""} ${clicked ? "speedUp" : ""}`}>
@@ -151,12 +187,30 @@ export default function Main() {
               className="feather__img-1"
             />
             <Feather2
+              src="/assets/images/feathers/main/1.png"
+              style={{ top: "350px", left: "200px" }}
+              extra={{ top: "100%", left: "-100%" }}
+              clicked={clicked}
+              active={activePageIdx % 2 === 0}
+              animate={activePageIdx % 2 === 0 ? { top: "1000%", left: "-600%", transition: "15s" } : { top: "350px", left: "200px", transition: "0s" }}
+              className="feather__img-1 mobile"
+            />
+            <Feather2
               src="/assets/images/feathers/main/2.png"
               style={{ top: "70px", left: "300px" }}
               extra={{ top: "-100%", left: "-100%" }}
               clicked={clicked}
               active={activePageIdx % 2 === 0}
               animate={activePageIdx % 2 === 0 ? { top: "-1000%", left: "-600%", transition: "15s" } : { top: "70px", left: "300px", transition: "0s" }}
+            />
+            <Feather2
+              className="mobile"
+              src="/assets/images/feathers/main/2.png"
+              style={{ top: "70px", left: "198px" }}
+              extra={{ top: "-100%", left: "-100%" }}
+              clicked={clicked}
+              active={activePageIdx % 2 === 0}
+              animate={activePageIdx % 2 === 0 ? { top: "-1000%", left: "-600%", transition: "15s" } : { top: "70px", left: "198px", transition: "0s" }}
             />
             <Feather2
               src="/assets/images/feathers/main/3.png"
@@ -167,12 +221,30 @@ export default function Main() {
               animate={activePageIdx % 2 === 0 ? { top: "-1000%", right: "-600%", transition: "15s" } : { top: "70px", right: "350px", transition: "0s" }}
             />
             <Feather2
+              className="mobile"
+              src="/assets/images/feathers/main/3.png"
+              style={{ bottom: "315px", right: "250px", transform: "rotate(249deg)" }}
+              extra={{ bottom: "100%", right: "-100%" }}
+              clicked={clicked}
+              active={activePageIdx % 2 === 0}
+              animate={activePageIdx % 2 === 0 ? { bottom: "1000%", right: "-600%", transition: "15s" } : { bottom: "315px", right: "350px", transition: "0s" }}
+            />
+            <Feather2
+              className="mobile"
               src="/assets/images/feathers/main/4.png"
-              style={{ bottom: "230px", right: "350px" }}
+              style={{ bottom: "64px", right: "254px", }}
               extra={{ bottom: "-100%", right: "-100%" }}
               clicked={clicked}
               active={activePageIdx % 2 === 0}
-              animate={activePageIdx % 2 === 0 ? { bottom: "-1000%", right: "-600%", transition: "15s" } : { bottom: "230px", right: "350px", transition: "0s" }}
+              animate={activePageIdx % 2 === 0 ? { bottom: "-1000%", right: "-600%", transition: "15s" } : { bottom: "64px", right: "254px", transition: "0s" }}
+            />
+            <Feather2
+              src="/assets/images/feathers/main/4.png"
+              style={{ bottom: "230px", right: "350px" }}
+              extra={{ bottom: "-100%", right: "100%" }}
+              clicked={clicked}
+              active={activePageIdx % 2 === 0}
+              animate={activePageIdx % 2 === 0 ? { bottom: "-1000%", right: "600%", transition: "15s" } : { bottom: "230px", right: "350px", transition: "0s" }}
             />
           </div>
         </div>

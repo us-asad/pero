@@ -3,10 +3,9 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import "./index.css";
 
-export default function FuckingFeather({ src, width, style, animate, className, extra, clicked, active }) {
+export default function FuckingFeather({ src, width, style, animate, className, extra, clicked, active, mobile }) {
   const [animateStyles, setAnimateStyles] = useState({});
   const [extraStyles, setExtraStyles] = useState({});
-  const [transition, setTransition] = useState("a");
 
   useEffect(() => {
     if (clicked) {

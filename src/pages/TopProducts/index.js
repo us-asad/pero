@@ -27,6 +27,7 @@ export default function TopProducts() {
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % topProducts.length;
     setItemOffset(newOffset);
+    window?.scrollTo({ top: 100 })
   };
 
   useEffect(() => {

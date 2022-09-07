@@ -21,6 +21,7 @@ export default function Blogs() {
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % data.length;
     setItemOffset(newOffset);
+    window.scrollTo({ top: 100 })
   };
 
   useEffect(() => {

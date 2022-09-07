@@ -37,6 +37,8 @@ export default function Footer() {
                     <Link to={linkItem} className='footer__item-link' key={idx}>{t(`footer.links.${i}.links.${idx}`)}</Link>
                   ) : linkItem.startsWith("#") ?  (
                     <a href={`/${linkItem}`} className='footer__item-link' key={idx}>{t(`footer.links.${i}.links.${idx}`)}</a>
+                  ) : !linkItem ? (
+                    <p key={idx} className='footer__item-link disactive'>{t(`footer.links.${i}.links.${idx}`)}</p>
                   ) : (
                     <a href={linkItem} target="_blank" rel="noreferrer" className='footer__item-link' key={idx}>{t(`footer.links.${i}.links.${idx}`)}</a>
                   )
@@ -47,7 +49,7 @@ export default function Footer() {
         </div>
       </footer>
       <div className='footer__copyright'>
-        <p className='footer__copyright-text'>{t("footer.copyright")}</p>
+        <p className='footer__copyright-text'>{t("footer.copyright")} <span>Abba Media</span>, <span>Abba Coding</span></p>
       </div>
     </>
   )

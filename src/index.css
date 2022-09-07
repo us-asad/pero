@@ -25,6 +25,28 @@
   box-sizing: border-box;
 }
 
+*::selection {
+  background-color: #fff;
+  color: var(--green-semibold);
+}
+
+/* SCROLLBAR */
+*::-webkit-scrollbar-thumb {
+  background-color: var(--green-semibold);
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 20px;
+  height: 20px;
+}
+
 html {
   scroll-behavior: smooth;
 }

@@ -57,12 +57,16 @@
   cursor: pointer;
 }
 
+.footer__item-link.disactive {
+  cursor: initial;
+}
+
 .footer__item-link {
   transition: 0.3s;
   opacity: 0.5;
 }
 
-.footer__item-link:hover {
+.footer__item-link:not(.disactive):hover {
   opacity: 1;
 }
 
@@ -76,6 +80,10 @@
   display: flex;
   justify-content: center;
   gap: 10px;
+}
+
+.footer__copyright-text span {
+  color: var(--green-semibold);
 }
 
 .footer__copyright-text:last-of-type {
