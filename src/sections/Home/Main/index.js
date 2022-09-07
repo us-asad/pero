@@ -103,8 +103,7 @@ export default function Main() {
           height: "172%",
           top: "-8%",
           overscrollBehavior: "auto",
-          overflowY: "visible",
-          overflowX: "hidden",
+          overflow: "hidden"
         }}>
           <div className={`homemain__feathers ${activePageIdx % 2 !== 0 ? "active" : ""} ${clicked ? "speedUp" : ""}`}>
             <Feather2
@@ -241,10 +240,10 @@ export default function Main() {
             <Feather2
               src="/assets/images/feathers/main/4.png"
               style={{ bottom: "700px", right: "350px" }}
-              extra={{ bottom: "-100%", right: "100%" }}
+              extra={{ bottom: "-100%", right: "-100%" }}
               clicked={clicked}
               active={activePageIdx % 2 === 0}
-              animate={activePageIdx % 2 === 0 ? { bottom: "-1000%", right: "600%", transition: "15s" } : { bottom: "700px", right: "350px", transition: "0s" }}
+              animate={activePageIdx % 2 === 0 ? { bottom: "-1000%", right: "-600%", transition: "15s" } : { bottom: "700px", right: "350px", transition: "0s" }}
             />
           </div>
         </div>
