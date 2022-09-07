@@ -231,13 +231,13 @@
 
 @media (max-width: 400px) {
   .blogs__pagination-item {
-    font-size: 12.65px;
-    padding: 5px 4px;
+    font-size: 15.65px;
+    padding: 5px 6px;
     border-radius: 3px;
   }
 
   .blogs__pagination-btn {
-    font-size: 10px;
+    font-size: 20px;
     padding: 2px;
     margin: 0;
   }
