@@ -1,0 +1,36 @@
+.section__footer {
+  width: 300px;
+  margin: 0 auto;
+  padding: 0 0 50px;
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+  z-index: 3;
+}
+
+.section__footer-text {
+  margin-bottom: 10px;
+  display: block;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.section__footer-text:hover {
+  transform: scale(.9);
+}
+
+.section__footer-text:active {
+  transform: scale(1.1);
+}
+
+.section__footer-hr {
+  border-bottom: 3px solid #fff;
+}
+
+@media (max-width: 500px) {
+  .section__footer {
+    font-size: 12px;
+    width: 50%;
+  }
+
+}

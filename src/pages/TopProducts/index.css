@@ -1,0 +1,132 @@
+.topproducts {
+  background-color: var(--green-semibold);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.topproducts__select {
+  background-color: transparent;
+  color: inherit;
+  font-size: inherit;
+}
+
+.topproducts__select-icon {
+  font-size: 25px;
+}
+
+.topproducts__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.topproducts__product {
+  display: flex;
+  justify-content: space-between;
+}
+
+.topproducts__product-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 40px;
+  gap: 30px;
+  width: 40%;
+}
+
+.topproducts__product-title {
+  font-size: 35px;
+  line-height: 42.89px;
+  font-weight: 400;
+}
+
+.topproducts__product-text {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 18.96px;
+}
+
+.topproducts__product-img {
+  width: 50%;
+  max-height: 400px;
+}
+
+.topproducts__product-img img {
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.topproducts__comment {
+  border-radius: 25px;
+  padding: 18px 27px 27px;
+  background-color: #80b4a2;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.topproducts__comment-img {
+  object-fit: contain;
+}
+
+.topproducts__comment-username {
+  line-height: 20px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.topproducts__comment-who {
+  font-size: 12px;
+  line-height: 23.53px;
+  font-weight: 300;
+}
+
+.topproducts__comment-stars {
+  margin-top: 20px;
+  display: flex;
+}
+
+.topproducts__comment-star {
+  font-size: 25px;
+}
+
+.topproducts__comment-star.active {
+  color: #ffde2f;
+}
+
+.topproducts__comment-link {
+  font-size: 12px;
+  text-decoration: underline;
+  font-weight: 400;
+  line-height: 23.53px;
+  margin-left: 35px;
+  opacity: 0.9;
+}
+
+@media (max-width: 950px) {
+  .topproducts__product {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+
+  .topproducts__product-details {
+    width: 100%;
+  }
+  
+  .topproducts__product-img {
+    margin: auto;
+  }
+}
+
+@media (max-width: 450px) {
+  .topproducts__select-icon {
+    font-size: 18px;
+  }
+
+  .topproducts__product-img {
+    width: 100%;
+  }
+}

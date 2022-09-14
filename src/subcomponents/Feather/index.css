@@ -1,0 +1,12 @@
+.feather__img {
+  position: absolute;
+  z-index: 0;
+  transition: 200s;
+}
+
+@media (max-width: 500px) {
+  .feather__img {
+    width: 100px;
+    height: 100px
+  }
+}

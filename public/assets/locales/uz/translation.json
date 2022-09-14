@@ -1,0 +1,122 @@
+{
+  "name": "UZ",
+  "home": {
+    "title": "Bosh sahifa"
+  },
+  "slider_click": "O'zgartirsh uchun bosing",
+  "last_update": "oxirgi yangilanish",
+  "nav": [
+    "Biz haqimizda",
+    "Top mahsulotlar",
+    "Mahsulotlar",
+    "Yangiliklar",
+    "Foydalanish shartlari"
+  ],
+  "products": {
+    "top_products": "Top Mahsulotlar",
+    "all_products": "Barcha Mahsulotlar",
+    "title": "Bizning mahsulotlar",
+    "subtitle": "Bizda 20ga yaqin mahsulot turlari mavjud",
+    "order": "Buyurtma berish",
+    "related": "O'xshash mahsulotlar",
+    "property_1": "Maqola",
+    "property_2": "O'lcham",
+    "success_title": "Buyurtmangiz qabul qilindi",
+    "success_subtitle": "Tez orada mutahasislarimiz siz bilan bog`lanishadi",
+    "view": "Ko'proq",
+    "download": "Mashxur mahsulotlarimiz"
+  },
+  "about": {
+    "time_name": "Kecha",
+    "title": "Biz haqimizda",
+    "subtitle": "Pero ko’plab ishchilarni bir maqsad yo’lida jamlagan korxona bo'lib, u turli xildagi salfetkalar ishlab chiqarishga ixtisoslashgan. Biz o’z mijozlarimizga doim eng yaxshi va sifatlisini ulashamiz.",
+    "title_2": "Poklik siri",
+    "icons": [
+      {
+        "title": "Yuqori sifat",
+        "subtitle": "Mahsulot sifatini nazorat qilish va ishlab chiqarish bosqichida rad etish, sifat nazorati bo'limidan o'tish, GOST va sifat standartlariga muvofiqligi."
+      },
+      {
+        "title": "Xavfsizlik",
+        "subtitle": "Barcha mahsulotlarimiz sinovdan o'tgan va jahon standartlariga muvofiq sertifikatlangan."
+      },
+      {
+        "title": "Inovatsiya",
+        "subtitle": "Mahsulotlarimiz har doim ko‘p funksiyali va zamon bilan hamnafas bo‘lib, bugungi talabchan foydalanuvchilarning ehtiyojlariga javob beradi."
+      }
+    ],
+    "video": {
+      "title": "Pero - Poklik Siri",
+      "text": "'PERO' kompaniyasi 2022- yil boshida tashkil etilgan. Korxonamiz yangi bo'lishiga qaramay oldiga juda katta maqsadlarni qo'ygan. Bulardan eng asosiysi insonlarga foydali bo'lgan yuqori sifatli mahsulotlar ishlab chiqarib, xalq ehtiyojlarini to'laqonli qondirishga qaratilgan. Bu yo'lda korxonamiz hamda jamoamiz xizmatingizga qattiq bel bog'lagan! Korxonamiz Turkiya texnika texnologiyalari bilan jixozlangan bo'lib, bu mahsulotlarimizni yana ham sifatli, dunyo standartlariga javob beradigan darajada bo'lishini ta'minlaydi, shu bilan bir qatorda dunyoning hamda o'zimizning diyorimizdagi eng yetakchi korxonalarda ishlab chiqarilgan Sellulozadan foydalangan holda ishlab chiqaramiz? Biz xalqimizga, insonlarga sifatli mahsulot yetkazib berib, o'z o'rnida poklik, tozalik uchun xizmat qilishimizdan faxrlanamiz. PERO poklikni sevuvchilar uchun....."
+    },
+    "production": {
+      "title": "Ishlab chiqarish",
+      "text": "Mahsulotlarimiz yuqori sifatli xom ashyolardan tayyorlanadi. Mahsulotimiz yuqori sifatga ega va xalqaro standartlarga javob beradi. Mahsulotlarimiz sifatining asosiy ko'rsatkichlari kuchlilik, yumshoqlik va gigiena bo'lib, bu eng yaxshi jahon namunalarining analoglariga mos keladi.",
+      "more": "Ko'proq"
+    },
+    "main_btn": "Biz haqimizda batafsil",
+    "more": "Batafsil",
+    "footer_text": "Biz sonlarda"
+  },
+  "videos": {
+    "title": "Bizning videolar",
+    "subtitle": "Bizni videolarimizda kuzatib boring",
+    "download": "Boshqa video"
+  },
+  "blog": {
+    "title": "Bizning Blog",
+    "all": "Barcha yangiliklar",
+    "more": "Barcha yangiliklar",
+    "route": "blog",
+    "read": "Ko'proq o'qish"
+  },
+  "contact": {
+    "title": "Biz bilan bog'laning",
+    "subtitle": "Maxsus formani to'ldiring va bizning mutaxassislarimiz tez orada siz bilan bog'lanishadi",
+    "info_title": "Pero - Poklik siri",
+    "info_subtitle": "Pero - sanitariya maqsadlarida qog'oz mahsulotlari ishlab chiqaruvchisi. Kompaniyamiz ko'p yillardan buyon faoliyat yuritadi Mahsulotlarimiz yuqori sifatli xom ashyolardan tayyorlanadi. Mahsulotimiz yuqori sifatga ega va xalqaro standartlarga javob beradi. Ishlab chiqarilgan mahsulotlar ham byudjet, ham premium bo'lishi mumkin. Mahsulotlarimiz sifatining asosiy ko'rsatkichlari kuchlilik, yumshoqlik va gigiena bo'lib, bu eng yaxshi jahon namunalarining analoglariga mos keladi.",
+    "name": "Ismingiz",
+    "phone": "Telefon Raqamingiz",
+    "message": "Xabar",
+    "send": "Yuborish",
+    "sent": "Yuborildi",
+    "contact_btn": "Aloqa"
+  },
+  "footer": {
+    "text": "Yumshoq va mayin salfetkalar. Mahsulotlarning eng sifatlisni siz Pero'dan topasiz. Barcha qulayliklar qadrli mijozlar uchun. Biz bilan nafislikni his eting. Pero - poklik siri",
+    "links": [
+      {
+        "title": "Kompaniya",
+        "links": [
+          "Biz haqimizda",
+          "Bizning mahsulotlar",
+          "Aloqa",
+          "Yangiliklar"
+        ]
+      },
+      {
+        "title": "Foydalanish",
+        "links": [
+          "Bizning Videolar",
+          "Katalogimiz",
+          "Foydalanish shartlari"
+        ]
+      },
+      {
+        "title": "Aloqa",
+        "links": [
+          "Toshkent viloyati, Zangiota tumani, Oxakchilar ko'chasi, 2-uy",
+          "info@pero.uz",
+          "+998 98 888 44 46",
+          "+998 98 126 09 19"
+        ]
+      }
+    ],
+    "copyright": "© Pero - barcha huquqlar himoyalangan. Ishlab chiqildi",
+    "powered": "- Tomonidan ishlab chiqilid"
+  },
+  "terms": {
+    "title": "Foydalanish",
+    "route": "Terms of use"
+  }
+}

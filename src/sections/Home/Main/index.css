@@ -1,0 +1,419 @@
+.homemain {
+  background-image: url(/public/assets/images/main-bg.png);
+  background-size: cover;
+  padding: 60px 0 0;
+  position: relative;
+  color: var(--black-color);
+  overflow: hidden;
+}
+
+.homemain .container {
+  position: relative;
+}
+
+.homemain__image {
+  width: 90%;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.homemain__image img {
+  width: 100%;
+}
+
+.homemain__clicker {
+  position: absolute;
+  left: 0px;
+  top: 0%;
+  width: 352px !important;
+  z-index: 10;
+}
+
+.homemain__click {
+  position: absolute;
+  top: 45%;
+  left: 84px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 11;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+
+.homemain__click img {
+  width: 60px;
+}
+
+.homemain__click span {
+  text-align: center;
+  opacity: 0.5;
+}
+
+.homemain__hand {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -778px;
+  width: 500px;
+  transition: 0.8s;
+  z-index: 10;
+}
+
+.homemain__hand.active {
+  right: -113px;
+}
+
+.homemain__hand img {
+  width: 100%;
+}
+
+.homemain__overflow {
+  position: absolute;
+  left: 48px;
+  top: 30px;
+  width: 103%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.homemain__pages {
+  position: absolute;
+  right: 254px;
+  top: 0;
+  display: flex;
+  transition: all 1s;
+}
+
+.homemain__page {
+  background-image: url(/public/assets/images/page-bg.png);
+  background-size: cover;
+  width: 906px;
+  height: 610px;
+  color: var(--green-extrabold);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+/* 
+.homemain__page .feather_img {
+  transition: 0 !important;
+}
+
+.homemain__page.active .feather_img {
+  transition: 100s !important;
+} */
+
+.homemain__feathers {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  transition: 1s;
+  overflow: visible;
+}
+
+.homemain__feathers.active {
+  left: 0%;
+  /* transition: 10s; */
+}
+
+.homemain__feathers.speedUp .feather__img-1 {
+  transition: 5s;
+}
+
+.homemain__page-container {
+  width: 55%;
+  margin-left: 70px;
+}
+
+.homemain__page-title {
+  font-size: 45px;
+  font-weight: 800;
+  line-height: 54.96px;
+  margin-bottom: 30px;
+}
+
+.homemain__page-text {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 29.46px;
+}
+/* 
+.homemain__page-link {
+  text-decoration: underline;
+  font-size: 20px;
+  margin-top: 20px;
+  display: block;
+  cursor: pointer;
+  opacity: .8;
+  position: relative;
+  z-index: 3;
+} */
+
+.homemain .section__footer {
+  color: var(--green-normal);
+}
+
+.homemain .section__footer-hr {
+  border-bottom: 3px solid var(--green-normal);
+}
+
+@media (max-width: 1420px) {
+  .homemain__clicker {
+    width: 274px !important;
+  }
+
+  .homemain__pages {
+    right: 217px;
+    top: -7px;
+  }
+
+  .homemain__page {
+    width: 925px;
+    height: 473px;
+  }
+
+  .homemain__page-container {
+    margin-left: 275px;
+  }
+
+  .homemain__click {
+    font-size: 14px;
+    top: 43%;
+    left: 58px;
+  }
+
+  .homemain__click img {
+    width: 57px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .homemain__clicker {
+    width: 223px !important;
+  }
+
+  .homemain__overflow {
+    left: 36px;
+    top: 21px;
+  }
+
+  .homemain__pages {
+    right: 190px;
+    top: -8px;
+  }
+
+  .homemain__page {
+    width: 750px;
+    height: 380px;
+  }
+
+  .homemain__page-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .homemain__page-text {
+    font-size: 16px;
+    line-height: 26.46px;
+  }
+
+  .homemain__click {
+    font-size: 12px;
+    top: 43%;
+    left: 31px;
+  }
+
+  .homemain__click img {
+    width: 50px;
+  }
+
+  .homemain__click span {
+    width: 70%;
+    line-height: 16px;
+  }
+}
+
+@media (max-width: 950px) {
+  .homemain {
+    padding: 150px 0 251px;
+  }
+
+  .homemain__overflow {
+    left: 77px;
+    top: 16px;
+  }
+
+  .homemain .container {
+    transform: rotate(90deg) translateX(71px);
+  }
+
+  .homemain__pages {
+    right: 156px;
+  }
+
+  .homemain__page {
+    width: 495px;
+    height: 437px;
+  }
+
+  .homemain__page-container {
+    transform: rotate(-90deg);
+    margin-left: 75px;
+  }
+
+  .homemain__clicker {
+    width: 244px !important;
+    left: -7px;
+    top: -5px;
+  }
+
+  .homemain__hand {
+    transform: rotate(90deg) translateY(-50%);
+    top: 100%;
+    right: 50%;
+  }
+
+  .homemain__hand.active {
+    top: 69%;
+    right: 50%;
+  }
+
+  .homemain__click {
+    transform: rotate(-90deg);
+    top: 44%;
+    left: 31px;
+  }
+
+  .homemain__page-title {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 39.91px;
+  }
+
+  .homemain__page-text {
+    font-size: 16px;
+    line-height: 21.39px;
+  }
+
+  .homemain__footer-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .homemain {
+    padding-top: 100px;
+  }
+
+  .homemain__overflow {
+    width: 111%;
+    height: 114%;
+    left: 77px;
+    top: -33px;
+  }
+
+  .homemain__clicker {
+    top: -57px;
+  }
+
+  .homemain__page-container {
+    margin-left: 123px;
+  }
+}
+
+@media (max-width: 700px) {
+  .homemain__page-container {
+    margin-left: 143px;
+  }
+
+  .homemain__overflow {
+    height: 132%;
+    left: 171px;
+  }
+}
+
+@media (max-width: 600px) {
+  .homemain {
+    padding-bottom: 409px;
+    padding-top: 50px;
+  }
+
+  .homemain__clicker {
+    top: 50%;
+    transform: translateY(-49%);
+    left: -11px;
+  }
+
+  .homemain__overflow {
+    height: 159%;
+    left: 175px;
+    top: -83px;
+    width: 134%;
+  }
+
+  .homemain__pages {
+    right: 180px;
+  }
+
+  .homemain__hand {
+    width: 300px;
+  }
+}
+
+@media (max-width: 500px) {
+  .homemain__clicker {
+    width: 60% !important;
+  }
+
+  .homemain__overflow {
+    transform: translateY(-51%);
+    top: 50%;
+    height: 139%;
+    left: 20%;
+    width: 200%;
+  }
+
+  .homemain__pages {
+    right: 58vw;
+    top: 1px;
+  }
+
+  .homemain__page {
+    height: 75vw;
+    width: 500px;
+  }
+
+  .homemain__hand.active {
+    top: 69%
+  }
+}
+
+@media (max-width: 450px) {
+  .homemain__page-title {
+    font-size: 29px;
+    line-height: 35.91px;
+  }
+
+  .homemain__page-text {
+    line-height: 20.39px;
+    font-size: 14px;
+  }
+
+  .homemain__click {
+    transform: rotate(-90deg) translateX(23%);
+    top: 48%;
+    left: -1%;
+  }
+
+  .homemain__page {
+    padding: 34px;
+  }
+}

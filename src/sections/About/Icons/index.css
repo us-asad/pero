@@ -1,0 +1,71 @@
+.abouticons {
+  display: flex;
+  gap: 56px;
+  justify-content: center;
+  margin-bottom: 100px;
+  margin-top: 150px;
+}
+
+.abouticons__icon {
+  text-align: center;
+}
+
+.abouticons__icon-title {
+  margin: 25px 0 30px;
+  font-size: 21px;
+  line-height: 26.79px;
+}
+
+.abouticons__icon-text {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 21.5px;
+}
+
+.abouticons__icon-img.mb-25 {
+  margin-bottom: -25px;
+}
+
+@media (max-width: 950px) {
+  .abouticons {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  .abouticons__icon-3 {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .abouticons {
+    gap: 20px 56px;
+  }
+
+  .abouticons__icon-img {
+    width: 70px;
+  }
+
+  .abouticons__icon-title {
+    margin: 8px 0 10px;
+    font-size: 18px;
+    line-height: 20.79px;
+  }
+
+  .abouticons__icon-text {
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 16.5px;
+  }
+}
+
+@media (max-width: 400px) {
+  .abouticons__icon {
+    grid-column: span 2;
+    gap: 20px;
+  }
+
+  .abouticons__icon-3 .abouticons__icon-title {
+    margin-top: 15px;
+  }
+}

@@ -1,0 +1,151 @@
+.videos {
+  padding: 80px 0;
+  background-color: var(--red-normal);
+  color: var(--white-color);
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.videos__title {
+  color: var(--orange-thin);
+  font-weight: 700;
+  font-size: 52px;
+  margin-bottom: 15px;
+}
+
+.videos__text {
+  font-size: 15.68px;
+  font-weight: 300;
+}
+
+.videos__slider {
+  display: flex;
+  justify-content: center;
+  width: max-content;
+  margin: 80px auto;
+  padding: 88px 70px;
+  background-color: var(--white-light);
+  border-radius: 60px;
+  gap: 60px;
+  position: relative;
+}
+
+.videos__slide {
+  width: 253px;
+  height: 143px;
+  background-color: var(--white-light);
+  border-radius: 16px;
+  transition: 500ms;
+  cursor: pointer;
+}
+
+.videos__slide:hover {
+  transform: scale(1.05);
+}
+
+.videos__slide:active {
+  transform: scale(.95);
+}
+
+.videos__slide.active {
+  transform: scale(1.5);
+  z-index: 10;
+  background: var(--white-color);
+  margin: 0 50px;
+}
+
+.videos__slide-video {
+  border-radius: 16px;
+  width: 100%;
+  height: 100%;
+  transition: .3s;
+}
+
+.videos__slider-container {
+  display: none;
+}
+
+@media (max-width: 1450px) {
+  .videos__slide {
+    width: 193px;
+    height: 113px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .videos__slider {
+    padding: 74px 46px;
+  }
+
+  .videos__slide {
+    width: 171px;
+    height: 101px;
+  }
+}
+
+@media (max-width: 950px) {
+  .videos .container {
+    padding: 0;
+  }
+
+  .videos__slider-desktop {
+    display: none;
+  }
+
+  .videos__slider-container {
+    display: block;
+    overflow: hidden;
+    padding: 0 40px;
+  }
+
+  .videos__slider-mobile {
+    border-radius: 21px;
+    width: 100%;
+  }
+
+  .videos__slider {
+    padding: 35px 0px;
+  }
+
+  .videos__slides-wrapper {
+    display: flex;
+    gap: 200px;
+    transition: 1s;
+    width: max-content;
+    position: relative;
+    left: 14%;
+  }
+
+  .videos__slider-overflow {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .videos__slide {
+    width: 50vw;
+    height: 25vw;
+    background-color: #fff;
+  }
+
+  .videos__title {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .videos__text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .videos__title {
+    font-size: 33.86px;
+  }
+
+  .videos__text {
+    font-size: 10.16px;
+  }
+}

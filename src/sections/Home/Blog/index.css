@@ -1,0 +1,247 @@
+.homeblog {
+  background: var(--blue-bold);
+  position: relative;
+  overflow: hidden;
+}
+
+.homeblog .container {
+  padding-top: 130px;
+  padding-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.homeblog__header {
+  display: none;
+}
+
+.homeblog__container {
+  margin-bottom: 60px;
+}
+
+.homeblog__main-container {
+  width: 540px;
+  margin: auto;
+  position: relative;
+}
+
+.homeblog__main-img img {
+  width: 100%;
+}
+
+.homeblog__main-btn {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 18px 41px;
+  color: #101d30;
+  border-radius: 100px;
+  background-color: var(--white-color);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 73px;
+  cursor: pointer;
+}
+
+.homeblog__bg-text {
+  text-transform: uppercase;
+  font-size: 189px;
+  color: var(--white-color);
+  opacity: 0.05;
+  position: absolute;
+  top: 100px;
+  left: -70px;
+}
+
+.homeblog__pop-up-container {
+  background-image: url(/public/assets/images/blog-pop-up.png);
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 270px;
+  background-size: 400px 270px;
+  color: var(--black-color);
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  left: 50%;
+  bottom: 200px;
+  transform: translateX(-50%) scale(0.0005);
+  box-shadow: 0px 28px 20px -16px #0000006e;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.homeblog__pop-up-container.active {
+  transition: .5s;
+}
+
+.homeblog__pop-up-1.active:hover {
+  transform: translateX(-50%) rotate(-15deg) scale(1.05) !important;
+  box-shadow: 0px 28px 20px -16px #ffffff6e;
+}
+
+.homeblog__pop-up-2.active:hover {
+  transform: translateX(-50%) rotate(15deg) scale(1.05) !important;
+  box-shadow: 0px 28px 20px -16px #ffffff6e;
+}
+
+.homeblog__pop-up-3.active:hover {
+  transform: translateX(-50%) scale(1.05) !important;
+  box-shadow: 0px 28px 20px -16px #ffffff6e;
+}
+
+.homeblog__pop-up-1 {
+  z-index: 4;
+}
+
+.homeblog__pop-up-2 {
+  z-index: 3;
+}
+
+.homeblog__pop-up-container.blog__pop-up-3 {
+  z-index: 2;
+  bottom: 180px;
+}
+
+.homeblog__pop-up-1.active {
+  transform: translateX(-50%) rotate(-15deg) scale(1);
+  bottom: 400px;
+  left: 40%;
+}
+
+.homeblog__pop-up-2.active {
+  transform: translateX(-50%) rotate(15deg) scale(1);
+  bottom: 300px;
+  left: 60%;
+}
+
+.homeblog__pop-up-3.active {
+  bottom: 210px;
+  transform: translateX(-50%) scale(1);
+}
+
+.homeblog__pop-up-img {
+  height: 78%;
+  width: 80%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.homeblog__pop-up-text {
+  font-size: 13.93px;
+  font-weight: 400;
+  line-height: 15.22px;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .homeblog__header {
+    display: block;
+    margin-bottom: 300px;
+    text-align: center;
+  }
+
+  .homeblog__bg-text {
+    top: initial;
+    bottom: 200px;
+  }
+
+  .homeblog__main-container {
+    width: 100%;
+  }
+
+  .homeblog__pop-up-container {
+    background-size: 100% 100%;
+    width: 80%;
+    height: 80%;
+  }
+
+  .homeblog__pop-up-3.active {
+    bottom: 200px;
+  }
+
+  .homeblog__pop-up-2.active {
+    bottom: 300px;
+  }
+
+  .homeblog__pop-up-1.active {
+    bottom: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .homeblog__pop-up-text {
+    font-size: 10.93px;
+  }
+
+  .homeblog__pop-up-3.active {
+    bottom: 162px;
+  }
+
+  .homeblog__pop-up-2.active {
+    bottom: 260px;
+  }
+
+  .homeblog__pop-up-1.active {
+    bottom: 360px;
+  }
+
+  .homeblog__main-btn {
+    bottom: 56px;
+    font-size: 16px;
+    padding: 15px 31px;
+  }
+}
+
+@media (max-width: 500px) {
+  .homeblog__header {
+    margin-bottom: 200px;
+  }
+
+  .homeblog__pop-up-text {
+    font-size: 10.93px;
+  }
+
+  .homeblog__pop-up-container {
+    padding: 40px 20px;
+    gap: 15px;
+  }
+
+  .homeblog__pop-up-img {
+    border-radius: 3px;
+    width: 73%;
+  }
+
+  .homeblog__pop-up-text {
+    font-size: 8.93px;
+    line-height: 11px;
+  }
+
+  .homeblog__pop-up-3.active {
+    bottom: 118px;
+  }
+
+  .homeblog__pop-up-2.active {
+    bottom: 180px;
+  }
+
+  .homeblog__pop-up-1.active {
+    bottom: 280px;
+  }
+
+  .homeblog__main-btn {
+    bottom: 42px;
+    font-size: 13px;
+    padding: 12px 23px;
+  }
+}
+
+@media (max-width: 450px) {
+  .homeblog .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

@@ -1,0 +1,152 @@
+.footer {
+  background-color: var(--green-semibold);
+  padding: 70px 40px;
+}
+
+.footer__items {
+  display: flex;
+  gap: 80px;
+}
+
+.footer__item {
+  width: 20%;
+}
+
+.footer__item:first-of-type {
+  width: 35%;
+}
+
+.footer__logo {
+  width: 163px;
+  margin-bottom: 30px;
+}
+
+.footer__text {
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0.5;
+  line-height: 24px;
+  margin-bottom: 30px;
+}
+
+.footer__social-items {
+  display: flex;
+  gap: 35px;
+  font-size: 25px;
+}
+
+.footer__social-item {
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.footer__social-item:hover {
+  transform: rotate(360deg) scale(2);
+}
+
+.footer__item-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.footer__item-links {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  cursor: pointer;
+}
+
+.footer__item-link.disactive {
+  cursor: initial;
+}
+
+.footer__item-link {
+  transition: 0.3s;
+  opacity: 0.5;
+}
+
+.footer__item-link:not(.disactive):hover {
+  opacity: 1;
+}
+
+.footer__copyright {
+  text-align: center;
+  color: #656565;
+  padding: 33px;
+  font-size: 18px;
+  font-weight: 400;
+  background-color: var(--white-color);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.footer__copyright-text span {
+  color: var(--green-semibold);
+}
+
+.footer__copyright-text:last-of-type {
+  margin-left: 30px;
+}
+
+.footer__copyright-link {
+  color: #3a896a;
+}
+
+@media (max-width: 950px) {
+  .footer__items {
+    gap: 36px 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .footer__item {
+    width: 40% !important;
+  }
+
+  .footer__copyright {
+    font-size: 10.46px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer {
+    padding: 70px 0px;
+  }
+
+  .footer__logo {
+    width: 130px;
+    margin-bottom: 19px;
+  }
+
+  .footer__text {
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 15px;
+  }
+
+  .footer__social-items {
+    font-size: 17px;
+    gap: 17px;
+  }
+
+  .footer__item-title {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  .footer__item-links {
+    gap: 9px;
+    font-size: 13px;
+  }
+
+  .footer__item:first-of-type {
+    width: 100% !important;
+  }
+
+  .footer__copyright-text:last-of-type {
+    margin-left: 0;
+  }
+}

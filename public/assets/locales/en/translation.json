@@ -1,0 +1,122 @@
+{
+  "name": "EN",
+  "home": {
+    "title": "Home"
+  },
+  "slider_click": "click to change",
+  "last_update": "last update",
+  "nav": [
+    "About us",
+    "Top Products",
+    "Products",
+    "News",
+    "Terms of use"
+  ],
+  "products": {
+    "top_products": "Top products",
+    "all_products": "All products",
+    "title": "Our products",
+    "subtitle": "We have about 20 kinds of products",
+    "order": "Order",
+    "related": "Related Products",
+    "property_1": "Aricle",
+    "property_2": "Size",
+    "success_title": "Your order has been accepted",
+    "success_subtitle": "Our experts will contact you soon",
+    "view": "View Product",
+    "download": "Top products"
+  },
+  "about": {
+    "time_name": "Yesterday", 
+    "title": "About us",
+    "subtitle": "Pero ko’plab ishchilarni bir maqsad yo’lida jamlagan korxona bo'lib, u turli xildagi salfetkalar ishlab chiqarishga ixtisoslashgan. Biz o’z mijozlarimizga doim eng yaxshi va sifatlisini ulashamiz.",
+    "title_2": "The secret of purity",
+    "icons": [
+      {
+        "title": "High quality",
+        "subtitle": "Quality control of products and rejection at the production stage, passing the Quality Control Department, compliance with GOSTs and quality standards"
+      },
+      {
+        "title": "Safety",
+        "subtitle": "All our products are tested and certified according to world-class standards."
+      },
+      {
+        "title": "Innovation and innovation",
+        "subtitle": "Our products are always multifunctional and keep up with the times, responding to the needs of today's demanding users."
+      }
+    ],
+    "video": {
+      "title": "Pero - The secret of purity",
+      "text": "'PERO' company was established in early 2022. Despite the fact that our company is new has set very big goals. The most important of these is the high quality that is beneficial to people producing products aimed at fully meeting people's needs. Our company is on this road and our team is committed to your service! Our company is equipped with Turkish technical technologies, which makes our products even more also ensures that it meets world standards of quality, at the same time produced in the leading enterprises of the world and our country We produce using cellulose? We deliver quality products to our people and people, and serve for purity and cleanliness in their place we are proud to do. PERO is for those who love purity....."
+    },
+    "production": {
+      "title": "Pero uz",
+      "text": "Our products are made from high quality raw materials. Our product is of high quality and complies with international standards. The main indicators of the quality of our products are strength, softness and hygiene, which corresponds to the analogues of the best world samples.",
+      "more": "more"
+    },
+    "main_btn": "More about us",
+    "more": "More",
+    "footer_text": "We are in numbers"
+  },
+  "videos": {
+    "title": "Bizning videolar",
+    "subtitle": "Follow us on our videos",
+    "download": "Another video"
+  },
+  "blog": {
+    "title": "Our Blog",
+    "all": "All news",
+    "more": "All news",
+    "route": "blog",
+    "read": "Read More"
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "Fill out the special form and our experts will contact you soon",
+    "info_title": "Pero - The secret of purity",
+    "info_subtitle": "Pero - is a manufacturer of paper products for sanitary purposes. Our company has been operating for many years. Our products are made from high quality raw materials. Our product is of high quality and complies with international standards. Manufactured products can be both budget and premium. The main indicators of the quality of our products are strength, softness and hygiene, which corresponds to the analogues of the best world samples.",
+    "name": "Name",
+    "phone": "Phone Number",
+    "message": "Message",
+    "send": "Send",
+    "sent": "Sent",
+    "contact_btn": "Contact"
+  },
+  "footer": {
+    "text": "Soft and fluffy napkins. You will find the best quality products at Pero. All amenities are for valued customers. Feel the elegance with us. A feather is the secret of purity",
+    "links": [
+      {
+        "title": "Company",
+        "links": [
+          "About Us",
+          "Our products",
+          "Communication",
+          "News"
+        ]
+      },
+      {
+        "title": "Terms",
+        "links": [
+          "Our Videos",
+          "Our catalog",
+          "Terms of use"
+        ]
+      },
+      {
+        "title": "Contact",
+        "links": [
+          "Tashkent region, Zangiota District, Okakhchilar street, 2nd house",
+          "info@pero.uz",
+          "+998 98 888 44 46",
+          "+998 98 126 09 19"
+        ]
+      }
+    ],
+    "copyright": "© Pero - All rights reserved. Developed by",
+    "powered": "- Powered by"
+  },
+  "terms": {
+    "title": "Terms of use",
+    "route": "Terms of use"
+  }
+}

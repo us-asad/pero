@@ -1,0 +1,26 @@
+.feather2__img {
+  position: absolute;
+  z-index: 0;
+  transition: 200s;
+}
+
+.feather2__img.mobile {
+  display: none;
+}
+
+@media (max-width: 1150px) {
+  .feather2__img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 950px) {
+  .feather2__img {
+    display: none;
+  }
+
+  .feather2__img.feather2__img.mobile {
+    display: block;
+  }
+}

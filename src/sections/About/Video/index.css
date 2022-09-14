@@ -1,0 +1,142 @@
+.aboutvideo {
+  position: relative;
+}
+
+.aboutvideo__title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 80px 0 60px;
+}
+
+.aboutvideo__title {
+  width: 50%;
+}
+
+.aboutvideo__text {
+  margin-top: 40px;
+}
+
+.aboutvideo__button {
+  background-color: var(--white-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.aboutvideo__video {
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  display: grid;
+  place-content: center;
+  opacity: 0;
+  transition: 0.7s;
+  pointer-events: none;
+  width: fit-content;
+  height: fit-content;
+}
+
+.aboutvideo__video.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.aboutvideo__video video {
+  border-radius: 10px;
+}
+
+.aboutvideo__bg {
+  background: rgba(0, 0, 0, 0.386);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transform: 0.4s;
+}
+
+.aboutvideo__bg.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+@media (max-width: 950px) {
+  .aboutvideo__title-container {
+    margin-bottom: 30px;
+  }
+
+  .about__title {
+    font-size: 34px;
+    line-height: 38.28px;
+    width: 80%;
+  }
+
+  .about__text {
+    margin-top: 20px;
+    font-size: 15px !important;
+    line-height: 21.79px;
+  }
+
+  .aboutvideo__video video {
+    width: 500px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 650px) {
+  .aboutvideo__video video {
+    width: 400px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 650px) {
+  .aboutvideo__video video {
+    width: 70vw;
+    height: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .aboutvideo__title-container {
+    margin-bottom: 20px;
+  }
+
+  .about__title {
+    font-size: 30px;
+    line-height: 34.28px;
+    width: 100%;
+  }
+
+  .about__text {
+    margin-top: 15px;
+    font-size: 14px !important;
+    line-height: 19.79px;
+  }
+
+  .aboutvideo__title-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .aboutvideo__button {
+    min-width: 80px;
+    min-height: 80px;
+    width: 80px;
+    height: 80px;
+  }
+}

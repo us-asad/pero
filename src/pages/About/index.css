@@ -1,0 +1,35 @@
+.about {
+  background-color: var(--green-semibold);
+  padding: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about__title {
+  font-size: 42px;
+  line-height: 49.28px;
+  font-weight: 700;
+  color: var(--pink-thin);
+}
+
+.about__text {
+  font-size: 17.86px;
+  line-height: 26.79px;
+  font-weight: 300;
+}
+
+@media (max-width: 1050px) {
+  .about {
+    padding: 80px 0;
+  }
+
+  .about__header {
+    display: none;
+  }
+}
+
+@media (max-width: 950px) {
+  .about__span {
+    display: none;
+  }
+}
