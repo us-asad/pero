@@ -20,7 +20,7 @@
   padding: 0 20px 15px;
   overflow-x: auto;
   position: relative;
-  row-gap: 34px;
+  row-gap: 24px;
   flex-wrap: wrap;
 }
 
@@ -57,9 +57,9 @@
   position: absolute;
   width: 130%;
   left: -15%;
-  height: 2.5px;
+  height: 2px;
   background-color: var(--pink-thin);
-  bottom: -15px;
+  bottom: -8px;
   z-index: 2;
   transition: .7s;
   opacity: 0;
